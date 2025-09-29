@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Study Guide 3 - UT Invitational 2022</title>
+    <link rel="stylesheet" href="../css/study-guide-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Study Hub
+            </a>
+            <a href="../pdfresources/SolarSystemStudyGuide3.pdf" target="_blank" style="display: inline-block; background: #dc3545; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                📄 Questions PDF
+            </a>
+            <a href="../pdfresources/SolarSystemStudyGuide3-Key.pdf" target="_blank" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                📄 Answer Key PDF
+            </a>
+        </div>
+        <h1>Solar System Study Guide 3</h1>
+        <div class="subtitle">Science Olympiad Preparation</div>
+        <div class="subtitle">UT Invitational 2022 - Complete Questions & Answers with Image Analysis</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>Section A: Image-Based Questions</h2>
+    <div class="section-points">16 Questions - Variable Points - Total: 50 Points</div>
+
+    <div class="image-reference">
+        <strong>📸 IMAGE SET</strong><br>
+        <em>Reference these images when answering the questions below</em>
+
+        <div class="study-images">
+            <div class="study-image">
+                <img src="../images/study-guide-3/image1-9.png" alt="Images 1-9" />
+                <p>Images 1-9: Various Solar System Objects</p>
+            </div>
+            <div class="study-image">
+                <img src="../images/study-guide-3/image10-21.png" alt="Images 10-21" />
+                <p>Images 10-21: Additional Solar System Objects & Analysis</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Image Panel -->
+    <div id="floatingImagePanel" class="floating-image-panel">
+        <div class="floating-panel-header" id="panelHeader">
+            <span id="panelTitle">Image Viewer</span>
+            <button class="close-panel" onclick="closeImagePanel()">&times;</button>
+        </div>
+        <div class="floating-panel-content" id="panelContent">
+            <p>Click on an image reference button to view images here.</p>
+        </div>
+        <div class="resize-handle" id="resizeHandle"></div>
+    </div>
+
+    <div class="question">
+        <strong>1.</strong> Order the following objects by their (average) distance from the Sun, from nearest to farthest: Enceladus, Venus, Mars, and Europa. [1 point]
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: Venus, Mars, Europa, Enceladus</div>
+        <div class="explanation">Venus is the second planet from the Sun, Mars is the fourth planet, Europa orbits Jupiter (fifth planet), and Enceladus orbits Saturn (sixth planet).</div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> Order the following objects by their radius, from smallest to largest: Titan, Venus, 101955 Bennu, and Enceladus. [1 point]
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: 101955 Bennu, Enceladus, Titan, Venus</div>
+        <div class="explanation">Bennu is a small asteroid (~250m radius), Enceladus is a moon (~252km radius), Titan is a large moon (~2574km radius), and Venus is a planet (~6052km radius).</div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> Order the objects shown in the following images by their (average) temperature, from coldest to hottest: Image 1, Image 2, Image 11, and Image 16. [1 point]
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image1-9.png', 'Images 1-9')">Images 1-9</button>
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image10-21.png', 'Images 10-21')">Images 10-21</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: Enceladus, Europa, Mars, Venus</div>
+        <div class="explanation">Based on the images: Enceladus (Image 1) is coldest at ~75K, Europa (Image 2) at ~100K, Mars (Image 16) at ~210K, and Venus (Image 11) is hottest at ~735K.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> Image 1 Analysis (3 points total)
+        <div class="sub-question"><strong>(a)</strong> What moon is shown in Image 1? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Around which planet does this moon orbit? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What geologic feature is illustrated towards the bottom of the moon in Image 1? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image1-9.png', 'Images 1-9')">Images 1-9</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Enceladus</div>
+        <div class="answer-part"><strong>(b)</strong> Saturn</div>
+        <div class="answer-part"><strong>(c)</strong> Tiger Stripes/Subsurface Ocean/Plumes</div>
+        <div class="explanation">Enceladus is Saturn's sixth-largest moon, famous for its "tiger stripe" fractures at the south pole that eject water-ice plumes from its subsurface ocean.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> Exoplanet Analysis (3 points total)
+        <div class="sub-question"><strong>(a)</strong> What planet is shown in Image 3? Hint: it is outside of the Solar System. [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> In your own words, describe the technique used to discover this planet. [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> Suppose you're part of a team of scientists searching for Earth-like planets. Is the technique from (b) better at discovering Earth-like planets in the habitable zones of high-mass or low-mass stars? Explain your answer, as well as any assumptions you make. [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image1-9.png', 'Images 1-9')">Images 1-9</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Kepler-186f</div>
+        <div class="answer-part"><strong>(b)</strong> The transit method: looking for dips in the parent star's brightness due to the planet crossing in front of the star</div>
+        <div class="answer-part"><strong>(c)</strong> Low-mass stars. Transit probability is approximately R_star/a, and Earth-like planets would orbit much closer to low-mass stars than high-mass stars, since low-mass stars are much cooler. Low-mass stars are smaller than high-mass stars, but not by as much. Also, there are way more low-mass stars than high-mass stars.</div>
+        <div class="explanation">Kepler-186f was the first Earth-sized exoplanet discovered in the habitable zone of its star, found using the transit method by the Kepler Space Telescope.</div>
+    </div>
+
+    <div class="question">
+        <strong>6.</strong> Asteroid Analysis (4 points total)
+        <div class="sub-question"><strong>(a)</strong> What object is shown in Image 4? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which of the following terms best describes this object? Choose from planet, moon, asteroid, or comet. [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> In 2018, this object was famously visited by a NASA mission. What was its name? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> What other image shows this object? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image1-9.png', 'Images 1-9')">Images 1-9</button>
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image10-21.png', 'Images 10-21')">Images 10-21</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> 101955 Bennu</div>
+        <div class="answer-part"><strong>(b)</strong> Asteroid</div>
+        <div class="answer-part"><strong>(c)</strong> OSIRIS-REx</div>
+        <div class="answer-part"><strong>(d)</strong> Image 12</div>
+        <div class="explanation">Bennu is a near-Earth asteroid studied by the OSIRIS-REx mission, which collected samples and returned them to Earth in 2023.</div>
+    </div>
+
+    <div class="question">
+        <strong>7.</strong> Infrared Imaging Analysis (4 points total)
+        <div class="sub-question"><strong>(a)</strong> In what portion of the electromagnetic spectrum (e.g., ultraviolet, visible, infrared, etc.) was Image 5 taken? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What image shows this object pictured in visible light? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What spacecraft or telescope took both of these images? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> What image shows an illustration of this spacecraft or telescope? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image1-9.png', 'Images 1-9')">Images 1-9</button>
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image10-21.png', 'Images 10-21')">Images 10-21</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Infrared</div>
+        <div class="answer-part"><strong>(b)</strong> Image 15</div>
+        <div class="answer-part"><strong>(c)</strong> Cassini</div>
+        <div class="answer-part"><strong>(d)</strong> Image 19</div>
+        <div class="explanation">Cassini used multiple instruments to study Saturn's moons in different wavelengths, revealing temperature variations and surface compositions.</div>
+    </div>
+
+    <div class="question">
+        <strong>8.</strong> Europa Surface Chemistry (3 points total)
+        <div class="sub-question"><strong>(a)</strong> Image 6 shows the distribution of a sulfur-containing compound over the surface of Europa. What compound is it? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> How do scientists think this compound ended up on Europa's surface? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What image shows an illustration of the spacecraft or telescope that collected the data to make Image 6? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image1-9.png', 'Images 1-9')">Images 1-9</button>
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image10-21.png', 'Images 10-21')">Images 10-21</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Sulfuric acid</div>
+        <div class="answer-part"><strong>(b)</strong> Sulfur from Io hits Europa's trailing hemisphere, where it reacts with oxygen and hydrogen to form sulfuric acid</div>
+        <div class="answer-part"><strong>(c)</strong> Image 14</div>
+        <div class="explanation">Europa's surface chemistry is influenced by material from Io's volcanic activity, which gets distributed throughout Jupiter's magnetosphere.</div>
+    </div>
+
+    <div class="question">
+        <strong>9.</strong> Titan Lakes Analysis (4 points total)
+        <div class="sub-question"><strong>(a)</strong> Image 7 shows two "lakes" on Titan. Generally, what substance(s) are these lakes composed of? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What spacecraft or telescope took Image 7? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What instrument on this spacecraft or telescope collected the data for this image? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> The lake on the right has lighter patches within it. Why might this be the case? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image1-9.png', 'Images 1-9')">Images 1-9</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Hydrocarbons (methane and ethane)</div>
+        <div class="answer-part"><strong>(b)</strong> Cassini</div>
+        <div class="answer-part"><strong>(c)</strong> Radar mapper</div>
+        <div class="answer-part"><strong>(d)</strong> The lake on the right may be slowly drying out as northern summer approaches, causing it to look lighter than the lake on the left</div>
+        <div class="explanation">Titan is the only other body in the Solar System with stable surface liquids, though they're hydrocarbons rather than water.</div>
+    </div>
+
+    <div class="question">
+        <strong>10.</strong> Venus Analysis (4 points total)
+        <div class="sub-question"><strong>(a)</strong> What image shows the hottest planet in the Solar System? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> In what portion of the electromagnetic spectrum (e.g., ultraviolet, visible, infrared, etc.) was this image taken? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What spacecraft or telescope took this image? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> This planet is much hotter than its planetary equilibrium temperature. Why is that the case? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image10-21.png', 'Images 10-21')">Images 10-21</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Image 11</div>
+        <div class="answer-part"><strong>(b)</strong> Ultraviolet</div>
+        <div class="answer-part"><strong>(c)</strong> Hubble</div>
+        <div class="answer-part"><strong>(d)</strong> Venus has a thick atmosphere (with lots of carbon dioxide) leading to a very strong greenhouse effect</div>
+        <div class="explanation">Venus's dense CO₂ atmosphere creates a runaway greenhouse effect, making it hotter than Mercury despite being farther from the Sun.</div>
+    </div>
+
+    <div class="question">
+        <strong>11.</strong> Mars Ice Analysis (3 points total)
+        <div class="sub-question"><strong>(a)</strong> What image shows Martian permafrost? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What spacecraft or telescope took this image? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> Mars also has water in the form of equatorial glaciers. What image shows these? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image10-21.png', 'Images 10-21')">Images 10-21</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Image 16</div>
+        <div class="answer-part"><strong>(b)</strong> Phoenix</div>
+        <div class="answer-part"><strong>(c)</strong> Image 10</div>
+        <div class="explanation">Mars has water ice in various forms - permafrost near the poles and buried glaciers at lower latitudes, discovered by different missions.</div>
+    </div>
+
+    <div class="question">
+        <strong>12.</strong> Europa Composition (3 points total)
+        <div class="sub-question"><strong>(a)</strong> What object is shown in Image 13? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What spacecraft or telescope took this image? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> From a chemistry perspective, what is the difference between the white-blue areas and the red-orange areas? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image10-21.png', 'Images 10-21')">Images 10-21</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Europa</div>
+        <div class="answer-part"><strong>(b)</strong> Galileo</div>
+        <div class="answer-part"><strong>(c)</strong> White-blue: relatively pure water ice; red-orange: water ice with hydrated salts</div>
+        <div class="explanation">Europa's surface composition varies, with pure ice in some regions and salt-contaminated ice in others, possibly from the subsurface ocean.</div>
+    </div>
+
+    <div class="question">
+        <strong>13.</strong> Europa Chaos Terrain (5 points total)
+        <div class="sub-question"><strong>(a)</strong> Image 17 shows "chaos terrain" on Europa. In your own words, briefly explain what this is. [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Does the existence of chaos terrain imply that Europa's crust is thin, thick, or some combination of the two? Explain why. [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> This region of chaos terrain is so well-known that it has a specific name. What is it? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> Image 2 shows a geological feature on Europa closely related to chaos terrain. What are the "dots" in this image called? [1 pt]</div>
+        <div class="sub-question"><strong>(e)</strong> How do scientists think these dots were formed? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image1-9.png', 'Images 1-9')">Images 1-9</button>
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image10-21.png', 'Images 10-21')">Images 10-21</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Regions of irregular, disrupted blocks of ice, cracks, and ridges</div>
+        <div class="answer-part"><strong>(b)</strong> This is a bit of a trick question. Europa's crust is probably relatively thick in most places, but in regions where there is chaos terrain, the crust is thinner, and there may be liquid water "lakes" only a few kilometers under the surface</div>
+        <div class="answer-part"><strong>(c)</strong> Conamara Chaos</div>
+        <div class="answer-part"><strong>(d)</strong> Freckles or lenticulae</div>
+        <div class="answer-part"><strong>(e)</strong> Upwelling of warmer ice while cooler ice sinks, or ice erupting onto the surface</div>
+        <div class="explanation">Europa's chaos terrain provides evidence for a dynamic ice shell with possible connections to the subsurface ocean below.</div>
+    </div>
+
+    <div class="question">
+        <strong>14.</strong> Comet Analysis (4 points total)
+        <div class="sub-question"><strong>(a)</strong> There is one comet on this year's rules. What is its name? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What image shows this comet? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> In order to learn more about water in the Solar System, scientists measured the ratio of deuterium to hydrogen in the water vapor surrounding this comet. In your own words, what is deuterium? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> Measurements have shown that the ratio of deuterium to hydrogen in the water vapor surrounding this comet is significantly higher than that of water on Earth. Based on this information, do you think it is likely that the water on Earth came from comets like this? Explain why. [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image1-9.png', 'Images 1-9')">Images 1-9</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> 67P/Churyumov–Gerasimenko</div>
+        <div class="answer-part"><strong>(b)</strong> Image 9</div>
+        <div class="answer-part"><strong>(c)</strong> Isotope of hydrogen with one neutron instead of zero</div>
+        <div class="answer-part"><strong>(d)</strong> No (or if it did, it can't be the only source). The water on Earth should have the same chemical composition/signature as the water from the source (or be some combination of the sources)</div>
+        <div class="explanation">Isotopic analysis of comets helps scientists understand the origins of water on Earth and throughout the Solar System.</div>
+    </div>
+
+    <div class="question">
+        <strong>15.</strong> Mars Polar Analysis (3 points total)
+        <div class="sub-question"><strong>(a)</strong> Image 20 shows Chasma Boreale, a large canyon in Mars's north polar ice cap. What spacecraft or telescope took this image? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What instrument on this spacecraft or telescope collected the data for this image? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> The darker areas in this image are thought to be dust. How might the presence of dust affect whether (and how quickly) material is melted compared to areas without dust? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image10-21.png', 'Images 10-21')">Images 10-21</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Mars Reconnaissance Orbiter</div>
+        <div class="answer-part"><strong>(b)</strong> HiRISE</div>
+        <div class="answer-part"><strong>(c)</strong> Dust is dark, and it will absorb more light, causing the ice underneath it to melt more/faster</div>
+        <div class="explanation">Mars's polar ice caps show complex layering and seasonal changes, with dust playing a key role in ice melting processes.</div>
+    </div>
+
+    <div class="question">
+        <strong>16.</strong> Enceladus Thermal Analysis (4 points total)
+        <div class="sub-question"><strong>(a)</strong> What object is shown in Image 21? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What is the name of the surface feature shown in Image 21? Be as specific as possible. [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> This image shows how the temperature varies near this surface feature. In what portion of the electromagnetic spectrum (e.g., ultraviolet, visible, infrared, etc.) would we find this thermal radiation? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> Scientists have measured temperatures as high as 180-200 Kelvin in this area of the object, which is much higher than expected. What process (or property of Enceladus) is leading to the extra heat flow to sustain these high temperatures? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-3/image10-21.png', 'Images 10-21')">Images 10-21</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(16)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-16">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Enceladus</div>
+        <div class="answer-part"><strong>(b)</strong> Damascus Sulcus</div>
+        <div class="answer-part"><strong>(c)</strong> Infrared</div>
+        <div class="answer-part"><strong>(d)</strong> Enceladus is not a perfect sphere, which causes the tidal heating produced due to libration to increase dramatically</div>
+        <div class="explanation">Enceladus's tiger stripes are heated by tidal forces from Saturn, creating the warm temperatures that allow liquid water to exist beneath the ice.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>Section B: Advanced Analysis Questions</h2>
+    <div class="section-points">4 Questions - Variable Points - Total: 45 Points</div>
+
+    <div class="question">
+        <strong>17.</strong> Red Dwarf Habitability Analysis (16 points total)
+        <br>All of the exoplanets in this year's rules orbit red dwarfs, which are smaller, less massive, and dimmer than the Sun. In this question, we'll explore some of the ways red dwarfs can impact the habitability of planets around them.
+        <div class="sub-question"><strong>(a)</strong> Compared to our Sun's habitable zone, would the habitable zone around a red dwarf be closer or farther away? Justify your answer by either writing a few short sentences or referencing the equation for planetary equilibrium temperature. [2 pts]</div>
+        <div class="sub-question"><strong>(b)</strong> Planets in the habitable zone of red dwarfs have a significant likelihood of being tidally locked to their parent star, but none of the planets in our Solar System are tidally locked to the Sun. Building off your answer to the previous part, why might planets in the habitable zones of red dwarfs be more susceptible to being tidally locked? Hint: think about the shape (and especially slope) of the function f(r) = 1/r² at both large and small values of r. [3 pts]</div>
+        <div class="sub-question"><strong>(c)</strong> Challenge: Consider an alternate universe in which the force of gravity scales with 1/r³ instead of 1/r². Do you think objects would get tidally locked faster or slower than in our universe? [4 pts]</div>
+        <div class="sub-question"><strong>(d)</strong> A tidally locked planet would have one side facing its parent star at all times, while the other side is in constant darkness. What are some ways life could survive in such an environment? Are there any ways that the planet could redistribute the heat? Note: this is intentionally written as an open-ended question, and you are encouraged to be creative (and imaginative) in your response. A variety of answers will be accepted. [3 pts]</div>
+        <div class="sub-question"><strong>(e)</strong> Red dwarfs emit a significant amount of ultraviolet radiation. Photons in this portion of the electromagnetic spectrum have energies comparable to the energy stored in chemical bonds, like the ones that make up proteins or DNA. Do you think this presence of this radiation would help or hinder the development of life around red dwarfs? [2 pts]</div>
+        <div class="sub-question"><strong>(f)</strong> Red dwarfs also "live" much longer than our Sun. Based on your knowledge of how (biological) life evolves, do you think this extra time would help or hinder the development of life around red dwarfs? [2 pts]</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(17)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-17">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Closer. Red dwarfs are cooler and smaller, so in order for a planet around it to have the same temperature as Earth, it'll have to be closer. Imagine a scenario where you have two heaters during the wintertime. If one of them is weaker than the other, you'll have to stand closer to it to feel the same level of warmth as the stronger heater.</div>
+        <div class="answer-part"><strong>(b)</strong> The force of gravity is proportional to 1/r². So, the closer you get to the star, the stronger the force of gravity, and it stronger at a faster and faster rate as you get closer. As a result, when you're close to the parent star, you'll have a much bigger difference between the force the near and far sides of the planet experience, and it is this difference in gravitational force that drives tidal locking. A habitable planet around a red dwarf will be very close to its parent star (for the reasons outlined in the part above), so it will get tidally locked faster.</div>
+        <div class="answer-part"><strong>(c)</strong> A graph of 1/r³ will have an even more pronounced curvature when close to the parent star, which would increase the tidal force a planet would experience, making it become tidally locked faster.</div>
+        <div class="answer-part"><strong>(d)</strong> Answers will vary dramatically; this was meant to be a question where students can come up with whatever ideas they want, and as long as it seemed like they put some thought into it, they got points for it.</div>
+        <div class="answer-part"><strong>(e)</strong> Hinder. The high-energy radiation would break bonds in complicated biological molecules (like DNA) needed for life, leading to errors (like mutations). Students who put that it could help life got points if it seemed like they thought about it a lot (for example, one team mentioned that this could lead to photocatalysis and help make molecules more easily).</div>
+        <div class="answer-part"><strong>(f)</strong> Help. Life takes time to develop, and the more time you give it, the greater the probability is that something will happen.</div>
+        <div class="explanation">Red dwarf stars present unique challenges and opportunities for habitability, requiring careful consideration of orbital mechanics, atmospheric dynamics, and stellar evolution.</div>
+    </div>
+
+    <div class="question">
+        <strong>18.</strong> Mars Atmospheric Loss (12 points total)
+        <br>Liquid water is thought to be essential for life as we know it. However, in order for water to exist as a liquid in a stable form, the pressure must be higher than 611.66 Pa. At some point Mars had an atmosphere substantial enough to support such a pressure, but most of it has since disappeared.
+        <div class="sub-question"><strong>(a)</strong> 611.66 Pa is a very specific number, and it comes from a famous "point" on the pressure-temperature phase diagram for water. What is it? Hint: In case this number is more recognizable in other units, 611.66 Pa is equivalent to 6.1166 mbar or 0.0060366 atm. [2 pts]</div>
+        <div class="sub-question"><strong>(b)</strong> At a given temperature, do you think it is easier for light molecules (like hydrogen) or heavier molecules (like carbon dioxide) to escape from the atmosphere through this processes? [2 pts]</div>
+        <div class="sub-question"><strong>(c)</strong> For a given molecule, do you think it is easier for it to escape at high temperatures or low temperatures through this process? [2 pts]</div>
+        <div class="sub-question"><strong>(d)</strong> It turns out that this thermal process can only explain why Mars lost its hydrogen and helium. What do scientists think caused the other compounds to escape? [3 pts]</div>
+        <div class="sub-question"><strong>(e)</strong> One of the ways scientists supported this theory was by studying the relative abundances of two isotopes of argon, which is a Noble gas. From a chemistry perspective, why would they choose to focus on a Noble gas? [3 pts]</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(18)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-18">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> It is the pressure corresponding to the triple point of water.</div>
+        <div class="answer-part"><strong>(b)</strong> Light molecules. At a given temperature, light molecules will have a higher average speed, so a higher fraction of them will have a velocity high enough to escape the atmosphere.</div>
+        <div class="answer-part"><strong>(c)</strong> High temperatures. The higher temperatures will increase the average kinetic energy of the molecules in the gas.</div>
+        <div class="answer-part"><strong>(d)</strong> Several mechanisms probably played a role (e.g., solar wind/radiation, impacts). Sputtering due to solar wind/radiation after Mars lost its magnetic field is probably the dominant cause.</div>
+        <div class="answer-part"><strong>(e)</strong> Noble gases are inert (i.e., they do not easily react with other elements). So, the scientists would not have to worry about it being chemically stored on the planet, say, in a rock.</div>
+        <div class="explanation">Mars's atmospheric loss is a complex process involving thermal escape, solar wind sputtering, and impact erosion, studied through isotopic analysis of noble gases.</div>
+    </div>
+
+    <div class="question">
+        <strong>19.</strong> Titan Subsurface Ocean (12 points total)
+        <br>In addition to having stable bodies of liquid on its surface, Titan is also thought to have a subsurface ocean consisting primarily of liquid water. In this question, we'll begin by examining some of the evidence for a subsurface ocean on Titan before thinking more about how such a subsurface ocean could remain liquid even when Titan is so cold.
+        <div class="sub-question"><strong>(a)</strong> Radar mapping carried out by the Cassini mission has shown geologic features on the surface of Titan changing positions by tens of kilometers over the course of only a few years. Why might this support the idea of a subsurface ocean? [2 pts]</div>
+        <div class="sub-question"><strong>(b)</strong> Furthermore, the Huygens lander detected extremely low-frequency radio waves during its descent. Why would the detection of these radio waves support the idea of a subsurface ocean? [2 pts]</div>
+        <div class="sub-question"><strong>(c)</strong> Challenge: From a thermodynamics perspective, why would adding ammonia decrease the freezing point of water? Frame your answer in terms of the entropic barrier that arises when the mixture starts to freeze. [5 pts]</div>
+        <div class="sub-question"><strong>(d)</strong> What is the lowest temperature the freezing point can go in this water-ammonia system? At this temperature, what percent of the subsurface ocean will consist of ammonia, by mole? [3 pts]</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(19)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-19">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Landmarks shifting so much in such a short amount of time suggests the crust is disconnected from the rest of the interior of the planet (maybe a subsurface ocean!)</div>
+        <div class="answer-part"><strong>(b)</strong> Titan's low conductivity icy surface means that these radio waves readily penetrate the crust rather than being reflected. So, for them to resonate they must be reflected by something in Titan, which is most likely the high conductivity water–ammonia subsurface ocean.</div>
+        <div class="answer-part"><strong>(c)</strong> As the mixture freezes, the water freezes first, increasing the concentration of the ammonia in the remaining liquid water. Freezing a substance is a process that decreases the entropy of the system (a bunch of molecules held in a lattice as a solid have way fewer accessible microstates than molecules that can freely move around as a liquid), and concentrating the ammonia makes the entropy change even more negative. We know ΔH is negative, and now ΔS is even more negative than it would be for a pure substance, so in order for the process to be thermodynamically spontaneous (ΔG < 0), T (the freezing point) will be a smaller number.</div>
+        <div class="answer-part"><strong>(d)</strong> Temperature: about -97°C, composition: accept answers between 30-40% ammonia.</div>
+        <div class="explanation">Titan's subsurface ocean is maintained by tidal heating and antifreeze compounds like ammonia, allowing liquid water to exist despite the moon's cold surface temperature.</div>
+    </div>
+
+    <div class="question">
+        <strong>20.</strong> Open-Ended Concept Discussion (5 points total)
+        <br>When preparing for this event, you probably studied some concepts that weren't covered explicitly on this exam, simply because this exam can't be infinitely long. Choose one of them and talk about it in as much detail as you can. Note: this question will be the first tiebreaker.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(20)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-20">
+        <div class="answer-label">Answer: Here are 5 important Solar System topics explained for students:</div>
+
+        <div class="explanation">
+            <h4>🌌 Topic 1: How Planets Form from Dust</h4>
+            <p><strong>What is it?</strong> Planets don't just appear in space - they grow from tiny pieces of dust and rock over millions of years!</p>
+
+            <p><strong>How does it work?</strong> Imagine you're making a snowball. You start with a small handful of snow, then roll it around to pick up more snow until it becomes huge. Planets form the same way! Here's the process:</p>
+
+            <ul>
+                <li><strong>Step 1 - Dust Sticks Together:</strong> Tiny particles of dust and ice in space bump into each other and stick together, like when you rub a balloon on your hair and it picks up small pieces of paper.</li>
+                <li><strong>Step 2 - Bigger Chunks Form:</strong> These dust bunnies keep growing bigger and bigger, eventually becoming rocks the size of mountains.</li>
+                <li><strong>Step 3 - Gravity Takes Over:</strong> Once these chunks get big enough (about the size of a large city), their gravity becomes strong enough to pull in more material from far away.</li>
+                <li><strong>Step 4 - Planets Are Born:</strong> Over millions of years, these growing balls of rock and ice become planets!</li>
+            </ul>
+
+            <p><strong>Cool Fact:</strong> The rocky planets (like Earth) formed closer to the Sun where it was too hot for ice to exist. The gas giants (like Jupiter) formed farther away where it was cold enough for ice to help them grow much bigger!</p>
+
+            <h4>🧲 Topic 2: Planetary Magnetospheres - Invisible Force Fields</h4>
+            <p><strong>What is it?</strong> Some planets have invisible "force fields" called magnetospheres that protect them from dangerous space radiation!</p>
+
+            <p><strong>How does it work?</strong> Think of a magnetosphere like an invisible bubble around a planet. Here's what creates it:</p>
+
+            <ul>
+                <li><strong>Liquid Metal Core:</strong> Deep inside planets like Earth, there's liquid metal (mostly iron) that's constantly moving around.</li>
+                <li><strong>Electric Currents:</strong> This moving liquid metal creates electric currents, just like the wires in your house.</li>
+                <li><strong>Magnetic Field:</strong> These electric currents create a huge magnetic field around the entire planet - like a giant invisible magnet!</li>
+                <li><strong>Protection:</strong> This magnetic field deflects harmful particles from the Sun, keeping them from hitting the planet's surface.</li>
+            </ul>
+
+            <p><strong>Why is this important?</strong> Without Earth's magnetosphere, the Sun's radiation would slowly strip away our atmosphere, and life as we know it couldn't exist. Mars lost most of its magnetosphere billions of years ago, which is one reason why it lost most of its atmosphere!</p>
+
+            <p><strong>Cool Fact:</strong> The Northern Lights (Aurora) happen when some of the Sun's particles do get through Earth's magnetosphere and hit our atmosphere, creating beautiful dancing lights in the sky!</p>
+
+            <h4>💍 Topic 3: Why Saturn Has Rings (And How They Stay There)</h4>
+            <p><strong>What is it?</strong> Saturn's rings are made of billions of pieces of ice and rock, some as small as snowballs and others as big as houses!</p>
+
+            <p><strong>How did they form?</strong> Scientists think Saturn's rings formed in one of these ways:</p>
+
+            <ul>
+                <li><strong>Broken Moon Theory:</strong> A moon got too close to Saturn and was torn apart by Saturn's strong gravity.</li>
+                <li><strong>Leftover Material:</strong> The rings might be leftover material from when Saturn was forming that never became a moon.</li>
+                <li><strong>Comet Crash:</strong> A large comet might have crashed into one of Saturn's moons, creating the ring material.</li>
+            </ul>
+
+            <p><strong>Why don't the rings fall into Saturn?</strong> This is like asking why the Moon doesn't fall into Earth! The ring particles are constantly moving around Saturn very fast. Their speed creates a force that balances out Saturn's gravity trying to pull them in.</p>
+
+            <p><strong>Why don't they fly away?</strong> Saturn's gravity is strong enough to keep them from escaping into space, but not so strong that they fall in.</p>
+
+            <p><strong>Cool Fact:</strong> Saturn's rings are incredibly thin - if you made a scale model where the rings were as wide as a football field, they would only be as thick as a piece of paper!</p>
+
+            <h4>🔬 Topic 4: Astrobiology - The Search for Life in Space</h4>
+            <p><strong>What is it?</strong> Astrobiology is the study of life in the universe - both life on Earth and the possibility of life on other worlds!</p>
+
+            <p><strong>Where might we find life?</strong> Scientists look for life in places that have the basic ingredients:</p>
+
+            <ul>
+                <li><strong>Liquid Water:</strong> All life on Earth needs water, so we look for places where water can exist as a liquid.</li>
+                <li><strong>Energy Source:</strong> Life needs energy to survive - this could be sunlight, heat from inside a planet, or chemical energy.</li>
+                <li><strong>Chemical Building Blocks:</strong> Life needs elements like carbon, hydrogen, oxygen, and nitrogen to build complex molecules.</li>
+            </ul>
+
+            <p><strong>Exciting Places to Look:</strong></p>
+            <ul>
+                <li><strong>Europa (Jupiter's moon):</strong> Has a liquid ocean under its icy surface that might contain more water than all of Earth's oceans combined!</li>
+                <li><strong>Enceladus (Saturn's moon):</strong> Shoots geysers of water into space from its subsurface ocean.</li>
+                <li><strong>Mars:</strong> Once had rivers and lakes, and might still have liquid water underground.</li>
+                <li><strong>Titan (Saturn's moon):</strong> Has lakes and rivers, though they're made of liquid methane instead of water.</li>
+            </ul>
+
+            <p><strong>Cool Fact:</strong> Scientists have found life on Earth in some of the most extreme places imaginable - in boiling hot springs, in ice, in acid, and even deep underground. This gives us hope that life might exist in extreme environments on other worlds too!</p>
+
+            <h4>🚀 Topic 5: How We Design Space Missions</h4>
+            <p><strong>What is it?</strong> Sending a spacecraft to another planet is like throwing a paper airplane from New York and trying to hit a moving target in California - while both you and the target are spinning!</p>
+
+            <p><strong>The Challenge:</strong> Planets are constantly moving in their orbits, so mission planners have to figure out exactly when and where to launch a spacecraft so it will meet up with its target planet months or years later.</p>
+
+            <p><strong>Launch Windows:</strong> There are only certain times when it's possible to launch to each planet:</p>
+            <ul>
+                <li><strong>Mars:</strong> Every 26 months when Earth and Mars are properly aligned</li>
+                <li><strong>Jupiter:</strong> About every 13 months</li>
+                <li><strong>Saturn:</strong> About every 12.5 months</li>
+            </ul>
+
+            <p><strong>Gravity Assists:</strong> This is like a cosmic slingshot! Spacecraft can use a planet's gravity to speed up and change direction without using fuel. The Voyager spacecraft used gravity assists from Jupiter and Saturn to visit all four outer planets.</p>
+
+            <p><strong>Mission Types:</strong></p>
+            <ul>
+                <li><strong>Flyby:</strong> Spacecraft zooms past the target (like New Horizons at Pluto)</li>
+                <li><strong>Orbiter:</strong> Spacecraft goes into orbit around the target (like Cassini at Saturn)</li>
+                <li><strong>Lander:</strong> Spacecraft lands on the surface (like the Mars rovers)</li>
+                <li><strong>Sample Return:</strong> Spacecraft brings pieces of another world back to Earth (like OSIRIS-REx from asteroid Bennu)</li>
+            </ul>
+
+            <p><strong>Cool Fact:</strong> It takes radio signals from Earth about 22 minutes to reach Mars when it's closest, and up to 24 minutes to reach Mars when it's farthest away. This means mission controllers can't control Mars rovers in real-time - the rovers have to be smart enough to make decisions on their own!</p>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips</h3>
+        <p><strong>Focus on understanding the underlying physics and planetary science concepts rather than just memorizing facts.</strong></p>
+        <p>Pay special attention to:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>How different detection methods work and their limitations</li>
+            <li>The relationship between surface features and geological processes</li>
+            <li>How spacecraft missions have advanced our understanding</li>
+            <li>The physics behind planet formation and evolution</li>
+            <li>How different wavelengths of light reveal different information</li>
+            <li>Habitability criteria and astrobiology concepts</li>
+            <li>Atmospheric dynamics and escape mechanisms</li>
+            <li>Tidal heating and orbital mechanics</li>
+        </ul>
+        <p><em>This study guide covers all questions from the 2022 UT Invitational Solar System exam. Good luck with your preparation!</em></p>
+    </div>
+
+    <script src="../js/study-guide-common.js"></script>
+
+</body>
+</html>

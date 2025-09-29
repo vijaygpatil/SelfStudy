@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Study Guide 2</title>
+    <link rel="stylesheet" href="../css/study-guide-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Study Hub
+            </a>
+            <a href="../pdfresources/SolarSystemStudyGuide2.pdf" target="_blank" style="display: inline-block; background: #dc3545; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                📄 Original PDF
+            </a>
+        </div>
+        <h1>Solar System Study Guide 2</h1>
+        <div class="subtitle">Science Olympiad Preparation</div>
+        <div class="subtitle">Complete Questions & Answers with Image Analysis</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>Section A: Image-Based Questions</h2>
+    <div class="section-points">12 Questions - Variable Points - Total: 60 Points</div>
+
+    <div class="image-reference">
+        <strong>📸 IMAGE SET</strong><br>
+        <em>Reference these images when answering the questions below</em>
+
+        <div class="study-images">
+            <div class="study-image">
+                <img src="../images/study-guide-2/image1-13.png" alt="Images 1-13" />
+                <p>Images 1-13: Various Solar System Objects</p>
+            </div>
+            <div class="study-image">
+                <img src="../images/study-guide-2/image14-17.png" alt="Images 14-17" />
+                <p>Images 14-17: Detection Methods & Analysis</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Image Panel -->
+    <div id="floatingImagePanel" class="floating-image-panel">
+        <div class="floating-panel-header" id="panelHeader">
+            <span id="panelTitle">Image Viewer</span>
+            <button class="close-panel" onclick="closeImagePanel()">&times;</button>
+        </div>
+        <div class="floating-panel-content" id="panelContent">
+            <p>Click on an image reference button to view images here.</p>
+        </div>
+        <div class="resize-handle" id="resizeHandle"></div>
+    </div>
+
+    <div class="question">
+        <strong>1.</strong> Image 8 depicts the surface of a rocky Solar System planet. (4 points total)
+        <div class="sub-question"><strong>(a)</strong> What is the name of the planet whose surface is shown here? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What type of missions produced this image? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What type of geologic feature is most prominently shown in this image? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> What is the primary compositional component of this feature? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Mars</div>
+        <div class="answer-part"><strong>(b)</strong> Satellite OR probe OR orbiter</div>
+        <div class="answer-part"><strong>(c)</strong> Ice cap OR ice sheet</div>
+        <div class="answer-part"><strong>(d)</strong> Water ice</div>
+        <div class="explanation">Mars has prominent polar ice caps composed primarily of water ice, visible in orbital imagery.</div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> Image 6 depicts a surface feature on the largest moon of the planet Saturn. (5 points total)
+        <div class="sub-question"><strong>(a)</strong> What is the name of this moon? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What type of feature is most prominently shown in this image? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What is the primary compositional component of this feature? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> What is shown in the image inset on the left-hand side of Image 6, and why would this be important to depict? [2 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Titan</div>
+        <div class="answer-part"><strong>(b)</strong> Lake</div>
+        <div class="answer-part"><strong>(c)</strong> Hydrocarbons (OR methane/ethane)</div>
+        <div class="answer-part"><strong>(d)</strong> It shows the changing shape of a small land feature on the lake's coast, indicating that it is geologically dynamic</div>
+        <div class="explanation">Titan has hydrocarbon lakes and seas, with dynamic shorelines that change over time due to seasonal effects.</div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> The first Earth-sized exoplanet in its star's habitable zone was discovered in 2014. (6 points total)
+        <div class="sub-question"><strong>(a)</strong> What is the name of this exoplanet? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which image depicts the orbital configuration of this planetary system? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What criteria must a planet satisfy to be in the "habitable zone"? [2 pts]</div>
+        <div class="sub-question"><strong>(d)</strong> Could a planet outside of the "habitable zone" theoretically support life? Why or why not? [2 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Kepler-186f</div>
+        <div class="answer-part"><strong>(b)</strong> Image 4</div>
+        <div class="answer-part"><strong>(c)</strong> It must hold liquid water on its surface given sufficient atmospheric pressure</div>
+        <div class="answer-part"><strong>(d)</strong> Yes it could, because of the potential for life to arise through biochemical means below a planet's surface</div>
+        <div class="explanation">The habitable zone is defined by the ability to maintain liquid water, but subsurface life could exist beyond this zone.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> Image 9 depicts the surface of a Solar System planet. (6 points total)
+        <div class="sub-question"><strong>(a)</strong> What is the name of the planet whose surface is shown here? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What wavelength was this image taken in? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> Why was it necessary to image the surface of this planet in this wavelength? [2 pts]</div>
+        <div class="sub-question"><strong>(d)</strong> What is the primary geologic feature shown in this image, and what does it indicate about this planet's geologic past? [2 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Venus</div>
+        <div class="answer-part"><strong>(b)</strong> Radar</div>
+        <div class="answer-part"><strong>(c)</strong> Venus has a dense atmosphere, and only radar is capable of penetrating through the clouds to image the surface</div>
+        <div class="answer-part"><strong>(d)</strong> Surface lava flows; indicate that Venus was and still is geologically active</div>
+        <div class="explanation">Venus's thick atmosphere requires radar imaging to see the surface, revealing extensive volcanic activity.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> Image 5 is an illustration of one of the missions launched and operated with the purpose of exploring Jupiter and its moons. (5 points total)
+        <div class="sub-question"><strong>(a)</strong> What is the name of the spacecraft depicted in this image? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What is the current operational status of this mission? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What was this mission's principal science goal, and why is Jupiter an ideal candidate to study for this purpose? [3 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Juno</div>
+        <div class="answer-part"><strong>(b)</strong> Operational, still conducting science</div>
+        <div class="answer-part"><strong>(c)</strong> Goal was understand the composition and evolution of the early Solar System; Jupiter is ideal because it is the largest and most typified gas giant in the Solar System</div>
+        <div class="explanation">Juno studies Jupiter's interior structure to understand how gas giants and the Solar System formed.</div>
+    </div>
+
+    <div class="question">
+        <strong>6.</strong> TOI-700 is a red dwarf that hosts an exoplanetary system. (5 points total)
+        <div class="sub-question"><strong>(a)</strong> What does "TOI" stand for? What does this indicate about its discovery? [2 pts]</div>
+        <div class="sub-question"><strong>(b)</strong> Which image depicts a computer model of this star's stellar wind activity? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> Why is an understanding of TOI-700's stellar wind activity necessary in assessing the potential habitability of its planetary system? [2 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> TESS Object of Interest; indicates it was discovered by the Transiting Exoplanet Survey Satellite, or TESS</div>
+        <div class="answer-part"><strong>(b)</strong> Image 13</div>
+        <div class="answer-part"><strong>(c)</strong> Habitability as we know it requires a planet to maintain an atmosphere, and strong stellar wind can disrupt or event prevent planetary atmospheric formation</div>
+        <div class="explanation">Stellar winds can strip away planetary atmospheres, making habitability assessment crucial for exoplanets.</div>
+    </div>
+
+    <div class="question">
+        <strong>7.</strong> Enceladus is one of the largest moons of Saturn and a primary candidate for potential extraterrestrial life in the Solar System. (6 points total)
+        <div class="sub-question"><strong>(a)</strong> Which image depicts active geological processes occurring on Enceladus? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What type of geologic feature is depicted in this image, and how were such features identified? [2 pts]</div>
+        <div class="sub-question"><strong>(c)</strong> Describe the process occurring in this image, and what it can tell us about the possibility of life existing on Enceladus. [3 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Image 7</div>
+        <div class="answer-part"><strong>(b)</strong> Subsurface geysers; detected via Cassini spacecraft fly-throughs of ejected material</div>
+        <div class="answer-part"><strong>(c)</strong> The geysers eject subsurface ocean material into space, which includes amino acids (the building-blocks of life) attached to ice crystals in the ejected material</div>
+        <div class="explanation">Enceladus's geysers provide direct access to its subsurface ocean, revealing organic compounds that suggest potential for life.</div>
+    </div>
+
+    <div class="question">
+        <strong>8.</strong> The OSIRIS-REx mission was launched in 2016 to study one of the asteroids of the Solar System. (4 points total)
+        <div class="sub-question"><strong>(a)</strong> What is the name of the asteroid this mission was sent to study? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which image depicts this mission and its target? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What is the primary scientific purpose of this mission, and through what means will it be accomplished? [2 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> 101955 Bennu</div>
+        <div class="answer-part"><strong>(b)</strong> Image 2</div>
+        <div class="answer-part"><strong>(c)</strong> To understand early Solar System conditions and explore potential sources of life; accomplished via sample return</div>
+        <div class="explanation">OSIRIS-REx collected samples from asteroid Bennu to study the early Solar System and origins of life.</div>
+    </div>
+
+    <div class="question">
+        <strong>9.</strong> Mars is the most directly-studied planet in the Solar System aside from Earth, with over three dozen missions so far sent to explore it. (5 points total)
+        <div class="sub-question"><strong>(a)</strong> Which image depicts the Martian surface from one ground-based mission? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which mission was responsible for capturing this image, and in what major feature on the surface of Mars is it located? [2 pts]</div>
+        <div class="sub-question"><strong>(c)</strong> Describe the local geological makeup of this feature, and why it is a relevant area of study for Mars-exploring missions. [2 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Image 12</div>
+        <div class="answer-part"><strong>(b)</strong> Curiosity rover; Gale Crater</div>
+        <div class="answer-part"><strong>(c)</strong> It is composed primarily of clay- and sulfate-rich rocks, common in areas of present or evaporated water respectively</div>
+        <div class="explanation">Gale Crater contains evidence of past water activity, making it ideal for studying Mars's potential for past life.</div>
+    </div>
+
+    <div class="question">
+        <strong>10.</strong> The closest star to Earth also hosts the closest planetary system to Earth. (5 points total)
+        <div class="sub-question"><strong>(a)</strong> What is the name of this star? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which image depicts the orbital configuration of this planetary system? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> One of the planets in this system orbits within its star's habitable zone. Relative to other habitable-zone planets, is life on this planet more or less likely to exist? Why or why not? [3 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Proxima Centauri</div>
+        <div class="answer-part"><strong>(b)</strong> Image 1</div>
+        <div class="answer-part"><strong>(c)</strong> Less likely, because it orbits very close to its parent star which emits intense, atmosphere-stripping E-M radiation</div>
+        <div class="explanation">Proxima Centauri b orbits very close to its red dwarf star, exposing it to harmful radiation and stellar flares.</div>
+    </div>
+
+    <div class="question">
+        <strong>11.</strong> Europa is one of the largest moons of Jupiter and a primary candidate for potential extraterrestrial life in the Solar System. (7 points total)
+        <div class="sub-question"><strong>(a)</strong> Which image depicts the surface of Europa? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What type of feature is most prominent in this image? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> How are such features thought to form on Europa? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> What does the presence of these features suggest about the structure of Europa? Why? [2 pts]</div>
+        <div class="sub-question"><strong>(e)</strong> What role does Europa's orbit around Jupiter play in this process, and what implication does this have for the habitability of Europa? [2 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Image 11</div>
+        <div class="answer-part"><strong>(b)</strong> Ridges in the ice surface</div>
+        <div class="answer-part"><strong>(c)</strong> Sheets of ice "raft" in blocks, with the boundaries as visible ridges</div>
+        <div class="answer-part"><strong>(d)</strong> It suggests that it has a subsurface ocean, which would facilitate the movement of ice sheets</div>
+        <div class="answer-part"><strong>(e)</strong> Europa is pulled by Jupiter's gravity, flexing its surface and heating its ocean, driving ice sheet movement and potentially creating a warm interior environment for life</div>
+        <div class="explanation">Europa's ice shell floats on a subsurface ocean, with tidal heating from Jupiter maintaining liquid water beneath.</div>
+    </div>
+
+    <div class="question">
+        <strong>12.</strong> Image 3 depicts the surface of a rocky Solar System object. (4 points total)
+        <div class="sub-question"><strong>(a)</strong> What is the name of the object depicted in this image? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> How was the prominent dune-like feature in this image formed? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What major chemical discovery was made on this object, and what does this potentially imply about the origin of life in the Solar System? [2 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image1-13.png', 'Images 1-13')">Images 1-13</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> 67P/Churyumov-Gerasimenko</div>
+        <div class="answer-part"><strong>(b)</strong> Deposition of dust released from the comet</div>
+        <div class="answer-part"><strong>(c)</strong> Carboxylic acids found on the surface; implies that comets may have delivered the building blocks of life to early Solar System</div>
+        <div class="explanation">The Rosetta mission discovered organic compounds on comet 67P, supporting theories about comets delivering life's building blocks to Earth.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>Section B: Advanced Analysis Questions</h2>
+    <div class="section-points">4 Questions - Variable Points - Total: 40 Points</div>
+
+    <div class="question">
+        <strong>13.</strong> Very few exoplanets are both close enough to Earth and bright enough compared to their parent star to be directly imaged. Most of the time, exoplanet discovery occurs via indirect means of detection. Images 14 and 15 compare two of these means. (10 points total)
+        <div class="sub-question"><strong>(a)</strong> What methods of detection are depicted in Images 14 and 15 respectively? [2 pts]</div>
+        <div class="sub-question"><strong>(b)</strong> Which image corresponds to the most practical detection method of a planet orbiting closely around a low-mass star? Why? [2 pts]</div>
+        <div class="sub-question"><strong>(c)</strong> Which image could have been produced by the TESS mission? Why? [2 pts]</div>
+        <div class="sub-question"><strong>(d)</strong> What is the approximate orbital period of the planet depicted in Image 14? [2 pts]</div>
+        <div class="sub-question"><strong>(e)</strong> If the planet depicted in Image 15 were to orbit at a significantly slower orbital period with all else about its orbit unchanged, how would the plot appear different, if at all? [2 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image14-17.png', 'Images 14-17')">Images 14-17</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Radial velocity and transit methods</div>
+        <div class="answer-part"><strong>(b)</strong> Image 14; radial velocity measurements are more pronounced when planet:star mass ratio is greater, and close orbits are harder to detect transits</div>
+        <div class="answer-part"><strong>(c)</strong> Image 15; TESS makes transit detections and it is a transit plot</div>
+        <div class="answer-part"><strong>(d)</strong> 10 days (+/- 2 days)</div>
+        <div class="answer-part"><strong>(e)</strong> The decrease in brightness at center epoch 95.1990 days would remain the same depth, but would persist for a longer period of time</div>
+        <div class="explanation">Different detection methods have different advantages depending on the star-planet system characteristics.</div>
+    </div>
+
+    <div class="question">
+        <strong>14.</strong> Image 16 is a simplified and exaggerated depiction of the Earth's orbit around the Sun, with variables a, b, and T denoting three different orbital measurements. (10 points total)
+        <div class="sub-question"><strong>(a)</strong> What value do each of these variables represent, and what unit measurement (e.g. mass, distance, time, angle, etc.) do they correspond to? [3 pts]</div>
+        <div class="sub-question"><strong>(b)</strong> How would you expect T to change (increase/decrease/no change) if both a and b were increased, with all else remaining the same? [2 pts]</div>
+        <div class="sub-question"><strong>(c)</strong> How would you expect a, b, and T to change (increase, decrease, no change) if the mass of the Sun were increased, with all else remaining the same? [3 pts]</div>
+        <div class="sub-question"><strong>(d)</strong> What measurement (not depicted) represents the "oval-ness" of the orbit? Write an expression for this measurement in terms of only the provided values. [2 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image14-17.png', 'Images 14-17')">Images 14-17</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> a = semimajor axis (distance), b = semiminor axis (distance), T = orbital period (time)</div>
+        <div class="answer-part"><strong>(b)</strong> Expect T to increase</div>
+        <div class="answer-part"><strong>(c)</strong> All three would decrease</div>
+        <div class="answer-part"><strong>(d)</strong> Eccentricity (e); e² = 1 - b²/a²</div>
+        <div class="explanation">Kepler's laws describe the relationship between orbital parameters and the central mass.</div>
+    </div>
+
+    <div class="question">
+        <strong>15.</strong> One of the most important measurements to determine the habitability of a planet is its equilibrium temperature, or T_eq. (10 points total)
+        <div class="sub-question"><strong>(a)</strong> What is a planet's equilibrium temperature, described in words? [2 pts]</div>
+        <div class="sub-question"><strong>(b)</strong> Is the Earth in temperature equilibrium? Why or why not? [2 pts]</div>
+        <div class="sub-question"><strong>(c)</strong> Why is equilibrium temperature maintenance essential for habitability? What happens if a planet is not able to establish temperature equilibrium? [2 pts]</div>
+        <div class="sub-question"><strong>(d)</strong> Imagine an exoplanet observed with the naked eye through an extremely powerful telescope. How would we expect the equilibrium temperature of the planet to change if its parent star were to grow dimmer? What would happen to the radiative energy output of the planet in this case, and how would we need to alter our observations to accommodate this change? [4 pts]</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> T_eq is the average temperature of a planet at which the energy receives from its parent star is equal to the energy it emits</div>
+        <div class="answer-part"><strong>(b)</strong> Yes, because the energy it receives from the Sun and the energy it emits are balanced to one another</div>
+        <div class="answer-part"><strong>(c)</strong> It is essential to habitability because life as we know it requires a stable T_eq within a certain range to begin and evolve. If a planet does not remain at a roughly constant T_eq, it will eventually grow either too hot or too cold to support life</div>
+        <div class="answer-part"><strong>(d)</strong> We would expect the equilibrium temperature of the planet to drop proportionally to the star's dimming. This would have the effect of shifting its radiation out of the visible-light range and into the infrared or radio, leading us to begin observing it with a telescope more sensitive to these wavelengths</div>
+        <div class="explanation">Equilibrium temperature is crucial for maintaining stable conditions necessary for life as we know it.</div>
+    </div>
+
+    <div class="question">
+        <strong>16.</strong> Image 17 depicts the atmospheric spectrum of one of the Solar System's inner planets. (10 points total)
+        <div class="sub-question"><strong>(a)</strong> What is represented by the labels "CO₂" and "H₂SO₄" in this image, and what does this tell us about the planet being depicted? [2 pts]</div>
+        <div class="sub-question"><strong>(b)</strong> What is the name of the planet whose atmosphere is depicted in this image? How can you tell? [2 pts]</div>
+        <div class="sub-question"><strong>(c)</strong> Observe the dips in the plot corresponding to the "CO₂" label. What causes these dips to appear, and what does their appearance and size tell us about the composition of the atmosphere of this planet? [4 pts]</div>
+        <div class="sub-question"><strong>(d)</strong> Imagine that the planet depicted in this image was completely stripped of its atmosphere. How would this plot change in response? Which inner planet would it most closely resemble? [2 pts]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-2/image14-17.png', 'Images 14-17')">Images 14-17</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(16)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-16">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Labels represent molecules in the planet's atmosphere, and tell us about their concentration relative to other molecules</div>
+        <div class="answer-part"><strong>(b)</strong> Venus, because of the concentration of CO₂ and H₂SO₄ (Mercury/Earth/Mars don't have such high atmospheric concentrations of these molecules)</div>
+        <div class="answer-part"><strong>(c)</strong> They are formed by radiated light from Venus being blocked as it impacts the CO₂ molecules in its atmosphere. The dips appear because light at specific wavelengths is blocked by CO₂, and the size of the dip is directly proportional to the concentration of CO₂, telling us that CO₂ is highly abundant in this planet's atmosphere</div>
+        <div class="answer-part"><strong>(d)</strong> All of the dips and ridges in the plot would disappear it it would become a uniform curve, most closely resembling the spectrum of Mercury</div>
+        <div class="explanation">Atmospheric spectroscopy reveals the composition of planetary atmospheres by analyzing absorption lines at specific wavelengths.</div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips</h3>
+        <p><strong>Focus on understanding the underlying physics and planetary science concepts rather than just memorizing facts.</strong></p>
+        <p>Pay special attention to:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>How different detection methods work and their limitations</li>
+            <li>The relationship between surface features and geological processes</li>
+            <li>How spacecraft missions have advanced our understanding</li>
+            <li>The physics behind planet formation and evolution</li>
+            <li>How different wavelengths of light reveal different information</li>
+            <li>Habitability criteria and astrobiology concepts</li>
+        </ul>
+        <p><em>This study guide covers all questions from the 2023 Solar System State Test. Good luck with your preparation!</em></p>
+    </div>
+
+    <script src="../js/study-guide-common.js"></script>
+
+</body>
+</html>

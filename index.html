@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Self Study - Table of Contents</title>
+    <link rel="stylesheet" href="css/study-guide-common.css">
+    <meta name="description" content="Solar System Self Study Guides - Science Olympiad Preparation">
+
+    <meta property="og:title" content="Solar System Self Study Guides">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Comprehensive Solar System study guides for Science Olympiad preparation">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#003366">
+
+    <style>
+        /* Additional styles specific to the index page */
+        .study-guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .study-guide-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #003366;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1);
+        }
+
+        .study-guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.2);
+            border-color: #4169e1;
+        }
+
+        .card-title {
+            color: #003366;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #4169e1;
+            padding-bottom: 10px;
+        }
+
+        .card-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .stat-item {
+            background: #e3f2fd;
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 1px solid #2196f3;
+        }
+
+        .card-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #4169e1 0%, #2c5aa0 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .card-link:hover {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3d72 100%);
+            transform: scale(1.02);
+            text-decoration: none;
+            color: white;
+        }
+
+        .coming-soon {
+            opacity: 0.6;
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+        }
+
+        .coming-soon:hover {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            transform: none;
+            cursor: not-allowed;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .intro-title {
+            color: #1565c0;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .intro-text {
+            color: #333;
+            line-height: 1.7;
+            font-size: 1.1em;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            border-left: 4px solid #4169e1;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .feature-title {
+            color: #003366;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .feature-description {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .stats-overview {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #ff9800;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ff9800;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e65100;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Solar System Self Study</h1>
+        <div class="subtitle">Science Olympiad Preparation Hub</div>
+        <div class="subtitle">Comprehensive Study Guides & Practice Materials</div>
+    </div>
+
+    <div class="intro-section">
+        <div class="intro-title">🚀 Welcome to Your Solar System Study Hub</div>
+        <div class="intro-text">
+            Master the Solar System event with our comprehensive collection of interactive study guides.
+            Each guide features detailed explanations, practice questions, image analysis, and advanced concepts
+            to help you excel in Science Olympiad competitions.
+        </div>
+    </div>
+
+
+    <h2>📖 Available Study Guides</h2>
+
+    <div class="study-guide-grid">
+        <!-- Solar System Study Guide -->
+        <div class="study-guide-card">
+            <div class="card-title">🌟 Solar System Study Guide</div>
+            <div class="card-description">
+                Comprehensive study guide covering all major Solar System topics including planetary classification,
+                space missions, exoplanet detection methods, and advanced image analysis. Features deep-dive
+                scientific explanations and interactive learning tools.
+            </div>
+            <div class="card-stats">
+                <span class="stat-item">63 Questions</span>
+                <span class="stat-item">251 Points</span>
+                <span class="stat-item">18 Images</span>
+            </div>
+            <a href="guides/Solar_System_Study_Guide.html" class="card-link">
+                📚 Start Studying
+            </a>
+        </div>
+
+        <!-- Solar System Study Guide 2 -->
+        <div class="study-guide-card">
+            <div class="card-title">🌟 Solar System Study Guide 2</div>
+            <div class="card-description">
+                Advanced study guide featuring image-based questions and complex analysis problems. Covers
+                exoplanet detection, spacecraft missions, habitability analysis, and spectroscopic methods.
+                Based on real Science Olympiad test questions for authentic practice.
+            </div>
+            <div class="card-stats">
+                <span class="stat-item">16 Questions</span>
+                <span class="stat-item">100 Points</span>
+                <span class="stat-item">17 Images</span>
+            </div>
+            <a href="guides/Solar_System_Study_Guide_2.html" class="card-link">
+                📚 Start Studying
+            </a>
+        </div>
+
+        <!-- Solar System Study Guide 3 -->
+        <div class="study-guide-card">
+            <div class="card-title">🌟 Solar System Study Guide 3</div>
+            <div class="card-description">
+                Comprehensive study guide from the 2022 UT Invitational featuring advanced topics including
+                red dwarf habitability, atmospheric loss mechanisms, subsurface oceans, and thermodynamics.
+                Includes challenging analysis questions and open-ended scientific discussions.
+            </div>
+            <div class="card-stats">
+                <span class="stat-item">20 Questions</span>
+                <span class="stat-item">95 Points</span>
+                <span class="stat-item">21 Images</span>
+            </div>
+            <a href="guides/Solar_System_Study_Guide_3.html" class="card-link">
+                📚 Start Studying
+            </a>
+        </div>
+
+        <!-- Solar System Study Guide 4 -->
+        <div class="study-guide-card">
+            <div class="card-title">🌟 Solar System Study Guide 4</div>
+            <div class="card-description">
+                University of Michigan 2023 Invitational exam featuring advanced exoplanet detection methods,
+                transit photometry analysis, and comprehensive Solar System knowledge. Includes embedded images
+                for Section B and C questions with detailed explanations and calculations.
+            </div>
+            <div class="card-stats">
+                <span class="stat-item">30 Questions</span>
+                <span class="stat-item">50 Points</span>
+                <span class="stat-item">2 Images</span>
+            </div>
+            <a href="guides/Solar_System_Study_Guide_4.html" class="card-link">
+                📚 Start Studying
+            </a>
+        </div>
+
+        <!-- Solar System Study Guide 5 -->
+        <div class="study-guide-card">
+            <div class="card-title">🌟 Solar System Study Guide 5</div>
+            <div class="card-description">
+                University of Chicago 2022 exam covering recent exoplanet discoveries, planetary migration,
+                spacecraft missions, and advanced Solar System concepts. Features comprehensive long-answer
+                questions on tidal forces, Kepler's laws, and planetary science fundamentals.
+            </div>
+            <div class="card-stats">
+                <span class="stat-item">42 Questions</span>
+                <span class="stat-item">100 Points</span>
+                <span class="stat-item">No Images</span>
+            </div>
+            <a href="guides/Solar_System_Study_Guide_5.html" class="card-link">
+                📚 Start Studying
+            </a>
+        </div>
+
+
+        <!-- Future Study Guides (Coming Soon) -->
+        <div class="study-guide-card">
+            <div class="card-title">🔮 Advanced Exoplanets Guide</div>
+            <div class="card-description">
+                Deep dive into exoplanet detection methods, habitability criteria, and recent discoveries.
+                Will include detailed analysis of transit photometry, radial velocity measurements, and
+                direct imaging techniques.
+            </div>
+            <div class="card-stats">
+                <span class="stat-item">Coming Soon</span>
+                <span class="stat-item">Advanced Level</span>
+                <span class="stat-item">Research Focus</span>
+            </div>
+            <a href="#" class="card-link coming-soon">
+                🚧 Coming Soon
+            </a>
+        </div>
+
+        <div class="study-guide-card">
+            <div class="card-title">🛰️ Space Missions Deep Dive</div>
+            <div class="card-description">
+                Comprehensive coverage of past, present, and future space missions. Detailed analysis of
+                mission objectives, instruments, discoveries, and their impact on our understanding of
+                the Solar System.
+            </div>
+            <div class="card-stats">
+                <span class="stat-item">Coming Soon</span>
+                <span class="stat-item">Mission Focus</span>
+                <span class="stat-item">Historical Context</span>
+            </div>
+            <a href="#" class="card-link coming-soon">
+                🚧 Coming Soon
+            </a>
+        </div>
+
+        <div class="study-guide-card">
+            <div class="card-title">🌙 Moons & Small Bodies</div>
+            <div class="card-description">
+                Focused study of planetary moons, asteroids, comets, and other small Solar System bodies.
+                Includes geological processes, formation theories, and astrobiological significance.
+            </div>
+            <div class="card-stats">
+                <span class="stat-item">Coming Soon</span>
+                <span class="stat-item">Specialized Topics</span>
+                <span class="stat-item">Astrobiology</span>
+            </div>
+            <a href="#" class="card-link coming-soon">
+                🚧 Coming Soon
+            </a>
+        </div>
+    </div>
+
+
+    <script src="js/app.js"></script>
+</body>
+</html>
