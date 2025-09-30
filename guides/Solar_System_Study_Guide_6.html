@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Study Guide 6 - Science Olympiad Preparation</title>
+    <link rel="stylesheet" href="../css/study-guide-common.css">
+    <style>
+        /* Deep Dive Scientific Explanation - specific to this guide */
+        .deep-dive {
+            background-color: #f0f8ff;
+            border-left: 4px solid #4169e1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .deep-dive.show {
+            display: block;
+        }
+
+        .deep-dive-label {
+            font-weight: bold;
+            color: #4169e1;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .deep-dive-content {
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .deep-dive-content h4 {
+            color: #4169e1;
+            margin: 15px 0 8px 0;
+            font-size: 14px;
+        }
+
+        .deep-dive-content ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .deep-dive-content li {
+            margin-bottom: 5px;
+        }
+
+        .reference {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .toggle-deep-dive-btn {
+            background: #4169e1;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            margin: 5px 0;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-deep-dive-btn:hover {
+            background: #2c5aa0;
+        }
+
+        .toggle-deep-dive-btn.expanded {
+            background: #6c757d;
+        }
+
+        .toggle-deep-dive-btn.expanded:hover {
+            background: #5a6268;
+        }
+
+        .question-image {
+            max-width: 400px;
+            margin: 15px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .sub-question {
+            margin: 10px 0;
+            padding-left: 20px;
+            font-weight: normal;
+        }
+
+        .answer-part {
+            margin: 5px 0;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Study Hub
+            </a>
+            <a href="../pdfresources/SolarSystemStudyGuide6.pdf" target="_blank" style="display: inline-block; background: #dc3545; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                📄 Original PDF
+            </a>
+            <a href="../pdfresources/SolarSystemStudyGuide6-Key.pdf" target="_blank" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                📄 Answer Key PDF
+            </a>
+        </div>
+        <h1>Solar System Study Guide 6</h1>
+        <div class="subtitle">Sierra Vista Invitational - Division B</div>
+        <div class="subtitle">Complete Questions & Answers with Image Analysis</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>Section A: Multiple Choice Questions</h2>
+    <div class="section-points">20 Questions - 1 Point Each - Total: 20 Points</div>
+
+    <div class="question">
+        <strong>1.</strong> Which of the following is closest to the thickness of the crust of Enceladus?
+        <br>a. ~0.01 km
+        <br>b. ~0.1 km
+        <br>c. ~1 km
+        <br>d. ~10 km
+        <br>e. None of the above
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: D (~10 km)</div>
+        <div class="explanation">Enceladus has an ice crust approximately 10-20 km thick overlying its subsurface ocean.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(1)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-1">
+            <div class="deep-dive-label">🔬 Planetary Scientist Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Enceladus Ice Shell Structure</h4>
+                The thickness of Enceladus's ice crust has been determined through multiple lines of evidence:
+                <ul>
+                    <li><strong>Gravity measurements:</strong> Cassini's gravity data revealed the moon's internal structure</li>
+                    <li><strong>Libration analysis:</strong> The way Enceladus wobbles in its orbit indicates a decoupled ice shell</li>
+                    <li><strong>Topographic analysis:</strong> Surface features suggest a relatively thin, flexible crust</li>
+                </ul>
+
+                <h4>Regional Variations</h4>
+                The ice shell thickness varies significantly:
+                <ul>
+                    <li><strong>South polar region:</strong> As thin as 1-5 km near the tiger stripes</li>
+                    <li><strong>Equatorial regions:</strong> Up to 20-25 km thick</li>
+                    <li><strong>Average thickness:</strong> Approximately 10-15 km globally</li>
+                </ul>
+
+                <h4>Implications for Habitability</h4>
+                The relatively thin crust is crucial for:
+                <ul>
+                    <li><strong>Heat transfer:</strong> Allows tidal heating to maintain liquid ocean</li>
+                    <li><strong>Chemical exchange:</strong> Enables ocean-surface material exchange through cracks</li>
+                    <li><strong>Plume activity:</strong> Thin regions allow subsurface water to reach the surface</li>
+                </ul>
+
+                <div class="reference">
+                    References: Thomas et al. (2016) "Enceladus's measured physical libration"; Hemingway & Mittal (2019) "Enceladus's ice shell structure"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> How many amino acids are common to most of life?
+        <br>a. 20
+        <br>b. 30
+        <br>c. 10
+        <br>d. 5
+        <br>e. 2
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: A (20)</div>
+        <div class="explanation">There are 20 standard amino acids that are commonly used by most life forms to build proteins.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(2)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-2">
+            <div class="deep-dive-label">🔬 Planetary Scientist Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>The Universal Genetic Code</h4>
+                The 20 standard amino acids represent one of biology's most fundamental universals:
+                <ul>
+                    <li><strong>Essential amino acids:</strong> 9 cannot be synthesized by humans and must be obtained from diet</li>
+                    <li><strong>Non-essential amino acids:</strong> 11 can be synthesized by the human body</li>
+                    <li><strong>Genetic code:</strong> 64 possible codons encode these 20 amino acids plus stop signals</li>
+                </ul>
+
+                <h4>Astrobiology Significance</h4>
+                <ul>
+                    <li><strong>Biosignatures:</strong> Detection of these amino acids could indicate life</li>
+                    <li><strong>Chirality:</strong> Life preferentially uses left-handed amino acids</li>
+                    <li><strong>Meteorite discoveries:</strong> Over 80 amino acids found in carbonaceous chondrites</li>
+                    <li><strong>Prebiotic synthesis:</strong> Miller-Urey experiments produced several of these amino acids</li>
+                </ul>
+
+                <h4>Beyond the Standard 20</h4>
+                <ul>
+                    <li><strong>Selenocysteine:</strong> The "21st amino acid" in some proteins</li>
+                    <li><strong>Pyrrolysine:</strong> The "22nd amino acid" found in some archaea</li>
+                    <li><strong>Modified amino acids:</strong> Post-translational modifications create hundreds of variants</li>
+                </ul>
+
+                <div class="reference">
+                    References: Kvenvolden et al. (1970) "Evidence for extraterrestrial amino-acids"; Cleaves (2010) "The origin of the twenty amino acids"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> Which of the following is used to power the radioisotope power supply of the spacecraft in Image C?
+        <div class="image-reference-inline">
+            📸 Referenced Image:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-6/imageA-P.png', 'Images A-P')">Images A-P</button>
+        </div>
+        <br>a. U-235
+        <br>b. Pu-238
+        <br>c. U-238
+        <br>d. Pu-230
+        <br>e. Kr-220
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: B (Pu-238)</div>
+        <div class="explanation">Plutonium-238 is the standard radioisotope used in RTGs (Radioisotope Thermoelectric Generators) for deep space missions like the spacecraft shown in Image C.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(3)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-3">
+            <div class="deep-dive-label">🔬 Planetary Scientist Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Why Plutonium-238?</h4>
+                Pu-238 is ideal for space missions because:
+                <ul>
+                    <li><strong>Half-life:</strong> 87.7 years provides decades of reliable power</li>
+                    <li><strong>Alpha decay:</strong> Produces heat without dangerous gamma radiation</li>
+                    <li><strong>High power density:</strong> 0.57 watts per gram of thermal power</li>
+                    <li><strong>Stable output:</strong> Predictable power decline over mission lifetime</li>
+                </ul>
+
+                <h4>RTG Technology</h4>
+                <ul>
+                    <li><strong>Thermoelectric conversion:</strong> Heat converted to electricity via Seebeck effect</li>
+                    <li><strong>Efficiency:</strong> Typically 6-7% thermal to electrical conversion</li>
+                    <li><strong>Reliability:</strong> No moving parts, works in any orientation</li>
+                    <li><strong>Longevity:</strong> Voyager RTGs still operating after 45+ years</li>
+                </ul>
+
+                <h4>Mission Applications</h4>
+                RTGs have powered numerous missions:
+                <ul>
+                    <li><strong>Outer planet missions:</strong> Voyager, Galileo, Cassini, New Horizons</li>
+                    <li><strong>Mars rovers:</strong> Curiosity, Perseverance</li>
+                    <li><strong>Future missions:</strong> Dragonfly to Titan, Europa Clipper</li>
+                </ul>
+
+                <div class="reference">
+                    References: Bennett (2019) "Radioisotope Power Systems"; NASA (2013) "Multi-Mission Radioisotope Thermoelectric Generator"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> In the Drake equation, the variable f<sub>i</sub> represents which of the following fractions?
+        <br>a. Earth sized planets with life
+        <br>b. Suitable stars for life
+        <br>c. Stars with planets
+        <br>d. Planets with intelligent life
+        <br>e. The lifetime of life
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: D (Planets with intelligent life)</div>
+        <div class="explanation">In the Drake equation, f<sub>i</sub> represents the fraction of planets with life that develop intelligent life.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(4)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-4">
+            <div class="deep-dive-label">🔬 Planetary Scientist Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>The Complete Drake Equation</h4>
+                N = R* × f<sub>p</sub> × n<sub>e</sub> × f<sub>l</sub> × f<sub>i</sub> × f<sub>c</sub> × L
+                <ul>
+                    <li><strong>R*:</strong> Rate of star formation</li>
+                    <li><strong>f<sub>p</sub>:</strong> Fraction of stars with planets</li>
+                    <li><strong>n<sub>e</sub>:</strong> Number of habitable planets per star</li>
+                    <li><strong>f<sub>l</sub>:</strong> Fraction of habitable planets with life</li>
+                    <li><strong>f<sub>i</sub>:</strong> Fraction of life-bearing planets with intelligent life</li>
+                    <li><strong>f<sub>c</sub>:</strong> Fraction of intelligent civilizations that communicate</li>
+                    <li><strong>L:</strong> Lifetime of communicating civilizations</li>
+                </ul>
+
+                <h4>The Intelligence Factor</h4>
+                f<sub>i</sub> is one of the most uncertain parameters:
+                <ul>
+                    <li><strong>Earth example:</strong> Intelligence emerged after ~3.5 billion years of life</li>
+                    <li><strong>Convergent evolution:</strong> Intelligence evolved multiple times (primates, cetaceans, cephalopods)</li>
+                    <li><strong>Great Filter hypothesis:</strong> Intelligence might be extremely rare</li>
+                </ul>
+
+                <h4>Modern Estimates</h4>
+                <ul>
+                    <li><strong>Optimistic:</strong> f<sub>i</sub> ~ 0.1 (intelligence is common)</li>
+                    <li><strong>Pessimistic:</strong> f<sub>i</sub> ~ 10<sup>-9</sup> (intelligence is extremely rare)</li>
+                    <li><strong>Current research:</strong> Studying animal cognition and AI to understand intelligence</li>
+                </ul>
+
+                <div class="reference">
+                    References: Drake (1961) "Project Ozma"; Bains & Schulze-Makuch (2016) "The Cosmic Zoo"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> High-order approximations of the Drake equation lead to which of the following conclusions?
+        <br>a. The extremophile paradox
+        <br>b. The nebular hypothesis
+        <br>c. The Fermi paradox
+        <br>d. The faint young sun paradox
+        <br>e. None of the above
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: C (The Fermi paradox)</div>
+        <div class="explanation">High estimates from the Drake equation suggest many civilizations should exist, leading to Fermi's famous question: "Where is everybody?"</div>
+    </div>
+
+    <div class="question">
+        <strong>6.</strong> A possible starting material for abiogenesis, a PAH is a polycyclic _:
+        <br>a. amorphous hydrocarbon
+        <br>b. aromatic hydrocarbon
+        <br>c. agitated hydrogen
+        <br>d. activated hydrocarbon
+        <br>e. hydrocarbon
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: B (aromatic hydrocarbon)</div>
+        <div class="explanation">PAH stands for Polycyclic Aromatic Hydrocarbon - complex organic molecules found throughout the universe that may be precursors to life.</div>
+    </div>
+
+    <div class="question">
+        <strong>7.</strong> Which of the following is the chemical formula for heavy water?
+        <br>a. DO
+        <br>b. H<sub>3</sub>O
+        <br>c. H<sub>2</sub>O<sub>2</sub>
+        <br>d. H<sub>2</sub>O
+        <br>e. D<sub>2</sub>O
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: E (D<sub>2</sub>O)</div>
+        <div class="explanation">Heavy water is deuterium oxide (D<sub>2</sub>O), where deuterium is the heavy isotope of hydrogen with one proton and one neutron.</div>
+    </div>
+
+    <div class="question">
+        <strong>8.</strong> Which aspect of the DAVINCI+ mission will assist with knowledge on the formation of Venus?
+        <br>a. Emission spectroscopy
+        <br>b. Atmospheric analysis
+        <br>c. Absorption spectroscopy
+        <br>d. High resolution imaging
+        <br>e. None of the above
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: D (High resolution imaging)</div>
+        <div class="explanation">DAVINCI+ will provide high-resolution imaging of Venus's surface during its descent, revealing geological features that inform us about Venus's formation and evolution.</div>
+    </div>
+
+    <div class="question">
+        <strong>9.</strong> Image E is an artist's rendition of a planet which was approximately how far from the Earth when discovered?
+        <div class="image-reference-inline">
+            📸 Referenced Image:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-6/imageA-P.png', 'Images A-P')">Images A-P</button>
+        </div>
+        <br>a. ~100 ly
+        <br>b. ~200 ly
+        <br>c. ~1000 ly
+        <br>d. ~800 ly
+        <br>e. ~500 ly
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: A (~100 ly)</div>
+        <div class="explanation">The exoplanet shown in Image E was discovered at approximately 100 light-years from Earth.</div>
+    </div>
+
+    <div class="question">
+        <strong>10.</strong> Which of the following is true about the condition of habitability/life of a planet around a red dwarf?
+        <br>a. Lower possible lifetime
+        <br>b. Increased productivity
+        <br>c. Greater habitability
+        <br>d. Greater potential for life
+        <br>e. Greater instability
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: E (Greater instability)</div>
+        <div class="explanation">Red dwarf stars are prone to stellar flares and have habitable zones very close to the star, leading to greater instability for potential life.</div>
+    </div>
+
+    <div class="question">
+        <strong>11.</strong> The TESS satellite is most sensitive in which of the following bands?
+        <br>a. Visible light
+        <br>b. NIR light
+        <br>c. LWIR light
+        <br>d. UV light
+        <br>e. Radio light
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: B (NIR light)</div>
+        <div class="explanation">TESS (Transiting Exoplanet Survey Satellite) is most sensitive in the near-infrared (NIR) band, optimized for detecting transits around red dwarf stars.</div>
+    </div>
+
+    <div class="question">
+        <strong>12.</strong> The image captured in Image F was taken by which of the following missions?
+        <div class="image-reference-inline">
+            📸 Referenced Image:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-6/imageA-P.png', 'Images A-P')">Images A-P</button>
+        </div>
+        <br>a. Cassini-Huygens
+        <br>b. Phoenix
+        <br>c. Curiosity
+        <br>d. Opportunity
+        <br>e. Spitzer
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: A (Cassini-Huygens)</div>
+        <div class="explanation">Image F shows a surface view that was captured by the Cassini-Huygens mission.</div>
+    </div>
+
+    <div class="question">
+        <strong>13.</strong> Proxima Centauri is known as which of the following?
+        <br>a. A brown dwarf
+        <br>b. A MGVCN
+        <br>c. A flare star
+        <br>d. A red giant
+        <br>e. A YSO
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: C (A flare star)</div>
+        <div class="explanation">Proxima Centauri is classified as a flare star, a type of red dwarf that exhibits sudden increases in brightness due to magnetic activity.</div>
+    </div>
+
+    <div class="question">
+        <strong>14.</strong> Imagine a comet at perihelion. If you face the direction of the gas tail from the sun and the comet moves left, the dust tail is:
+        <br>a. Straight ahead
+        <br>b. Slightly to the left
+        <br>c. Slightly to the right
+        <br>d. Facing outwards
+        <br>e. None of the above
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: C (Slightly to the right)</div>
+        <div class="explanation">The dust tail lags behind the gas tail due to radiation pressure effects, appearing slightly to the right when the comet moves left.</div>
+    </div>
+
+    <div class="question">
+        <strong>15.</strong> The last mission to visit Venus before the year 2000 was:
+        <br>a. Mariner 10
+        <br>b. Pioneer 10
+        <br>c. Upwelling
+        <br>d. Messenger
+        <br>e. Cassini-Huygens
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: E (Cassini-Huygens)</div>
+        <div class="explanation">Cassini-Huygens performed a Venus flyby in 1999, making it the last mission to visit Venus before 2000.</div>
+    </div>
+
+    <div class="question">
+        <strong>16.</strong> What feature on Mars is most directly related to the sublimation of CO<sub>2</sub>?
+        <br>a. Ice formation
+        <br>b. Strong winds
+        <br>c. Dust storms
+        <br>d. Cirrus clouds
+        <br>e. All of the above
+        <button class="toggle-answer-btn" onclick="toggleAnswer(16)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-16">
+        <div class="answer-label">Answer: D (Cirrus clouds)</div>
+        <div class="explanation">CO<sub>2</sub> sublimation on Mars creates cirrus clouds in the atmosphere, particularly visible during seasonal changes at the polar regions.</div>
+    </div>
+
+    <div class="question">
+        <strong>17.</strong> What colors the atmosphere of Titan orange?
+        <br>a. Methane
+        <br>b. Hydrocarbon smog
+        <br>c. Nitrogen smog
+        <br>d. Tholins
+        <br>e. Organic compounds
+        <button class="toggle-answer-btn" onclick="toggleAnswer(17)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-17">
+        <div class="answer-label">Answer: B (Hydrocarbon smog)</div>
+        <div class="explanation">Titan's orange color comes from hydrocarbon smog created by photochemical reactions in its methane-rich atmosphere.</div>
+    </div>
+
+    <div class="question">
+        <strong>18.</strong> Which of the following is most true of the members of the TRAPPIST-1 system?
+        <br>a. They share similar colors
+        <br>b. They share similar luminosity
+        <br>c. They share similar densities
+        <br>d. They share similar periods
+        <br>e. They are entirely different
+        <button class="toggle-answer-btn" onclick="toggleAnswer(18)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-18">
+        <div class="answer-label">Answer: C (They share similar densities)</div>
+        <div class="explanation">The TRAPPIST-1 planets have remarkably similar densities, suggesting they formed from similar materials and processes.</div>
+    </div>
+
+    <div class="question">
+        <strong>19.</strong> Which of the following is not a type of asteroid in the solar system?
+        <br>a. C-type
+        <br>b. K-type
+        <br>c. M-type
+        <br>d. S-type
+        <br>e. All of the above
+        <button class="toggle-answer-btn" onclick="toggleAnswer(19)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-19">
+        <div class="answer-label">Answer: B (K-type)</div>
+        <div class="explanation">K-type is not a recognized asteroid classification. The main types are C-type (carbonaceous), S-type (silicaceous), and M-type (metallic).</div>
+    </div>
+
+    <div class="question">
+        <strong>20.</strong> A popular alternative proposed for carbon in building life is:
+        <br>a. Potassium
+        <br>b. Germanium
+        <br>c. Sulfur
+        <br>d. Silicon
+        <br>e. Strontium
+        <button class="toggle-answer-btn" onclick="toggleAnswer(20)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-20">
+        <div class="answer-label">Answer: D (Silicon)</div>
+        <div class="explanation">Silicon is often proposed as an alternative to carbon for life because it can form four covalent bonds and create complex molecules, though it's less versatile than carbon.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>Section B: Object-Specific Knowledge</h2>
+    <div class="section-points">3 Questions - Variable Points - Total: 75 Points</div>
+
+    <div class="image-reference">
+        <strong>📸 SECTION B IMAGE SET</strong><br>
+        <em>Reference these images when answering the questions below</em>
+
+        <div class="study-images">
+            <div class="study-image">
+                <img src="../images/study-guide-6/imageA-P.png" alt="Images A-P Reference Sheet" />
+                <p>Images A-P: Various Solar System Objects and Spacecraft</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Image Panel -->
+    <div id="floatingImagePanel" class="floating-image-panel">
+        <div class="floating-panel-header" id="panelHeader">
+            <span id="panelTitle">Image Viewer</span>
+            <button class="close-panel" onclick="closeImagePanel()">&times;</button>
+        </div>
+        <div class="floating-panel-content" id="panelContent">
+            <p>Click on an image reference button to view images here.</p>
+        </div>
+        <div class="resize-handle" id="resizeHandle"></div>
+    </div>
+
+    <div class="question">
+        <strong>1.</strong> Refer to Image A and Image B at the start of the following section. (33 points total)
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-6/imageA-P.png', 'Images A-P')">Images A-P</button>
+        </div>
+        <div class="sub-question"><strong>(a)</strong> What body is depicted in both images? (1 pt)</div>
+        <div class="sub-question"><strong>(b)</strong> Name the general features that dominate the surface of this object (as seen in the image). What are they composed of? (2 pts)</div>
+        <div class="sub-question"><strong>(c)</strong> Describe how the previously named features were formed on the surface of this body. (2 pts)</div>
+        <div class="sub-question"><strong>(d)</strong> How does the existence of such features indicate habitability on this body? Describe the relationship between this feature and how it implies the existence of other possible features on the body. (3 pts)</div>
+        <div class="sub-question"><strong>(e)</strong> Describe the layers that compose this object. (4 pts)</div>
+        <div class="sub-question"><strong>(f)</strong> Which spacecraft took images A and B (1 pt), and in what year (1 pt)? What image on the image sheet displays this spacecraft? (1 pt)</div>
+        <div class="sub-question"><strong>(g)</strong> What is the difference between the two images? (2 pts) Are they images of the same landscape? (1 pt)</div>
+        <div class="sub-question"><strong>(h)</strong> What instrument on the spacecraft likely took the images? (1 pt) Describe why that instrument is the most appropriate for this image out of all the instruments on the spacecraft. (2 pts)</div>
+        <div class="sub-question"><strong>(i)</strong> How does this object receive thermal energy? Describe any source(s) in detail. (4 pts)</div>
+        <div class="sub-question"><strong>(j)</strong> What other image on the image sheet displays this object? (1 pt)</div>
+        <div class="sub-question"><strong>(k)</strong> What feature is being displayed in this image? (Hint: Look towards the edges) (2 pts)</div>
+        <div class="sub-question"><strong>(l)</strong> What is the primary chemical composition of this feature? (2 pts)</div>
+        <div class="sub-question"><strong>(m)</strong> What is the significance of proving the existence of this feature, in terms of habitability? (3 pts)</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(21)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-21">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Europa</div>
+        <div class="answer-part"><strong>(b)</strong> Lineae, which are composed of water ice</div>
+        <div class="answer-part"><strong>(c)</strong> The features were formed by eruptions of warm ice</div>
+        <div class="answer-part"><strong>(d)</strong> The lineae indicate habitability since they imply the existence of a sub-surface water ocean through water-ice eruptions</div>
+        <div class="answer-part"><strong>(e)</strong> Europa has an iron core, a rocky mantle, and an ocean of salty water, under a thin shell of ice on the surface</div>
+        <div class="answer-part"><strong>(f)</strong> Juno in 2022. Image J</div>
+        <div class="answer-part"><strong>(g)</strong> Image B is a higher contrast version of Image A. Yes, they are images of the same landscape</div>
+        <div class="answer-part"><strong>(h)</strong> Junocam, most appropriate as it is the only visible imager on the spacecraft</div>
+        <div class="answer-part"><strong>(i)</strong> This object receives thermal energy from tidal heating and from the radioactive decay of elements within the body</div>
+        <div class="answer-part"><strong>(j)</strong> Image I</div>
+        <div class="answer-part"><strong>(k)</strong> Plumes</div>
+        <div class="answer-part"><strong>(l)</strong> Water ice</div>
+        <div class="answer-part"><strong>(m)</strong> Proving the existence of plumes implies that a water ocean exists under the surface, which would improve the habitability of Europa significantly</div>
+        <div class="explanation">Europa is one of the most promising locations for potential life in our Solar System due to its subsurface ocean and active geology.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(21)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-21">
+            <div class="deep-dive-label">🔬 Planetary Scientist Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Europa's Lineae: Windows to the Ocean</h4>
+                Europa's distinctive linear features (lineae) are among the most fascinating geological structures in the Solar System:
+                <ul>
+                    <li><strong>Formation mechanism:</strong> Tidal flexing creates cracks in the ice shell</li>
+                    <li><strong>Warm ice eruptions:</strong> Subsurface water or warm ice erupts through cracks</li>
+                    <li><strong>Resurfacing:</strong> Continuous geological activity keeps the surface young (~40-90 million years)</li>
+                </ul>
+
+                <h4>Internal Structure and Tidal Heating</h4>
+                <ul>
+                    <li><strong>Iron core:</strong> ~660 km radius, similar to Earth's Moon</li>
+                    <li><strong>Rocky mantle:</strong> Silicate layer surrounding the core</li>
+                    <li><strong>Subsurface ocean:</strong> 60-150 km deep, containing more water than all Earth's oceans</li>
+                    <li><strong>Ice shell:</strong> 15-25 km thick outer layer</li>
+                    <li><strong>Tidal heating:</strong> Jupiter's gravity flexes Europa, generating internal heat</li>
+                </ul>
+
+                <h4>Plume Activity and Habitability</h4>
+                <ul>
+                    <li><strong>Water vapor plumes:</strong> Detected by Hubble Space Telescope</li>
+                    <li><strong>Chemical composition:</strong> Plumes contain water, oxygen, and possibly organic compounds</li>
+                    <li><strong>Direct sampling:</strong> Future missions could sample plume material without landing</li>
+                    <li><strong>Hydrothermal vents:</strong> Possible seafloor venting could support chemosynthetic life</li>
+                </ul>
+
+                <div class="reference">
+                    References: Pappalardo et al. (2013) "Science potential from a Europa lander"; Sparks et al. (2016) "Probing for evidence of plumes on Europa"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> Refer to Image D for the following questions (26 points total)
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-6/imageA-P.png', 'Images A-P')">Images A-P</button>
+        </div>
+        <div class="sub-question"><strong>(a)</strong> What object is depicted in the image? (1 pt)</div>
+        <div class="sub-question"><strong>(b)</strong> Name another designation for the object. (1 pt)</div>
+        <div class="sub-question"><strong>(c)</strong> What spacecraft and instrument took this image? (2 pts)</div>
+        <div class="sub-question"><strong>(d)</strong> What two instruments on this spacecraft can measure infrared thermal emissions? (2 pts)</div>
+        <div class="sub-question"><strong>(e)</strong> Describe the formation process of this object. (3 pts)</div>
+        <div class="sub-question"><strong>(f)</strong> What is the name of the effect that allowed this object to obtain its current orbit? (1 pt)</div>
+        <div class="sub-question"><strong>(g)</strong> Describe the process by which this effect works. (3 pts) What kinds of objects does this effect apply to? (1 pt)</div>
+        <div class="sub-question"><strong>(h)</strong> Where did this object likely initially form? (1 pt)</div>
+        <div class="sub-question"><strong>(i)</strong> What is the image from the image sheet has a similar type/composition as the object in Image D? (1 pt)</div>
+        <div class="sub-question"><strong>(j)</strong> What is the name of this object? (1 pt) What spacecraft has most closely observed it? (1 pt)</div>
+        <div class="sub-question"><strong>(k)</strong> This object has provided a great deal of insight in the processes undergone by comets. Particularly, scientists have reevaluated previous hypotheses regarding the formation of the coma. Describe the process that is now thought to decompose carbon dioxide and water ices into the coma. Include specific terminology. (4 pts)</div>
+        <div class="sub-question"><strong>(l)</strong> What specific compound (an amino acid), extremely relevant to abiogenesis, was found on this object? (2 pts)</div>
+        <div class="sub-question"><strong>(m)</strong> Describe the density of this object, compared to Earth. (2 pts)</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(22)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-22">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> 101955 Bennu</div>
+        <div class="answer-part"><strong>(b)</strong> 1999 RQ36</div>
+        <div class="answer-part"><strong>(c)</strong> OSIRIS-REx, MapCam</div>
+        <div class="answer-part"><strong>(d)</strong> The Thermal Emission Spectrometer (OTES) and the OSIRIS-REx Visible and InfraRed Spectrometer (OVIRS)</div>
+        <div class="answer-part"><strong>(e)</strong> A large collision with a carbon-rich asteroid broke it apart into fragments, one of the pieces being Bennu</div>
+        <div class="answer-part"><strong>(f)</strong> The Yarkovsky effect</div>
+        <div class="answer-part"><strong>(g)</strong> It works when sunlight hits an asteroid, and the asteroid re-radiates a portion of the light, causing a small thrust. It applies to small meteors and asteroids</div>
+        <div class="answer-part"><strong>(h)</strong> It likely formed in the asteroid belt</div>
+        <div class="answer-part"><strong>(i)</strong> Image M</div>
+        <div class="answer-part"><strong>(j)</strong> 67P/Churyumov–Gerasimenko, Rosetta</div>
+        <div class="answer-part"><strong>(k)</strong> Electrons from the photoionization of water molecules break down ices on the surface</div>
+        <div class="answer-part"><strong>(l)</strong> Glycine</div>
+        <div class="answer-part"><strong>(m)</strong> The density is much less than that of Earth and is less than the density of water</div>
+        <div class="explanation">Bennu is a carbonaceous asteroid that has provided crucial insights into the early Solar System and the origins of life.</div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> Refer to Image G for the following questions (16 points total)
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-6/imageA-P.png', 'Images A-P')">Images A-P</button>
+        </div>
+        <div class="sub-question"><strong>(a)</strong> What object is depicted in the image? (1 pt)</div>
+        <div class="sub-question"><strong>(b)</strong> This object is known to contribute to the rings of Saturn. What is the name of the ring section that it contributes to? (2 pts)</div>
+        <div class="sub-question"><strong>(c)</strong> What general region of this object does the image depict? (2 pts)</div>
+        <div class="sub-question"><strong>(d)</strong> Which spacecraft took the image? (1 pt)</div>
+        <div class="sub-question"><strong>(e)</strong> Two craters are visible towards the center of this image. What are their names? (2 pts)</div>
+        <div class="sub-question"><strong>(f)</strong> This object is in orbital resonance with another object with a similar orbit around Saturn. What is the name of this other body? (1 pt)</div>
+        <div class="sub-question"><strong>(g)</strong> What process enables this object to receive the majority of its thermal energy? (1 pt)</div>
+        <div class="sub-question"><strong>(h)</strong> How does this resonance allow for this thermal energy to be sustained for a longer period of time? (3 pts)</div>
+        <div class="sub-question"><strong>(i)</strong> Evidence has been discovered on this object that may suggest hydrothermal activity. Why is the existence of hydrothermal activity relevant for the habitability of this object? (3 pts)</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(23)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-23">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Enceladus</div>
+        <div class="answer-part"><strong>(b)</strong> Ring E</div>
+        <div class="answer-part"><strong>(c)</strong> The northern polar region</div>
+        <div class="answer-part"><strong>(d)</strong> Cassini</div>
+        <div class="answer-part"><strong>(e)</strong> Ali Baba and Aladdin</div>
+        <div class="answer-part"><strong>(f)</strong> Dione</div>
+        <div class="answer-part"><strong>(g)</strong> Tidal heating</div>
+        <div class="answer-part"><strong>(h)</strong> Dione injects orbital energy into Enceladus which is radiated by tidal forces to further heat the moon</div>
+        <div class="answer-part"><strong>(i)</strong> The hydrothermal activity allows for nutrients important for life to form and hydrothermal activity may support microorganisms</div>
+        <div class="explanation">Enceladus is one of the most promising locations for potential life due to its active hydrothermal system and subsurface ocean.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>Section C: Theory</h2>
+    <div class="section-points">5 Questions - Variable Points - Total: 88 Points</div>
+
+    <div class="question">
+        <strong>1.</strong> Energy Balance (27 points total)
+        <div class="sub-question"><strong>(a)</strong> What is the "energy balance" of a planet? (2 pts) Name both sources this energy traditionally comes from. (2 pts)</div>
+        <div class="sub-question"><strong>(b)</strong> What is a positive, negative, and neutral energy balance? (3 pts) Which is the most suitable for a planet to be habitable? (2 pts)</div>
+        <div class="sub-question"><strong>(c)</strong> Categorize the following planets in terms of having a positive, negative, or neutral energy balance: Earth, Venus, and Mars. (3 pts)</div>
+        <div class="sub-question"><strong>(d)</strong> Imagine planet A is situated 0.5 AU from its host star. Planet B is 1 AU from the same star. What is the ratio of solar flux received at Planet A to that of Planet B? (3 pts)</div>
+        <div class="sub-question"><strong>(e)</strong> If the solar flux at planet B is 1200 W/m², what is the solar flux at planet A? (3 pts)</div>
+        <div class="sub-question"><strong>(f)</strong> Which planet has a solar flux more similar to Earth's? (1 pt) Which planet would you then guess is within the habitable zone of the star? (2 pts)</div>
+        <div class="sub-question"><strong>(g)</strong> Draw a rough sketch of the relation between the distance to a star and the solar flux that reaches the atmosphere. Only draw Quadrant 1. Let the y-axis represent the percentage of energy and the x-axis represent the distance (units are not required). y should equal 1 at x=0, and should equal 0.5 at x=1. Label the point at x=2. (6 pts)</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(24)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-24">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> The energy balance of a planet is the ratio of incoming energy to outgoing energy. The energy comes from both the host star and energy radiated by the planet itself</div>
+        <div class="answer-part"><strong>(b)</strong> A positive energy balance is when there is more incoming energy than outgoing energy. A negative energy balance is when there is more outgoing energy than incoming energy to the planet. A neutral energy balance is where there is an even amount of incoming and outgoing radiation. A neutral energy balance is the most suitable for a planet to be habitable</div>
+        <div class="answer-part"><strong>(c)</strong> All three are neutral</div>
+        <div class="answer-part"><strong>(d)</strong> 4 (ratio = 1/(0.5)² = 4)</div>
+        <div class="answer-part"><strong>(e)</strong> 4800 W/m² (1200 × 4 = 4800)</div>
+        <div class="answer-part"><strong>(f)</strong> Planet B has a more similar flux to Earth, and planet B is more likely within the habitable zone to the star</div>
+        <div class="answer-part"><strong>(g)</strong> Graph should show inverse square relationship with y=1 at x=0, y=0.5 at x=1, and y=0.25 at x=2</div>
+        <img src="../images/study-guide-6/partCanswer1.png" alt="Energy balance graph showing inverse square relationship" class="question-image" />
+        <div class="explanation">Energy balance is fundamental to understanding planetary habitability and climate stability.</div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> Kepler's Laws (15 points total)
+        <div class="sub-question"><strong>(a)</strong> Suppose you have a comet in orbit, in an ellipse with the Sun at one of its foci. Which law describes this shape? (1 pt) Which law describes the period of this orbit? (1 pt)</div>
+        <div class="sub-question"><strong>(b)</strong> What property of an orbit must be true for Kepler's second law to hold true for an orbit? (Not an orbit type, think of properties from physics) (2 pts)</div>
+        <div class="sub-question"><strong>(c)</strong> How many orbit types are possible in a traditional keplerian orbit? (2 pts)</div>
+        <div class="sub-question"><strong>(d)</strong> The total area of an ellipse can be described by the expression A=πab, where a and b describe the semi-major and semi-minor axis of the ellipse. Imagine a comet sweeps out an area of πbc/4e in a time interval t, where e is the eccentricity of the orbit. What fraction of the total period (T) of the orbit is this? (Hint: remember Kepler's second law and that e=c/a!) (5 pts)</div>
+        <div class="sub-question"><strong>(e)</strong> Using your answer from Part d, if the total period is 8×10⁸ s, what was the time interval t? (4 pts)</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(25)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-25">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Kepler's first law. Kepler's third law</div>
+        <div class="answer-part"><strong>(b)</strong> Constant angular momentum</div>
+        <div class="answer-part"><strong>(c)</strong> 4 types</div>
+        <div class="answer-part"><strong>(d)</strong> ¼</div>
+        <div class="answer-part"><strong>(e)</strong> 2×10⁸ seconds</div>
+        <div class="explanation">Kepler's laws describe the fundamental relationships governing orbital motion in gravitational systems.</div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> Proteins (8 points total)
+        <br>The graph below displays the relationship of protein decomposition with temperature.
+        <img src="../images/study-guide-6/partCquestion3.png" alt="Protein decomposition vs temperature graph" class="question-image" />
+        <div class="sub-question"><strong>(a)</strong> What is another name for this process? (1 pt)</div>
+        <div class="sub-question"><strong>(b)</strong> How does this process work? In particular, what component of the protein is decomposed with heat? (2 pts)</div>
+        <div class="sub-question"><strong>(c)</strong> What is the significance of this graph for habitability in our solar system? (1 pt) Which objects specifically exclude from harboring carbon-based life in our solar system? (2 pts)</div>
+        <div class="sub-question"><strong>(d)</strong> What is the most common everyday example of this process in the modern world? (2 pts)</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(26)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-26">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Protein denaturing</div>
+        <div class="answer-part"><strong>(b)</strong> Protein denaturing destroys the hydrogen bonds that hold the protein together</div>
+        <div class="answer-part"><strong>(c)</strong> Life cannot form at temperatures that are too hot. Venus and Mercury are thus excluded from having carbon-based life</div>
+        <div class="answer-part"><strong>(d)</strong> Cooking</div>
+        <div class="explanation">Protein stability sets fundamental temperature limits for carbon-based life as we know it.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> Transits (16 points total)
+        <br>Typically, a transit's "depth" is defined by the equation:
+        <img src="../images/study-guide-6/partCquestion4.png" alt="Transit depth equation" class="question-image" />
+        <div class="sub-question"><strong>(a)</strong> What does transit depth mean? (3 pts)</div>
+        <div class="sub-question"><strong>(b)</strong> Why is the ratio of the radii squared? (2 pts) What physical property does it represent? (1 pt)</div>
+        <div class="sub-question"><strong>(c)</strong> Imagine a function, F, which takes in a time-signal f(t) and decomposes it into N components of wavelengths that combine/add to form f(t). In this case, f(t) is incoming flux as a function of time. Provide a detailed explanation of how the function could be used to aid the research of exoplanet systems. (4 pts)</div>
+        <div class="sub-question"><strong>(d)</strong> Suppose you are viewing a system, with P watts per meter squared of flux visible from the Earth. Over a period of 4 days, you view three consecutive dips in the flux of the star. One dip leaves the flux at x*P, the next one is y*P, and the last one is z*P, where x is greater than y which is greater than z, and all three are decimals between 0 and 1. This pattern repeats indefinitely for this system. Assuming there are two bodies other than the central star, what is the significance of x, y, and z? Describe the physical system, and each component's relation to the variables. (6 pts)</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(27)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-27">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Transit depth is the ratio of the area of the planet to the area of the star</div>
+        <div class="answer-part"><strong>(b)</strong> The ratio is squared since the area of a circle is proportional to r squared. It represents the area</div>
+        <div class="answer-part"><strong>(c)</strong> It could be used to decompose a complex signal into the individual signals of each exoplanet that orbits in the system, which can determine the number of planets and their relative masses</div>
+        <div class="answer-part"><strong>(d)</strong> The system has two planets, x, y, and z represent the transits of the planets, with z being the transit of both planets together, y being the transit of the larger planet alone, and x being the transit of just the smallest planet</div>
+        <div class="explanation">Transit photometry is one of the most successful methods for detecting and characterizing exoplanets.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> Spectra (22 points total)
+        <div class="sub-question"><strong>(a)</strong> Traditionally, when light passes through a gas of some medium, its behavior is defined by Kirchhoff's laws. What are the three types of gases in Kirchhoff's laws? (3 pts)</div>
+        <div class="sub-question"><strong>(b)</strong> Which of these types best describes the case of a planetary atmosphere? Why? (3 pts)</div>
+        <div class="sub-question"><strong>(c)</strong> Imagine a continuous spectrum of photons passes through a planetary atmosphere, and after performing a spectroscopic analysis on the flux received the output is visible in Image P. If the x-axis is measured in nanometers, what gas would you believe the atmosphere contains? Write both the chemical formula and common name (4 pts).</div>
+        <div class="sub-question"><strong>(d)</strong> Does the presence of this substance more closely imply life or habitability? (1 pt) Why or why not? (2 pts)</div>
+        <div class="sub-question"><strong>(e)</strong> What biological process can produce this substance? (2 pts)</div>
+        <div class="sub-question"><strong>(f)</strong> Does the spectral feature necessarily have to come from the planetary atmosphere? (1 pt) Why or why not? (3 pts)</div>
+        <div class="sub-question"><strong>(g)</strong> What type of telescope would be the best for detecting this gas in a planetary atmosphere? (Hint: Think location). (1 pt) Why? (2 pts)</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/study-guide-6/imageA-P.png', 'Images A-P')">Images A-P</button>
+        </div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(28)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-28">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> The gases defined are dense gases, thin and hot gases, and thin and cool gases</div>
+        <div class="answer-part"><strong>(b)</strong> A thin cool gas, since planetary atmospheres produce absorption lines</div>
+        <div class="answer-part"><strong>(c)</strong> Oxygen gas, O₂</div>
+        <div class="answer-part"><strong>(d)</strong> Life, since oxygen is a byproduct of chemical reactions that sustain life, and is unstable in an atmosphere by itself without a regular source to replenish it</div>
+        <div class="answer-part"><strong>(e)</strong> Photosynthesis</div>
+        <div class="answer-part"><strong>(f)</strong> No. The feature could come from interstellar gas in between the planet and the observer</div>
+        <div class="answer-part"><strong>(g)</strong> A space telescope, since ground-based telescopes have interference from the oxygen in the atmosphere</div>
+        <div class="explanation">Spectroscopy is a powerful tool for detecting atmospheric composition and potential biosignatures on exoplanets.</div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips</h3>
+        <p><strong>Focus on understanding the underlying physics and planetary science concepts rather than just memorizing facts.</strong></p>
+        <p>Pay special attention to:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Energy balance and habitability concepts</li>
+            <li>Orbital mechanics and Kepler's laws</li>
+            <li>Spectroscopy and atmospheric analysis</li>
+            <li>Astrobiology and biosignatures</li>
+            <li>Spacecraft missions and instrumentation</li>
+            <li>Planetary formation and evolution processes</li>
+        </ul>
+        <p><em>This study guide covers all questions from the 2023 Sierra Vista Invitational Solar System test. Good luck with your preparation!</em></p>
+    </div>
+
+    <script src="../js/study-guide-common.js"></script>
+
+</body>
+</html>

@@ -184,6 +184,52 @@
             font-size: 0.9em;
             margin-top: 5px;
         }
+
+        /* AI Generated Card Styles */
+        .ai-generated-card {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border: 2px solid #9c27b0;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(156, 39, 176, 0.2);
+        }
+
+        .ai-generated-card:hover {
+            border-color: #7b1fa2;
+            box-shadow: 0 8px 25px rgba(156, 39, 176, 0.3);
+        }
+
+        .ai-badge {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(156, 39, 176, 0.3);
+            z-index: 10;
+        }
+
+        .ai-card-link {
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+        }
+
+        .ai-card-link:hover {
+            background: linear-gradient(135deg, #7b1fa2 0%, #6a1b9a 100%);
+        }
+
+        .ai-generated-card .card-title {
+            border-bottom: 2px solid #9c27b0;
+            color: #4a148c;
+        }
+
+        .ai-generated-card .stat-item {
+            background: #f3e5f5;
+            border: 1px solid #9c27b0;
+            color: #4a148c;
+        }
     </style>
 </head>
 <body>
@@ -296,6 +342,62 @@
             </a>
         </div>
 
+        <!-- Solar System Study Guide 6 -->
+        <div class="study-guide-card">
+            <div class="card-title">🌟 Solar System Study Guide 6</div>
+            <div class="card-description">
+                Sierra Vista Invitational Division B exam featuring advanced astrobiology concepts, energy balance
+                calculations, Kepler's laws applications, and comprehensive image analysis. Includes detailed
+                deep-dive explanations with planetary scientist insights and interactive learning features.
+            </div>
+            <div class="card-stats">
+                <span class="stat-item">28 Questions</span>
+                <span class="stat-item">183 Points</span>
+                <span class="stat-item">16 Images</span>
+            </div>
+            <a href="guides/Solar_System_Study_Guide_6.html" class="card-link">
+                📚 Start Studying
+            </a>
+        </div>
+
+        <!-- Solar System Study Guide 7 -->
+        <div class="study-guide-card">
+            <div class="card-title">🌟 Solar System Study Guide 7</div>
+            <div class="card-description">
+                Comprehensive Science Olympiad preparation guide covering all major Solar System topics including
+                planetary formation, exoplanet detection methods, atmospheric evolution, and advanced analysis.
+                Features 51 multiple choice questions, image-based problems, and detailed scientific explanations
+                with deep-dive content for enhanced learning.
+            </div>
+            <div class="card-stats">
+                <span class="stat-item">58 Questions</span>
+                <span class="stat-item">200 Points</span>
+                <span class="stat-item">8 Images</span>
+            </div>
+            <a href="guides/Solar_System_Study_Guide_7.html" class="card-link">
+                📚 Start Studying
+            </a>
+        </div>
+
+        <!-- Solar System Self-Study Guide (100 Questions) - AI Generated -->
+        <div class="study-guide-card ai-generated-card">
+            <div class="ai-badge">🤖 AI Generated</div>
+            <div class="card-title">🎯 Solar System Self-Study Guide</div>
+            <div class="card-description">
+                Specially designed for 7th-8th grade students with 100 carefully crafted questions covering all
+                essential Solar System topics. Features age-appropriate explanations, student-friendly tips,
+                memory tricks, and deep-dive sections for advanced learning. Perfect for Science Olympiad
+                preparation with progressive difficulty and engaging content.
+            </div>
+            <div class="card-stats">
+                <span class="stat-item">100 Questions</span>
+                <span class="stat-item">100 Points</span>
+                <span class="stat-item">7th-8th Grade</span>
+            </div>
+            <a href="guides/Solar_System_Study_Guide_New.html" class="card-link ai-card-link">
+                🤖 Start AI Study Guide
+            </a>
+        </div>
 
         <!-- Future Study Guides (Coming Soon) -->
         <div class="study-guide-card">

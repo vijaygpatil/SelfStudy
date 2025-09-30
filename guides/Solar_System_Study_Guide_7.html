@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Study Guide 7 - Science Olympiad Preparation</title>
+    <link rel="stylesheet" href="../css/study-guide-common.css">
+    <style>
+        /* Deep Dive Scientific Explanation - specific to this guide */
+        .deep-dive {
+            background-color: #f0f8ff;
+            border-left: 4px solid #4169e1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .deep-dive.show {
+            display: block;
+        }
+
+        .deep-dive-label {
+            font-weight: bold;
+            color: #4169e1;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .deep-dive-content {
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .deep-dive-content h4 {
+            color: #4169e1;
+            margin: 15px 0 8px 0;
+            font-size: 14px;
+        }
+
+        .deep-dive-content ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .deep-dive-content li {
+            margin-bottom: 5px;
+        }
+
+        .reference {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .toggle-deep-dive-btn {
+            background: #4169e1;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            margin: 5px 0;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-deep-dive-btn:hover {
+            background: #2c5aa0;
+        }
+
+        .toggle-deep-dive-btn.expanded {
+            background: #6c757d;
+        }
+
+        .toggle-deep-dive-btn.expanded:hover {
+            background: #5a6268;
+        }
+
+        .question-image {
+            max-width: 600px;
+            margin: 15px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: block;
+        }
+
+        .sub-question {
+            margin: 10px 0;
+            padding-left: 20px;
+            font-weight: normal;
+        }
+
+        .answer-part {
+            margin: 5px 0;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Study Hub
+            </a>
+            <a href="../pdfresources/SolarSystemStudyGuide7.pdf" target="_blank" style="display: inline-block; background: #dc3545; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                📄 Questions PDF
+            </a>
+            <a href="../pdfresources/SolarSystemStudyGuide7-Key.pdf" target="_blank" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                📄 Answer Key PDF
+            </a>
+        </div>
+        <h1>Solar System Study Guide 7</h1>
+        <div class="subtitle">2022 Science Olympiad National Invitational Tournament</div>
+        <div class="subtitle">Division B - Complete Questions & Answers with Image Analysis</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+
+    <h2>Section A: True/False and Fill-in-the-Blank Questions</h2>
+    <div class="section-points">30 Questions - 1 Point Each - Total: 30 Points</div>
+
+    <div class="question">
+        <strong>1.</strong> The Sun is at the center of the Solar System.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: A (True)</div>
+        <div class="explanation">The Sun is indeed at the center of the Solar System, with all planets orbiting around it.</div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> Pluto is a dwarf planet.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: A (True)</div>
+        <div class="explanation">Pluto was reclassified as a dwarf planet in 2006 by the International Astronomical Union.</div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> Venus is the hottest planet in the Solar System.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: A (True)</div>
+        <div class="explanation">Venus is the hottest planet due to its extreme greenhouse effect, with surface temperatures around 460°C.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> Saturn is the most massive gaseous planet in the Solar System.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: B (False)</div>
+        <div class="explanation">Jupiter is the most massive gaseous planet in the Solar System, not Saturn.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> Io is in an orbital resonance with Iapetus.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: B (False)</div>
+        <div class="explanation">Io (moon of Jupiter) is not in orbital resonance with Iapetus (moon of Saturn). Io is in resonance with Europa and Ganymede.</div>
+    </div>
+
+    <div class="question">
+        <strong>6.</strong> The Cassini spacecraft visited Arrokoth in 2020.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: B (False)</div>
+        <div class="explanation">New Horizons visited Arrokoth in 2019, not Cassini in 2020. Cassini studied Saturn and its moons.</div>
+    </div>
+
+    <div class="question">
+        <strong>7.</strong> Ralph and Alice are instruments on the Galileo spacecraft.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: B (False)</div>
+        <div class="explanation">Ralph and Alice are instruments on the New Horizons spacecraft, not Galileo.</div>
+    </div>
+
+    <div class="question">
+        <strong>8.</strong> Pluto's largest moon is Charon.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: A (True)</div>
+        <div class="explanation">Charon is indeed Pluto's largest moon, discovered in 1978.</div>
+    </div>
+
+    <div class="question">
+        <strong>9.</strong> The planets in the HR 8799 system were discovered using the radial velocity technique.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: B (False)</div>
+        <div class="explanation">The HR 8799 planets were discovered using direct imaging, not radial velocity.</div>
+    </div>
+
+    <div class="question">
+        <strong>10.</strong> The Great Red Spot is on Jupiter.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: A (True)</div>
+        <div class="explanation">The Great Red Spot is a massive storm system on Jupiter that has been observed for centuries.</div>
+    </div>
+
+    <div class="question">
+        <strong>11.</strong> ALMA is a ground-based telescope located in Chile.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: A (True)</div>
+        <div class="explanation">ALMA (Atacama Large Millimeter Array) is indeed a ground-based radio telescope located in Chile's Atacama Desert.</div>
+    </div>
+
+    <div class="question">
+        <strong>12.</strong> Iapetus is a moon around Uranus.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: B (False)</div>
+        <div class="explanation">Iapetus is a moon of Saturn, not Uranus.</div>
+    </div>
+
+    <div class="question">
+        <strong>13.</strong> Uranus and Neptune are "ice giants".
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: A (True)</div>
+        <div class="explanation">Uranus and Neptune are classified as ice giants due to their composition of water, methane, and ammonia ices.</div>
+    </div>
+
+    <div class="question">
+        <strong>14.</strong> The interior of Venus is thought to contain some amount of metallic hydrogen.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: B (False)</div>
+        <div class="explanation">Metallic hydrogen is found in gas giants like Jupiter and Saturn, not in terrestrial planets like Venus.</div>
+    </div>
+
+    <div class="question">
+        <strong>15.</strong> The barycenter (center of mass) of the Pluto-Charon system lies outside of either object.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: A (True)</div>
+        <div class="explanation">The Pluto-Charon barycenter lies in space between the two objects, making them essentially a double planet system.</div>
+    </div>
+
+    <div class="question">
+        <strong>16.</strong> Venus's atmosphere consists primarily of sulfur dioxide.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(16)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-16">
+        <div class="answer-label">Answer: B (False)</div>
+        <div class="explanation">Venus's atmosphere consists primarily of carbon dioxide (96%), not sulfur dioxide.</div>
+    </div>
+
+    <div class="question">
+        <strong>17.</strong> Io is thought to have been captured from the Asteroid Belt.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(17)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-17">
+        <div class="answer-label">Answer: B (False)</div>
+        <div class="explanation">Io formed in place around Jupiter and was not captured from the Asteroid Belt.</div>
+    </div>
+
+    <div class="question">
+        <strong>18.</strong> TOI-561 is an old, metal-poor star.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(18)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-18">
+        <div class="answer-label">Answer: A (True)</div>
+        <div class="explanation">TOI-561 is indeed an old, metal-poor star belonging to the galactic thick disk population.</div>
+    </div>
+
+    <div class="question">
+        <strong>19.</strong> Triton has a retrograde orbit.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(19)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-19">
+        <div class="answer-label">Answer: A (True)</div>
+        <div class="explanation">Triton orbits Neptune in a retrograde direction, suggesting it was a captured Kuiper Belt object.</div>
+    </div>
+
+    <div class="question">
+        <strong>20.</strong> Kepler-138d is a rocky super-Earth.
+        <br>A. True
+        <br>B. False
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(20)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-20">
+        <div class="answer-label">Answer: B (False)</div>
+        <div class="explanation">Kepler-138d is believed to be a water world, not a rocky super-Earth.</div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border: 2px solid #ff9800; border-radius: 15px; padding: 20px; margin: 20px 0;">
+        <h3 style="color: #e65100; margin-bottom: 10px;">📝 Fill-in-the-Blank Instructions</h3>
+        <p><strong>Complete the following statements with the name of an object or mission explicitly listed on the rules.</strong></p>
+        <p><em>No object or mission will be used more than once. Use the exact spelling shown in the word bank.</em></p>
+        <div style="background: white; padding: 15px; border-radius: 8px; margin-top: 15px;">
+            <strong>Word Bank:</strong><br>
+            <strong>Solar System Objects:</strong> Venus, Jupiter, Saturn, Uranus, Neptune, Io, Iapetus, Triton, Pluto, Arrokoth<br>
+            <strong>Extrasolar Systems/Planets:</strong> HL Tauri, HR 8799, Kepler 138, K2-18b, K2-33b, TOI-561<br>
+            <strong>Missions:</strong> Magellan, Galileo, Juno, Cassini, Voyager 2, New Horizons, ALMA, Kepler, TESS
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>21.</strong> The _______ system has an innermost planet that completes an orbit in less than one Earth day.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(21)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-21">
+        <div class="answer-label">Answer: TOI-561</div>
+        <div class="explanation">The TOI-561 system has an innermost planet with an extremely short orbital period of less than one Earth day.</div>
+    </div>
+
+    <div class="question">
+        <strong>22.</strong> The moon _______, despite its high orbital inclination, was almost definitely not captured by the planet it orbits.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(22)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-22">
+        <div class="answer-label">Answer: Iapetus</div>
+        <div class="explanation">Iapetus, despite its unusual orbital characteristics, is believed to have formed in place around Saturn rather than being captured.</div>
+    </div>
+
+    <div class="question">
+        <strong>23.</strong> The Galilean moons are the four largest moons of the planet _______.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(23)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-23">
+        <div class="answer-label">Answer: Jupiter</div>
+        <div class="explanation">The Galilean moons (Io, Europa, Ganymede, and Callisto) are the four largest moons of Jupiter, discovered by Galileo Galilei.</div>
+    </div>
+
+    <div class="question">
+        <strong>24.</strong> The pre-main-sequence star _______ has greatly changed our understanding of how early planets may form in a star system.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(24)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-24">
+        <div class="answer-label">Answer: HL Tauri</div>
+        <div class="explanation">HL Tauri is a young T Tauri star with a protoplanetary disk that has provided crucial insights into early planetary formation processes.</div>
+    </div>
+
+    <div class="question">
+        <strong>25.</strong> The Solar System mission _______ included fly-by's of Jupiter, Pluto, and 486958 Arrokoth.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(25)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-25">
+        <div class="answer-label">Answer: New Horizons</div>
+        <div class="explanation">New Horizons conducted flybys of Jupiter (2007), Pluto (2015), and Arrokoth (2019) during its extended mission.</div>
+    </div>
+
+    <div class="question">
+        <strong>26.</strong> The planet _______ was the first Earth-sized exoplanet in its star's habitable zone to have its atmosphere detected.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(26)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-26">
+        <div class="answer-label">Answer: K2-18b</div>
+        <div class="explanation">K2-18b was the first Earth-sized exoplanet in the habitable zone to have water vapor detected in its atmosphere.</div>
+    </div>
+
+    <div class="question">
+        <strong>27.</strong> _______ is unique among the ice giants in our Solar System for radiating almost no excess heat relative to what it receives from the Sun.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(27)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-27">
+        <div class="answer-label">Answer: Uranus</div>
+        <div class="explanation">Unlike Neptune, Uranus radiates very little excess heat compared to what it receives from the Sun, making it unique among the ice giants.</div>
+    </div>
+
+    <div class="question">
+        <strong>28.</strong> The _______ mission succeeded Kepler in searching for exoplanets via the transit method.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(28)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-28">
+        <div class="answer-label">Answer: TESS</div>
+        <div class="explanation">TESS (Transiting Exoplanet Survey Satellite) is the successor to the Kepler mission for finding exoplanets using the transit method.</div>
+    </div>
+
+    <div class="question">
+        <strong>29.</strong> Though other missions have followed, the _______ mission is the most recent American spacecraft to explore the planet Venus, not counting fly-by's.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(29)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-29">
+        <div class="answer-label">Answer: Magellan</div>
+        <div class="explanation">Magellan was the last dedicated American mission to Venus, mapping the planet's surface using radar from 1990-1994.</div>
+    </div>
+
+    <div class="question">
+        <strong>30.</strong> Due to its surface activity, the moon _______ has a thin atmosphere consisting almost exclusively of sulfur and sulfur compounds.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(30)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-30">
+        <div class="answer-label">Answer: Io</div>
+        <div class="explanation">Io's volcanic activity creates a thin atmosphere composed primarily of sulfur dioxide and other sulfur compounds.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>Section B: Image-Based Questions</h2>
+    <div class="section-points">21 Questions - Variable Points - Total: 70 Points</div>
+
+    <div class="image-reference">
+        <strong>📸 SECTION B IMAGE SET</strong><br>
+        <em>Use the attached Image Set for the questions in this section. Each part within each question is worth 1 point unless otherwise specified.</em>
+
+        <div class="study-images">
+            <div class="study-image">
+                <img src="../images/Study-guide-7/image1-20.png" alt="Images 1-20 for Section B" />
+                <p>Images 1-20: Various Solar System Objects and Spacecraft</p>
+            </div>
+            <div class="study-image">
+                <img src="../images/Study-guide-7/image21-33.png" alt="Images 21-33 for Section B" />
+                <p>Images 21-33: Additional Solar System Objects and Analysis</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Image Panel -->
+    <div id="floatingImagePanel" class="floating-image-panel">
+        <div class="floating-panel-header" id="panelHeader">
+            <span id="panelTitle">Image Viewer</span>
+            <button class="close-panel" onclick="closeImagePanel()">&times;</button>
+        </div>
+        <div class="floating-panel-content" id="panelContent">
+            <p>Click on an image reference button to view images here.</p>
+        </div>
+        <div class="resize-handle" id="resizeHandle"></div>
+    </div>
+
+    <div class="question">
+        <strong>31.</strong> (2 points) Order the objects shown in the following images by their distance from the Sun, from closest to farthest: 1, 2, 5, 10, 12
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(31)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-31">
+        <div class="answer-label">Answer: 10, 2, 5, 12, 1</div>
+        <div class="explanation">The objects are ordered by their distance from the Sun, with the closest object first.</div>
+    </div>
+
+
+    <div class="question">
+        <strong>32.</strong> (2 points) Order the objects shown in the following images by their average density, from least dense to most dense: 2, 6, 8, 17
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(32)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-32">
+        <div class="answer-label">Answer: 17, 2, 8, 6</div>
+        <div class="explanation">The objects are ordered by density, from least dense to most dense.</div>
+    </div>
+
+    <div class="question">
+        <strong>33.</strong> (3 points)
+        <div class="sub-question"><strong>(a)</strong> What spacecraft provided the image of Saturn shown in Image 17? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Where is this spacecraft currently located? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What is the number of the image that shows the message carried by this spacecraft? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(33)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-33">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Voyager 2</div>
+        <div class="answer-part"><strong>(b)</strong> Interstellar space</div>
+        <div class="answer-part"><strong>(c)</strong> Image 14</div>
+        <div class="explanation">Voyager 2 took images of Saturn and is now in interstellar space, carrying the Golden Record message.</div>
+    </div>
+
+    <div class="question">
+        <strong>34.</strong> (2 points)
+        <div class="sub-question"><strong>(a)</strong> What is the name of the object illustrated in Image 20? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What is notable about the composition of this object's atmosphere? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(34)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-34">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> K2-18b</div>
+        <div class="answer-part"><strong>(b)</strong> The atmosphere has water within the habitable zone of its parent star</div>
+        <div class="explanation">K2-18b is significant for having water vapor detected in its atmosphere while being in the habitable zone.</div>
+    </div>
+
+    <div class="question">
+        <strong>35.</strong> (4 points)
+        <div class="sub-question"><strong>(a)</strong> Which image shows Venus as taken by Mariner 10 as it left the planet? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which series of spacecraft was the first to land on the surface of Venus? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> Which image shows a spacecraft on the Venusian surface? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> Why is the photo from part (c) iconic? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(35)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-35">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Image 4</div>
+        <div class="answer-part"><strong>(b)</strong> Venera</div>
+        <div class="answer-part"><strong>(c)</strong> Image 33</div>
+        <div class="answer-part"><strong>(d)</strong> It was the first color image of Venus's surface</div>
+        <div class="explanation">The Venera missions were pioneering Soviet missions that first successfully landed on Venus's harsh surface.</div>
+    </div>
+
+    <div class="question">
+        <strong>36.</strong> (4 points)
+        <div class="sub-question"><strong>(a)</strong> What the name of the system shown in Image 7? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> The star in this system is categorized as belonging to a rare population of stars. What is it? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> How is the chemical composition of this group different from other groups of stars? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> What two telescopes combined observations to study this system in detail? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(36)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-36">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> TOI-561</div>
+        <div class="answer-part"><strong>(b)</strong> Galactic thick disk stars</div>
+        <div class="answer-part"><strong>(c)</strong> Lower metal content</div>
+        <div class="answer-part"><strong>(d)</strong> Keck and TESS</div>
+        <div class="explanation">TOI-561 is an example of an old, metal-poor star system that provides insights into early planetary formation.</div>
+    </div>
+
+    <div class="question">
+        <strong>37.</strong> (7 points)
+        <div class="sub-question"><strong>(a)</strong> Which object is shown in Image 12? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Broadly speaking, what type of object is this? (There are multiple correct answers.) [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> In what area of the Solar System is this object located? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> What causes the blue color shown in Image 12? [2 pt]</div>
+        <div class="sub-question"><strong>(e)</strong> Which object(s) in the rules is/are farther from the Sun (but still within the Solar System) than this object? Which image(s) show(s) them? [2 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(37)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-37">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Pluto</div>
+        <div class="answer-part"><strong>(b)</strong> Dwarf planet (also accept Kuiper Belt Object and Trans-Neptunian Object)</div>
+        <div class="answer-part"><strong>(c)</strong> Kuiper Belt</div>
+        <div class="answer-part"><strong>(d)</strong> Sunlight scattering off of haze particles in Pluto's atmosphere</div>
+        <div class="answer-part"><strong>(e)</strong> Arrokoth, Image 19</div>
+        <div class="explanation">Pluto's blue atmospheric haze was one of the surprising discoveries from the New Horizons mission.</div>
+    </div>
+
+    <div class="question">
+        <strong>38.</strong> (4 points)
+        <div class="sub-question"><strong>(a)</strong> Which image shows Jupiter's global circulation system? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What mission is currently exploring this planet? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> Which image shows the processes taking place at the south pole of Jupiter? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> Which image shows X-ray emissions at the north pole of Jupiter? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(38)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-38">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Image 15</div>
+        <div class="answer-part"><strong>(b)</strong> Juno</div>
+        <div class="answer-part"><strong>(c)</strong> Image 18</div>
+        <div class="answer-part"><strong>(d)</strong> Image 3</div>
+        <div class="explanation">The Juno mission has provided unprecedented views of Jupiter's atmospheric dynamics and polar regions.</div>
+    </div>
+
+    <div class="question">
+        <strong>39.</strong> (2 points)
+        <div class="sub-question"><strong>(a)</strong> A special phenomena involving Jupiter's magnetosphere occurs at its poles. What is the name of this phenomena? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> The Earth also displays these same phenomena. What is the major difference in these phenomena between Earth and Jupiter? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(39)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-39">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Aurora</div>
+        <div class="answer-part"><strong>(b)</strong> On Jupiter, they are out of sync with each other</div>
+        <div class="explanation">Jupiter's auroras behave differently from Earth's due to its unique magnetospheric structure.</div>
+    </div>
+
+    <div class="question">
+        <strong>40.</strong> (6 points)
+        <div class="sub-question"><strong>(a)</strong> What is the name of the most volcanically active object in the Solar System? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> True or false: the volcanism on this object is icy. [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> Which image shows this object? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> In one sentence or less, explain the root cause of this volcanism. [1 pt]</div>
+        <div class="sub-question"><strong>(e)</strong> What were the first spacecraft to image a volcanic eruption on this object? [1 pt]</div>
+        <div class="sub-question"><strong>(f)</strong> The image shown in part (a) above was taken by what mission? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(40)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-40">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Io</div>
+        <div class="answer-part"><strong>(b)</strong> False</div>
+        <div class="answer-part"><strong>(c)</strong> Image 6</div>
+        <div class="answer-part"><strong>(d)</strong> Tidal forces from Jupiter and other Jovian moons</div>
+        <div class="answer-part"><strong>(e)</strong> Voyager 1</div>
+        <div class="answer-part"><strong>(f)</strong> Galileo</div>
+        <div class="explanation">Io's sulfur volcanism is driven by tidal heating from Jupiter's immense gravitational field.</div>
+    </div>
+
+    <div class="question">
+        <strong>41.</strong> (6 points)
+        <div class="sub-question"><strong>(a)</strong> One of the objects on the rules is a young T-Tauri star with a protoplanetary disk. What is its name? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which image shows this object? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What telescope or spacecraft took this image? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> What is the image number that shows a distance density profile for the protoplanetary disk for this object? [1 pt]</div>
+        <div class="sub-question"><strong>(e)</strong> Which image shows another planetary system being discovered using direct imaging? [1 pt]</div>
+        <div class="sub-question"><strong>(f)</strong> What system is shown in the image from part (e)? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(41)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-41">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> HL Tauri</div>
+        <div class="answer-part"><strong>(b)</strong> Image 1</div>
+        <div class="answer-part"><strong>(c)</strong> ALMA</div>
+        <div class="answer-part"><strong>(d)</strong> Image 25</div>
+        <div class="answer-part"><strong>(e)</strong> Image 32</div>
+        <div class="answer-part"><strong>(f)</strong> HR 8799</div>
+        <div class="explanation">HL Tauri and HR 8799 represent different stages of planetary system formation and evolution.</div>
+    </div>
+
+    <div class="question">
+        <strong>42.</strong> (7 points)
+        <div class="sub-question"><strong>(a)</strong> One of the objects on the rules is a moon around Saturn. What is its name? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which image shows this object? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What is notable about this object's orbit around Saturn? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> What is the most likely cause of the extreme difference in albedo between the leading and trailing hemispheres of this object? [2 pt]</div>
+        <div class="sub-question"><strong>(e)</strong> This object is also known for its distinctive equatorial ridge. There are several theories for the formation of this ridge; explain one of them. [2 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(42)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-42">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Iapetus</div>
+        <div class="answer-part"><strong>(b)</strong> Image 2</div>
+        <div class="answer-part"><strong>(c)</strong> Iapetus is locked in synchronous rotation</div>
+        <div class="answer-part"><strong>(d)</strong> Sublimation of volatiles</div>
+        <div class="answer-part"><strong>(e)</strong> Answers will vary, check Wikipedia</div>
+        <div class="explanation">Iapetus is one of Saturn's most mysterious moons with its distinctive two-tone coloration and equatorial ridge.</div>
+    </div>
+
+    <div class="question">
+        <strong>43.</strong> (6 points)
+        <div class="sub-question"><strong>(a)</strong> Image 22 shows the surface of what object? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> What is the name of the mission that took this image? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> Which instrument(s) was/were used to collect the data used to create this image? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> What is the name of the smooth area towards the right of the image? [1 pt]</div>
+        <div class="sub-question"><strong>(e)</strong> What is the name of the mountains shown in the middle of the image? [1 pt]</div>
+        <div class="sub-question"><strong>(f)</strong> Generally, what do scientists believe make up these mountains? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(43)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-43">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Pluto</div>
+        <div class="answer-part"><strong>(b)</strong> New Horizons</div>
+        <div class="answer-part"><strong>(c)</strong> LORRI and MVIC</div>
+        <div class="answer-part"><strong>(d)</strong> Sputnik Planitia</div>
+        <div class="answer-part"><strong>(e)</strong> al-Idrisi mountains</div>
+        <div class="answer-part"><strong>(f)</strong> Water ice</div>
+        <div class="explanation">New Horizons revealed Pluto's complex and geologically active surface features.</div>
+    </div>
+
+    <div class="question">
+        <strong>44.</strong> (7 points)
+        <div class="sub-question"><strong>(a)</strong> There are three methods of detecting exoplanets explicitly listed in the rules for this event. Of these, which method has detected the most exoplanets? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which image depicts the exoplanet detection method from part (a)? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> Which method has detected the second highest number of exoplanets? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> Which image depicts the exoplanet detection method from part (c)? [1 pt]</div>
+        <div class="sub-question"><strong>(e)</strong> What makes the third method so difficult for detecting exoplanets? [2 pt]</div>
+        <div class="sub-question"><strong>(f)</strong> Image 30 shows a plot of planet mass vs. semi-major axis for exoplanets discovered using two methods. Which methods are represented by the colors red and blue, respectively? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(44)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-44">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Transits</div>
+        <div class="answer-part"><strong>(b)</strong> Image 28</div>
+        <div class="answer-part"><strong>(c)</strong> Radial velocity</div>
+        <div class="answer-part"><strong>(d)</strong> Image 26</div>
+        <div class="answer-part"><strong>(e)</strong> The star is typically very bright compared to the planet</div>
+        <div class="answer-part"><strong>(f)</strong> Red: radial velocity, blue: transit</div>
+        <div class="explanation">Different exoplanet detection methods have different strengths and limitations, leading to complementary discoveries.</div>
+    </div>
+
+    <div class="question">
+        <strong>45.</strong> (5 points)
+        <div class="sub-question"><strong>(a)</strong> There is one object on the rules that is a moon of Neptune. What is its name? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which image shows this object? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What is unique about the orbital motions of this moon? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> Which image shows a colored global map of this moon's surface? [1 pt]</div>
+        <div class="sub-question"><strong>(e)</strong> Image 31 shows white domes on Earth similar to those seen on the Neptunian moon, suggesting that this moon may be a watery world. What type of feature is shown? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(45)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-45">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Triton</div>
+        <div class="answer-part"><strong>(b)</strong> Image 8</div>
+        <div class="answer-part"><strong>(c)</strong> Retrograde and/or poles face Sun</div>
+        <div class="answer-part"><strong>(d)</strong> Image 27</div>
+        <div class="answer-part"><strong>(e)</strong> Salt domes</div>
+        <div class="explanation">Triton's retrograde orbit and geological features suggest it was a captured Kuiper Belt object.</div>
+    </div>
+
+    <div class="question">
+        <strong>46.</strong> (2 points)
+        <div class="sub-question"><strong>(a)</strong> From where is the moon from the previous question thought to have originated? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> The moon from the previous question is most similar in formation, structure, and origin to which of the other objects listed in the rules? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(46)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-46">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Kuiper Belt</div>
+        <div class="answer-part"><strong>(b)</strong> Pluto</div>
+        <div class="explanation">Triton and Pluto share similar characteristics, supporting the captured Kuiper Belt object hypothesis.</div>
+    </div>
+
+    <div class="question">
+        <strong>47.</strong> (2 points)
+        <div class="sub-question"><strong>(a)</strong> Which image shows Neptune? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which spacecraft visited Neptune and its moons? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(47)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-47">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Image 5</div>
+        <div class="answer-part"><strong>(b)</strong> Voyager 2</div>
+        <div class="explanation">Voyager 2 remains the only spacecraft to visit Neptune, providing our best close-up images of the ice giant.</div>
+    </div>
+
+    <div class="question">
+        <strong>48.</strong> (4 points)
+        <div class="sub-question"><strong>(a)</strong> Which image shows Kepler-138? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Broadly speaking, what type of exoplanet is the "b" component in this system? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> What exoplanet detection method was used to discover the planets in this system? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> Which image shows the radial velocity of the parent star in the system? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(48)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-48">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Image 13</div>
+        <div class="answer-part"><strong>(b)</strong> Super Earth</div>
+        <div class="answer-part"><strong>(c)</strong> Transit</div>
+        <div class="answer-part"><strong>(d)</strong> Image 24</div>
+        <div class="explanation">The Kepler-138 system demonstrates the power of combining multiple detection methods for exoplanet characterization.</div>
+    </div>
+
+    <div class="question">
+        <strong>49.</strong> (2 points)
+        <div class="sub-question"><strong>(a)</strong> Image 29 shows the spectra of some planet and exoplanet atmospheres, with Earth's atmosphere represented by the green line. Which line represents the Kepler-138b? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> One of the spectra in Image 29 represents a planet in our Solar System. Which line is it, and which planet does it represent? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(49)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-49">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Blue</div>
+        <div class="answer-part"><strong>(b)</strong> Orange, Venus</div>
+        <div class="explanation">Spectroscopy allows us to compare atmospheric compositions across different worlds.</div>
+    </div>
+
+    <div class="question">
+        <strong>50.</strong> (3 points)
+        <div class="sub-question"><strong>(a)</strong> Which object is shown in Image 11? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which spacecraft or telescope took this image? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> In which portion of the electromagnetic spectrum was this image taken? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(50)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-50">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Uranus</div>
+        <div class="answer-part"><strong>(b)</strong> Hubble Space Telescope</div>
+        <div class="answer-part"><strong>(c)</strong> Near infrared</div>
+        <div class="explanation">Hubble's infrared capabilities reveal details of Uranus's atmospheric structure and composition.</div>
+    </div>
+
+    <div class="question">
+        <strong>51.</strong> (7 points)
+        <div class="sub-question"><strong>(a)</strong> Which image shows a map of the surface of Venus? [1 pt]</div>
+        <div class="sub-question"><strong>(b)</strong> Which spacecraft or telescope took the image from part (a)? [1 pt]</div>
+        <div class="sub-question"><strong>(c)</strong> Which image shows a complex impact on the surface of Venus taken by the mission from part (b)? [1 pt]</div>
+        <div class="sub-question"><strong>(d)</strong> Which image shows the southern polar region of Venus and was taken by the Venus Express spacecraft? [1 pt]</div>
+        <div class="sub-question"><strong>(e)</strong> Saturn has a similar feature near its poles. Which image shows this feature? [1 pt]</div>
+        <div class="sub-question"><strong>(f)</strong> Which spacecraft or telescope took the image from part (e)? [1 pt]</div>
+        <div class="sub-question"><strong>(g)</strong> In no more than a couple of words, what are these features? [1 pt]</div>
+        <div class="image-reference-inline">
+            📸 Referenced Images:
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image1-20.png', 'Images 1-20')">Images 1-20</button>
+            <button class="image-ref-btn" onclick="showImage('../images/Study-guide-7/image21-33.png', 'Images 21-33')">Images 21-33</button>
+        </div>
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(51)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-51">
+        <div class="answer-label">Answers:</div>
+        <div class="answer-part"><strong>(a)</strong> Image 10</div>
+        <div class="answer-part"><strong>(b)</strong> Magellan</div>
+        <div class="answer-part"><strong>(c)</strong> Image 16</div>
+        <div class="answer-part"><strong>(d)</strong> Image 23</div>
+        <div class="answer-part"><strong>(e)</strong> Image 21</div>
+        <div class="answer-part"><strong>(f)</strong> Cassini</div>
+        <div class="answer-part"><strong>(g)</strong> Hurricanes or storms</div>
+        <div class="explanation">Both Venus and Saturn show polar vortex structures - massive storm systems at their poles.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>Section C: Advanced Analysis Questions</h2>
+    <div class="section-points">15 Questions - Variable Points - Total: 118 Points</div>
+
+    <div class="image-reference">
+        <strong>📸 KEPLER'S LAWS DIAGRAM</strong><br>
+        <em>The figure below depicts a geometrically-exaggerated diagram of a planet (grey) in orbit around a star (orange). Let the planet, which orbits with period P, have a mass m, and the star have a mass M.</em>
+        <div class="study-images">
+            <div class="study-image">
+                <img src="../images/Study-guide-7/sectionC52535455.png" alt="Kepler's Laws orbital diagram" class="question-image" />
+                <p>Orbital diagram showing semi-major axis (a), apoapsis (Ra), and periapsis (Rp)</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); border: 2px solid #4caf50; border-radius: 15px; padding: 20px; margin: 20px 0;">
+        <h3 style="color: #2e7d32; margin-bottom: 10px;">📐 Mathematical Notation</h3>
+        <p><strong>In your answers to the following four questions, you may indicate subscripts using the "_" character (e.g., A_B would be A<sub>B</sub>) and superscripts using the "^" character (e.g., X^2 would be X<sup>2</sup>).</strong></p>
+    </div>
+
+    <div class="question">
+        <strong>52.</strong> (6 points) In your own words, give a brief explanation of what a, R<sub>a</sub>, and R<sub>p</sub> represent in this diagram. Then, write a formula for a in terms of R<sub>a</sub>, R<sub>p</sub>, and any other necessary constants.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(52)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-52">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part"><strong>Definitions:</strong> "a" indicates the semimajor axis of the system (1pt), R<sub>a</sub> indicates the radius of apoapsis (or just apoapsis) (1pt), and R<sub>p</sub> indicates the radius of periapsis (or just periapsis) (1pt)</div>
+        <div class="answer-part"><strong>Formula:</strong> a = (½) × (R<sub>a</sub> + R<sub>p</sub>) (3pts)</div>
+        <div class="explanation">The semi-major axis is the average of the apoapsis and periapsis distances, representing the mean orbital radius.</div>
+    </div>
+
+    <div class="question">
+        <strong>53.</strong> (4 points) Write a formula that would allow you to determine a if you knew the values of P, m, and M without knowing R<sub>a</sub> or R<sub>p</sub>. Assume that each value is given in base SI units, not AU, years, or solar masses (i.e., be sure to include all necessary constants, like π).
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(53)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-53">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part"><strong>Formula:</strong> a = [(G×(M+m)×P²)/(4×π²)]^(1/3) (or algebraic equivalent) (4pts)</div>
+        <div class="explanation">This is derived from Kepler's Third Law, relating orbital period to semi-major axis and the masses involved.</div>
+    </div>
+
+    <div class="question">
+        <strong>54.</strong> (3 points) By what factor would the value of a change if the period of the planet's orbit, P, was doubled, with all other values held constant?
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(54)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-54">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part">"a" would increase (1pt) by a factor of 2^(2/3) (2pts)</div>
+        <div class="explanation">From Kepler's Third Law, if period doubles, the semi-major axis increases by the cube root of the square of the period change.</div>
+    </div>
+
+    <div class="question">
+        <strong>55.</strong> (7 points) By what factor would the value of P change if the mass of the planet were doubled with all else constant? What if the mass of the star were doubled with all else constant? Explain why these two values either differ or are the same, based on your answer.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(55)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-55">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part">If the planet's mass is doubled then the change to P is by a factor of essentially zero (2pts). If the mass of the star is doubled then P will decrease (1pt) by a factor of 2^(1/2) (2pts). This difference is due to the fact that the mass of the planet is ultimately negligible within the equation, since it is taken in sum with the mass of the star, which is likely several orders of magnitude greater. (2pts)</div>
+        <div class="explanation">The stellar mass dominates the gravitational dynamics, making planetary mass changes negligible for orbital period calculations.</div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 100%); border: 2px solid #17a2b8; border-radius: 15px; padding: 20px; margin: 20px 0;">
+        <h3 style="color: #0c5460; margin-bottom: 10px;">🌊 Triton's Plumes</h3>
+        <p><strong>Currently, Io, Titan, Europa, Enceladus, and Triton are the only moons thought to be currently geologically active. Triton's plumes were discovered in 1989 when the Voyager 2 spacecraft visited it, but their origin is still an open question in the field. Currently, there are five theories for the source of these plumes, some with more plausibility than others:</strong></p>
+        <p><em>Solar-driven Cryovolcanism, Volatile-ice Sheet, Basal-heat, Buoyant Methane, Dust Devils</em></p>
+        <img src="../images/Study-guide-7/sectionC56.png" alt="Artistic depiction of three remaining, eruption-based hypotheses for Triton's plumes" class="question-image" />
+        <p><em>Artistic depiction of three remaining, eruption-based hypotheses for Triton's plumes, taken from Hofgartner et al. (2019). Features are not shown to scale. The dark blue portion towards the bottom of the figure represents a subsurface water ocean (which Triton may have), but this isn't necessary in any of the three hypotheses.</em></p>
+    </div>
+
+    <div class="question">
+        <strong>56.</strong> (2 points) The "Buoyant Methane" and "Dust Devil" hypotheses for Triton's plumes are no longer considered likely candidates. Why is this the case?
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(56)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-56">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part">The winds in the atmospheric vortices are not strong enough to pick up dust (i.e., the dark material in plumes and fans) and to prevent shear of the vertical column, which was not observed.</div>
+        <div class="explanation">These hypotheses were ruled out based on atmospheric dynamics and observational evidence from Voyager 2.</div>
+    </div>
+
+    <div class="question">
+        <strong>57.</strong> (6 points) Hansen et al. (1990) and Kirk et al. (1990) argued that the geographic distributions of plumes and fans on Triton was strong evidence of the plumes being solar-driven. For three decades, this was the leading hypothesis for the origin of Triton's plumes, as when Voyager 2 had observed Triton, the plumes were close to the subsolar latitude (i.e., the latitude where the sun appears directly overhead at that moment). Recently, however, Hofgartner et al. (2019) argue that this isn't necessarily the case.
+        <br><br>The plot below shows how the daily-averaged solar flux varies with latitude for different subsolar latitudes. Using this plot and knowing that the two confirmed, active plumes on Triton were located at 49° S and 57° S, briefly explain why the plumes' locations aren't necessarily as supportive of the solar-driven hypothesis as previously thought.
+        <img src="../images/Study-guide-7/sectionC57.png" alt="Solar flux vs latitude plot for Triton" class="question-image" />
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(57)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-57">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part">The maximum average daily solar insolation can actually be a significant distance from the subsolar latitude. The two plumes were located near the subsolar latitude when Voyager 2 observed them, but given their location, the maximum average daily solar insolation would actually take place close to the South Pole, and we didn't see plumes there.</div>
+        <div class="explanation">This challenges the solar-driven hypothesis by showing that peak solar heating doesn't necessarily occur at the subsolar latitude.</div>
+    </div>
+
+    <div class="question">
+        <strong>58.</strong> (4 points) Hofgartner et al. suggest that it is possible to determine which of the three remaining theories is the origin of Triton's plumes through remote sensing.
+        <br><br>Suppose that in the future, a spacecraft visits Triton. It finds the following:
+        <br>• The distribution of active plumes is independent of seasons and the distribution of nitrogen ice
+        <br>• The fans and plumes are water-rich
+        <br>• The temperatures associated with plumes are above the boiling point of nitrogen on Triton
+        <img src="../images/Study-guide-7/sectionC58.png" alt="Triton plume analysis data" class="question-image" />
+        <br><br>Based on this information, which of the three theories would you think is the origin of Triton's plumes?
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(58)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-58">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part">Cryovolcanism</div>
+        <div class="explanation">The independence from seasonal variations, water-rich composition, and high temperatures all point to internal geological processes rather than surface-driven mechanisms.</div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); border: 2px solid #ffa000; border-radius: 15px; padding: 20px; margin: 20px 0;">
+        <h3 style="color: #e65100; margin-bottom: 10px;">📊 The Radius Gap</h3>
+        <p><strong>Our Solar System has small, rocky planets (e.g., Earth and Mercury) and large planets with thick, gaseous envelopes (e.g., Jupiter and Neptune), but nothing in between. Outside of our Solar System, however, we know that planets between the size of Earth and Neptune exist. What are these planets like, and how common are they?</strong></p>
+        <p><em>Using the California-Kepler survey, Fulton et al. (2017) find that the radii of these types of planets has a bimodal distribution, leading to a "radius gap" (sometimes called a "radius valley").</em></p>
+    </div>
+
+    <div class="question">
+        <strong>59.</strong> (4 points) What is the difference between the atmospheres of the planets that comprise each of the peaks in the distribution?
+        <br><br>In your answer, refer to the peaks as the "lower peak" (which has a red background) and "higher peak" (which has a light blue background) to prevent any misunderstandings while grading.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(59)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-59">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part"><strong>Lower peak:</strong> rocky cores without significant gaseous atmosphere. <strong>Higher peak:</strong> rocky planets with some gaseous envelope, which significantly inflates the radius of the planet.</div>
+        <div class="explanation">The radius gap reflects the difference between bare rocky cores and planets that retained substantial atmospheres.</div>
+    </div>
+
+    <div class="question">
+        <strong>60.</strong> (4 points) One possible cause of this bimodal distribution is photoevaporation. Briefly explain what photoevaporation is and how it could result in the planet characteristics you mentioned in the previous question.
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(60)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-60">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part">Light from the parent star (e.g., UV, x-ray) hits the atmosphere of a planet, heating up the molecules in it and causing some of them to "escape", slowly stripping the planet of its atmosphere. For some planets, it will strip away essentially all of the atmosphere, leaving behind a rocky core. For other planets, which have slightly stronger gravities, it won't, and the extra gaseous layer (which is not very dense) will lead to a significant increase in the radius of the planet.</div>
+        <div class="explanation">Photoevaporation creates a natural division between planets that can retain atmospheres and those that cannot.</div>
+    </div>
+
+    <div class="question">
+        <strong>61.</strong> (6 points) Ginzburg et al. (2017) proposes an alternate mechanism for the radius gap based on the residual heat of the core of the young planet leading to atmospheric erosion (also known as "core-powered mass loss"). In order to determine which mechanism (photoevaporation or core-powered mass loss) contributes more, they suggested seeing how the radius gap varies with stellar type (i.e., seeing if having a hotter or cooler parent stars effects the radius gap). Theoretically, how would this help astronomers distinguish between the two?
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(61)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-61">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part">Photoevaporation, which is powered by the high-energy radiation, should see a strong dependence on stellar types, given that different types of stars give off different proportions of their energy in high-energy radiation. On the other hand, core-powered atmospheric erosion should be the same as long as the bolometric insolation (i.e. planets' equilibrium temperature) is held constant.</div>
+        <div class="explanation">The stellar dependence would reveal whether external (photoevaporation) or internal (core-powered) processes dominate atmospheric loss.</div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border: 2px solid #9c27b0; border-radius: 15px; padding: 20px; margin: 20px 0;">
+        <h3 style="color: #4a148c; margin-bottom: 10px;">🌍 Planetary Migration</h3>
+        <p><strong>Our Solar System's structure is also unique. All eight planets lie in roughly the same plane and move in the same direction as the spin of our Sun. Furthermore, the four rocky planets are close to the Sun, while the large, gaseous planets are all farther away. This "tidiness" led astronomers centuries ago to think that planets (and planetary systems) stayed roughly the same after the planets first formed.</strong></p>
+        <p><em>Over the past few decades, astronomers have discovered systems that shatter these antiquated theories. Among these are systems that include large planets that orbit very, very close to their parent stars. K2-33b is such a planet.</em></p>
+    </div>
+
+    <div class="question">
+        <strong>62.</strong> (2 points) The radial velocity and transit detection methods are very effective for finding large planets that orbit close to their parent stars. Why is this the case?
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(62)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-62">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part"><strong>RV:</strong> larger radial velocities; <strong>Transit:</strong> higher transit probability and greater transit depth</div>
+        <div class="explanation">Close-in planets produce stronger signals in both detection methods, making them easier to discover.</div>
+    </div>
+
+    <div class="question">
+        <strong>63.</strong> (4 points) Observationally, there are many spectroscopic indicators that K2-33 is a very young system, such as the infrared excess in K2-33's spectral energy distribution (SED). What causes this "infrared excess", and how would it be an indicator that the system is young?
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(63)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-63">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part">Light from the young protostar is absorbed by gas and dust in the envelope and disk around it. The light is then reemitted in the IR. The disk persists longer than the envelope. A system that is older would not have the envelope or disk and would not have the "bump" in the IR in the SED. Protostars with both an envelope and a disk will have larger "bumps" than those with only a disk.</div>
+        <div class="explanation">Infrared excess indicates the presence of circumstellar material that disappears as systems age.</div>
+    </div>
+
+    <div class="question">
+        <strong>64.</strong> (6 points) Determining whether planets like K2-33b formed near their present position (in situ) or formed elsewhere and migrated to their present position is an open question. Conceptually speaking, planet migration mechanisms can be loosely classified into three categories:
+        <br>• interactions with the protoplanetary disk
+        <br>• interactions with a stellar companion and the planet
+        <br>• interactions between multiple planets in the system
+        <br><br>Due to its size, location, and age, what can K2-33b tell us about what is possible in terms of planetary migration? Between forming in-situ and the three migration mechanisms outlined earlier, which one(s) seem(s) plausible for K2-33b?
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(64)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-64">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part">K2-33b shows that it is *possible* for a large planet to be very close to its star at a very young age. Migration involving the protoplanetary disk occurs earlier/faster than migration involving a stellar companion or multiple planets. Based on this information, it probably formed in-situ or migrated inwards using a mechanism involving the protoplanetary disk. This does not mean that *all* planets like K2-33b went through this sort of formation.</div>
+        <div class="explanation">The young age of K2-33b constrains the possible migration mechanisms to those that operate quickly.</div>
+    </div>
+
+    <div class="question">
+        <strong>65.</strong> (4 points) Studying exoplanets has yielded new insight into the formation and early evolution of our Solar System. The earliest investigators focused primarily on whether gravitational interactions within the Solar System could scatter or even eject objects, which would populate the Oort Cloud.
+        <br><br>A planet ejecting an object results in the planet's orbit moving inwards slightly. From an energy conservation perspective, why is this the case? Of the eight planets in the Solar System, which would scatter or eject objects the most efficiently?
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(65)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-65">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part">The planet gives kinetic energy (which is positive) to the object getting ejected. The total energy in the system has to stay constant, so the planet's gravitational potential energy becomes more negative, corresponding with an orbit that is closer to the Sun. More massive planets will not have to move as far inwards when the scatter objects (for a given mass of the object being scattered), so Jupiter would be the planet most efficient for this process.</div>
+        <div class="explanation">Energy conservation requires that when a planet ejects an object, the planet must lose orbital energy and move closer to the Sun.</div>
+    </div>
+
+    <div class="question">
+        <strong>66.</strong> (4 points) Planetary scientists have had difficulty explaining the formation of Neptune via the core accretion process at its current location. In 2005, a series of papers by Rodney Gomes, Hal Levison, Alessandro Morbidelli, and Kleomenis Tsiganis established the first version of the Nice model (named after the French city, where some of the original work was done). In what way(s) does the Nice model potentially address this issue?
+        <br><button class="toggle-answer-btn" onclick="toggleAnswer(66)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-66">
+        <div class="answer-label">Answer:</div>
+        <div class="answer-part">In the Nice model, Neptune formed much closer to the Sun, where the surface density of the disk was higher. This means that Neptune would have had enough time to form. Then, it migrated outwards to its present location. In some versions, Neptune and Uranus even switch places after forming (i.e., Neptune formed closer to the Sun than Uranus, but due to planetary migration, they switched places).</div>
+        <div class="explanation">The Nice model solves Neptune's formation problem by invoking planetary migration from a more favorable formation location.</div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips</h3>
+        <p><strong>Focus on understanding the underlying physics and planetary science concepts rather than just memorizing facts.</strong></p>
+        <p>Pay special attention to:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Planetary formation and evolution processes</li>
+            <li>Exoplanet detection methods and their capabilities</li>
+            <li>Atmospheric composition and evolution</li>
+            <li>Tidal forces and orbital dynamics</li>
+            <li>Spectroscopy and remote sensing techniques</li>
+            <li>Habitability criteria and astrobiology</li>
+            <li>Solar System exploration missions and discoveries</li>
+        </ul>
+        <p><em>This study guide covers comprehensive Solar System science topics for advanced preparation. Good luck with your studies!</em></p>
+    </div>
+
+    <script src="../js/study-guide-common.js"></script>
+
+</body>
+</html>
