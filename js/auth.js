@@ -4,8 +4,10 @@
 // Configuration
 const AUTH_CONFIG = {
     // Credentials (in a real application, these would be on the server)
-    username: 'patilarnavv',
-    password: 'Sn0wba!!',
+    users: {
+        'patilarnavv': 'Sn0wba!!',
+        'patilvijayg': 'Study2024!'
+    },
 
     // Session duration (24 hours in milliseconds)
     sessionDuration: 24 * 60 * 60 * 1000,
@@ -25,7 +27,8 @@ const AUTH_CONFIG = {
  * @returns {boolean} - True if login successful, false otherwise
  */
 function login(username, password) {
-    if (username === AUTH_CONFIG.username && password === AUTH_CONFIG.password) {
+    // Check if username exists and password matches
+    if (AUTH_CONFIG.users[username] && AUTH_CONFIG.users[username] === password) {
         // Store authentication data
         const loginTime = new Date().getTime();
         localStorage.setItem(AUTH_CONFIG.storageKeys.loginTime, loginTime.toString());

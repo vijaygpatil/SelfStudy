@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SolarSystemSelfStudy.iml" filepath="$PROJECT_DIR$/SolarSystemSelfStudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SelfStudy.iml" filepath="$PROJECT_DIR$/SelfStudy.iml" />
     </modules>
   </component>
 </project>
