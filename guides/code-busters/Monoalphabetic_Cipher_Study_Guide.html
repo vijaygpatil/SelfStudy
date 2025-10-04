@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monoalphabetic Cipher Study Guide - Code Busters Preparation</title>
+    <link rel="stylesheet" href="../../css/study-guide-common.css">
+    <link rel="stylesheet" href="../../css/code-busters-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../../code-buster-index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Code Busters Hub
+            </a>
+            <a href="../../index.html" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                🏠 Main Portal
+            </a>
+        </div>
+        <h1>Monoalphabetic Cipher Study Guide</h1>
+        <div class="subtitle">Science Olympiad Code Busters Preparation</div>
+        <div class="subtitle">Master Advanced Substitution Ciphers</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>🔀 Introduction to Monoalphabetic Cipher</h2>
+
+    <div class="key-concepts">
+        <h3>What is a Monoalphabetic Cipher?</h3>
+        <p>A monoalphabetic cipher is a <strong>substitution cipher</strong> where each letter of the plaintext is consistently replaced by exactly one other letter throughout the entire message. Unlike Caesar and Atbash ciphers which follow fixed patterns, monoalphabetic ciphers use completely random letter mappings.</p>
+
+        <div class="cipher-example">
+            <strong>Example Monoalphabetic Mapping:</strong><br>
+            Plaintext:  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+            Ciphertext: Q W E R T Y U I O P A S D F G H J K L Z X C V B N M
+        </div>
+
+        <div class="cipher-comparison">
+            <div class="comparison-column">
+                <div class="comparison-title">Simple Substitution</div>
+                <div class="cipher-example">
+                    Caesar: Fixed shift pattern<br>
+                    Atbash: Fixed reversal pattern<br>
+                    <strong>Monoalphabetic: Random mapping</strong>
+                </div>
+            </div>
+            <div class="comparison-column">
+                <div class="comparison-title">Key Space</div>
+                <div class="cipher-example">
+                    Caesar: 25 possible keys<br>
+                    Atbash: 1 possible key<br>
+                    <strong>Monoalphabetic: 26! ≈ 4×10²⁶ keys</strong>
+                </div>
+            </div>
+        </div>
+
+        <p>The enormous key space makes brute force attacks impossible, but frequency analysis remains the primary weakness.</p>
+    </div>
+
+    <h2>🔤 How Monoalphabetic Cipher Works</h2>
+
+    <div class="process-steps">
+        <div class="concept-title">Encryption Process</div>
+        <div class="process-step">
+            <span class="step-number">1</span>
+            <strong>Create a substitution key:</strong> Assign each letter of the alphabet to a different letter (one-to-one mapping)
+        </div>
+        <div class="process-step">
+            <span class="step-number">2</span>
+            <strong>Apply substitution:</strong> Replace each plaintext letter with its corresponding ciphertext letter
+        </div>
+        <div class="process-step">
+            <span class="step-number">3</span>
+            <strong>Maintain consistency:</strong> The same plaintext letter always becomes the same ciphertext letter
+        </div>
+        <div class="process-step">
+            <span class="step-number">4</span>
+            <strong>Preserve structure:</strong> Spaces, punctuation, and word boundaries typically remain unchanged
+        </div>
+    </div>
+
+    <div class="cipher-example">
+        <strong>Encryption Example:</strong><br>
+        Key: A→Q, B→W, C→E, D→R, E→T, F→Y, G→U, H→I, I→O, J→P, K→A, L→S, M→D, N→F, O→G, P→H, Q→J, R→K, S→L, T→Z, U→X, V→C, W→V, X→B, Y→N, Z→M<br><br>
+        Plaintext:  HELLO WORLD<br>
+        Process:    H→I, E→T, L→S, L→S, O→G, W→V, O→G, R→K, L→S, D→R<br>
+        Ciphertext: ITSSQ VGKSR
+    </div>
+
+    <h2>📚 Theory and Practice Questions</h2>
+
+    <div class="question">
+        <strong>1.</strong> What makes monoalphabetic ciphers more secure than Caesar ciphers?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: Much larger key space - approximately 26! (4×10²⁶) possible keys compared to Caesar's 25</div>
+        <div class="explanation">The enormous number of possible substitution patterns makes brute force attacks computationally impossible.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(1)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-1">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Key Space Analysis</h4>
+                <ul>
+                    <li><strong>Caesar Cipher:</strong> 25 possible shifts (easily brute-forced)</li>
+                    <li><strong>Monoalphabetic:</strong> 26! = 403,291,461,126,605,635,584,000,000 possible keys</li>
+                    <li><strong>Comparison:</strong> Even checking 1 billion keys per second would take longer than the age of the universe</li>
+                </ul>
+
+                <h4>Security Through Complexity</h4>
+                <ul>
+                    <li><strong>Random mapping:</strong> No predictable pattern like Caesar's fixed shift</li>
+                    <li><strong>Unique substitutions:</strong> Each letter maps to exactly one other letter</li>
+                    <li><strong>Historical significance:</strong> Used extensively in diplomatic and military communications</li>
+                </ul>
+
+                <h4>Vulnerability</h4>
+                Despite the large key space, monoalphabetic ciphers remain vulnerable to frequency analysis because they preserve the statistical properties of the original language.
+
+                <div class="reference">
+                    References: Kahn "The Codebreakers"; Modern cryptanalysis techniques
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> What is the primary method used to break monoalphabetic ciphers?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: Frequency analysis - analyzing the frequency of letters, digrams, and trigrams</div>
+        <div class="explanation">Since each letter consistently maps to the same substitute, the frequency patterns of the original language are preserved.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(2)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-2">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Frequency Analysis Techniques</h4>
+                <ul>
+                    <li><strong>Single Letter Frequency:</strong> E, T, A, O, I, N, S, H, R are most common in English</li>
+                    <li><strong>Digram Analysis:</strong> TH, HE, IN, ER, AN are common two-letter combinations</li>
+                    <li><strong>Trigram Analysis:</strong> THE, AND, ING, HER, HAT, HIS are common three-letter combinations</li>
+                </ul>
+
+                <h4>Pattern Recognition</h4>
+                <ul>
+                    <li><strong>Double letters:</strong> LL, SS, EE, OO, TT patterns</li>
+                    <li><strong>Word structure:</strong> Single letters (A, I), common short words (THE, AND, FOR)</li>
+                    <li><strong>Apostrophes:</strong> Contractions like DON'T, CAN'T provide clues</li>
+                </ul>
+
+                <h4>Systematic Approach</h4>
+                <ol>
+                    <li>Count letter frequencies in the ciphertext</li>
+                    <li>Match high-frequency cipher letters to common English letters</li>
+                    <li>Look for patterns and common words</li>
+                    <li>Use context and trial-and-error to refine the mapping</li>
+                </ol>
+
+                <div class="reference">
+                    References: Friedman "Military Cryptanalysis"; Singh "The Code Book"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> In English text, which letter appears most frequently and is often the first to be identified in frequency analysis?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: E (approximately 12.7% of all letters in typical English text)</div>
+        <div class="explanation">The letter E is so common that it's usually the first breakthrough in frequency analysis attacks.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> What is the most common three-letter word in English that cryptanalysts look for first?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: THE</div>
+        <div class="explanation">"THE" appears so frequently that identifying its pattern in ciphertext often provides three letter mappings immediately.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> What mathematical property must a valid monoalphabetic cipher key possess?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: It must be a bijection (one-to-one correspondence) - each plaintext letter maps to exactly one ciphertext letter, and vice versa</div>
+        <div class="explanation">This ensures that encryption is reversible and no information is lost during the substitution process.</div>
+    </div>
+
+    <h2>🧮 Practice Problems</h2>
+    <div class="section-points">10 Problems - Ranging from Simple to Difficult</div>
+
+    <div class="question">
+        <strong>Problem 1 (Easy):</strong> Using the key A→X, B→Y, C→Z, D→A, E→B, encrypt the word "BEAD".
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: YBXA</div>
+        <div class="explanation">B→Y, E→B, A→X, D→A</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 2 (Easy):</strong> You have the partial key: A→F, E→K, T→W, H→Q. Decrypt "WQKFWKH".
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: THEATER</div>
+        <div class="explanation">W→T, Q→H, K→E, F→A, W→T, K→E, H→R (need to deduce R→H from context)</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 3 (Easy):</strong> In the ciphertext "XQV", the most frequent letter in a longer message is V. If this represents E, what does "XQV" likely decrypt to?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: THE (assuming X→T, Q→H, V→E)</div>
+        <div class="explanation">Since "THE" is the most common three-letter word, and V→E is established, this is the most likely decryption.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 4 (Medium):</strong> Decrypt this message using frequency analysis: "WQV JFGZP YHLKM ELN AFBDR LSVH WQV OZNT ALU". (Hint: V appears most frequently)
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</div>
+        <div class="explanation">Start with V→E, identify "WQV" as "THE", then use pattern recognition for common words like "QUICK", "BROWN", "JUMPS".</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 5 (Medium):</strong> You intercept "QVOOL DLHOA". You know it's a greeting. What does it say?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: HELLO WORLD</div>
+        <div class="explanation">Common greeting pattern suggests Q→H, V→E, O→L, L→L, D→W, H→O, A→R, giving the mapping for decryption.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 6 (Medium):</strong> Decrypt: "G OGPV DLHPGMF ZGSQVHD YVZXFDV GQVB ZQXOOVMFV NB NGMA XMA QVOS NV FMAVHDGXMA QLD GMELHNGXGM ZXM YV SHLGVZGVA". Use frequency analysis.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: I LOVE SOLVING CIPHERS BECAUSE THEY CHALLENGE MY MIND AND HELP ME UNDERSTAND HOW INFORMATION CAN BE PROTECTED</div>
+        <div class="explanation">Start with single letter "G" = "I", identify common patterns like "XMA" = "AND", "GQVB" = "THEY", then build the complete substitution key.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 7 (Hard):</strong> Decrypt this message: "WQGD NVDDXFV GD VMZHBSWVA LGWQ X NLMLXOSQXYVWGZ ZGSWVH WQXW FDVD X HXMANL DFYDWGWFWGLM ELH VXZQ OVWWVH LE WQV XOSQXYVW". Look for repeated patterns and common words.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: THIS MESSAGE IS ENCRYPTED WITH A MONOALPHABETIC CIPHER THAT USES A RANDOM SUBSTITUTION FOR EACH LETTER OF THE ALPHABET</div>
+        <div class="explanation">Identify "WQGD" as "THIS", "GD" as "IS", "X" as "A", "WQV" as "THE". Use these anchors to build the complete substitution pattern.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 8 (Hard):</strong> You have this partially solved puzzle: "?HE QU?CK ?RO?N ?OX ?U??S O?ER ?HE ?A?Y ?O?". The question marks represent unknown letters. Complete the decryption using pattern recognition.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</div>
+        <div class="explanation">Use knowledge of common phrases and letter patterns. "QU?CK" must be "QUICK", "?RO?N" is "BROWN", "?U??S" is "JUMPS", etc.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 9 (Very Hard):</strong> Decrypt this longer message using systematic frequency analysis: "YQVHV XHV NXMB AVEEVCVMW WBSVD LE ZGSWVHD FDVA GM ZHBSWLFHXSQB DLNV XHV DGNSO DFYDWGWFWGLM ZGSWVHD OGPV WQV ZXVDXH ZGSWVH LQVHD XHV NLHV ZLNSOVC OGPV WQV SLBXOSQXYVWGZ ZGSWVH VXZQ QXD GWD LM XAVXMWXFVD XMA AGDXAVXMWXFVD ELH YHVXPGMF".
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: THERE ARE MANY DIFFERENT TYPES OF CIPHERS USED IN CRYPTOGRAPHY SOME ARE SIMPLE SUBSTITUTION CIPHERS LIKE THE CAESAR CIPHER OTHERS ARE MORE COMPLEX LIKE THE POLYALPHABETIC CIPHER EACH HAS ITS OWN ADVANTAGES AND DISADVANTAGES FOR BREAKING</div>
+        <div class="explanation">This requires systematic frequency analysis. Start with most frequent letters, identify common words like "XHV" (ARE), "WQV" (THE), "XMA" (AND), then build the complete key through pattern recognition.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 10 (Challenge):</strong> You're given this cryptogram with no hints: "PQVMV XHVMW NXMB WQGMFD WQXW NXPV ZHBSWLFHXSQB EXDZGMXWGMF YFW WQV NLHV BLF OVXHM XYLFW GW WQV NLHV BLF HXOGKV QLQ GNSLHWXMW GW GD GL SHXZWGZV XMXOBKGMF ZGSWVHD XMA SHXZWGZV NXPVD SVHEVZW". Use all cryptanalysis techniques.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: THERE ARENT MANY THINGS THAT MAKE CRYPTOGRAPHY FASCINATING BUT THE MORE YOU LEARN ABOUT IT THE MORE YOU REALIZE HOW IMPORTANT IT IS TO PRACTICE ANALYZING CIPHERS AND PRACTICE MAKES PERFECT</div>
+        <div class="explanation">Advanced cryptanalysis: Count letter frequencies, identify "WQV" as "THE", "XMA" as "AND", "BLF" as "YOU". Use double letters, word patterns, and context to systematically build the substitution key.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="key-concepts">
+        <h2>🔑 Key Concepts Summary</h2>
+
+        <div class="concept-category">
+            <div class="concept-title">Monoalphabetic Cipher Basics</div>
+            <ul>
+                <li><strong>Type:</strong> Substitution cipher with random letter mapping</li>
+                <li><strong>Key:</strong> One-to-one correspondence between alphabets</li>
+                <li><strong>Key Space:</strong> 26! ≈ 4×10²⁶ possible keys</li>
+                <li><strong>Consistency:</strong> Each letter always maps to the same substitute</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Encryption/Decryption Process</div>
+            <ul>
+                <li><strong>Encryption:</strong> Replace each letter using substitution key</li>
+                <li><strong>Decryption:</strong> Reverse the substitution using inverse key</li>
+                <li><strong>Bijection:</strong> Each plaintext letter maps to exactly one ciphertext letter</li>
+                <li><strong>Preservation:</strong> Word boundaries and punctuation usually unchanged</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Frequency Analysis Attack</div>
+            <ul>
+                <li><strong>Letter frequency:</strong> E(12.7%), T(9.1%), A(8.2%), O(7.5%), I(7.0%)</li>
+                <li><strong>Common digrams:</strong> TH, HE, IN, ER, AN, RE, ED, ND, OU, TI</li>
+                <li><strong>Common trigrams:</strong> THE, AND, ING, HER, HAT, HIS, THA, ERE, FOR, ENT</li>
+                <li><strong>Pattern words:</strong> Single letters (A, I), double letters (LL, SS, EE)</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Breaking Techniques</div>
+            <ul>
+                <li><strong>Frequency counting:</strong> Identify most/least common cipher letters</li>
+                <li><strong>Pattern matching:</strong> Look for common word structures</li>
+                <li><strong>Contextual analysis:</strong> Use meaning and grammar clues</li>
+                <li><strong>Trial and error:</strong> Test hypotheses and refine mappings</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Security Analysis</div>
+            <ul>
+                <li><strong>Strengths:</strong> Enormous key space, no obvious patterns</li>
+                <li><strong>Weaknesses:</strong> Preserves language statistics, vulnerable to frequency analysis</li>
+                <li><strong>Historical use:</strong> Diplomatic codes, military communications</li>
+                <li><strong>Modern relevance:</strong> Foundation for understanding cryptanalysis</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Cryptanalysis Strategy</div>
+            <ul>
+                <li><strong>Step 1:</strong> Count letter frequencies in ciphertext</li>
+                <li><strong>Step 2:</strong> Match high-frequency letters to E, T, A, O, I</li>
+                <li><strong>Step 3:</strong> Identify common short words (THE, AND, FOR)</li>
+                <li><strong>Step 4:</strong> Use patterns and context to complete the key</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Advanced Techniques</div>
+            <ul>
+                <li><strong>Index of Coincidence:</strong> Statistical measure of letter distribution</li>
+                <li><strong>Chi-squared test:</strong> Mathematical comparison to expected frequencies</li>
+                <li><strong>Dictionary attacks:</strong> Using common words and phrases</li>
+                <li><strong>Computer assistance:</strong> Automated frequency analysis tools</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips for Monoalphabetic Ciphers</h3>
+        <p><strong>Master frequency analysis - the key to breaking substitution ciphers!</strong></p>
+        <p>Practice strategies:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Memorize English letter frequencies: E-T-A-O-I-N-S-H-R</li>
+            <li>Learn common digrams (TH, HE, IN) and trigrams (THE, AND, ING)</li>
+            <li>Practice identifying word patterns and structures</li>
+            <li>Start with short messages before tackling longer cryptograms</li>
+            <li>Use pencil and paper to track your substitution hypotheses</li>
+            <li>Look for repeated patterns and double letters</li>
+            <li>Consider context and meaning when making substitutions</li>
+            <li>Practice both creating and breaking monoalphabetic ciphers</li>
+        </ul>
+        <p><em>Frequency analysis is your most powerful weapon against substitution ciphers!</em></p>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/study-guide-common.js"></script>
+    <script>
+        // Initialize authentication for this page
+        initAuth();
+    </script>
+
+</body>
+</html>

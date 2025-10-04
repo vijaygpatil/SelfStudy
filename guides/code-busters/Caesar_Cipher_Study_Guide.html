@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher Study Guide - Code Busters Preparation</title>
+    <link rel="stylesheet" href="../../css/study-guide-common.css">
+    <link rel="stylesheet" href="../../css/code-busters-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../../code-buster-index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Code Busters Hub
+            </a>
+            <a href="../../index.html" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                🏠 Main Portal
+            </a>
+        </div>
+        <h1>Caesar Cipher Study Guide</h1>
+        <div class="subtitle">Science Olympiad Code Busters Preparation</div>
+        <div class="subtitle">Master the Classical Shift Cipher</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>🏛️ Introduction to Caesar Cipher</h2>
+
+    <div class="key-concepts">
+        <h3>What is the Caesar Cipher?</h3>
+        <p>The Caesar cipher is one of the simplest and most well-known encryption techniques. It is a type of <strong>substitution cipher</strong> where each letter in the plaintext is shifted a certain number of places down or up the alphabet.</p>
+
+        <div class="cipher-example">
+            <strong>Example with shift of 3:</strong><br>
+            Plaintext:  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+            Ciphertext: D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+        </div>
+
+        <p>Named after Julius Caesar, who reportedly used it with a shift of 3 to protect messages of military significance.</p>
+    </div>
+
+    <h2>🔤 How Caesar Cipher Works</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Encryption Process</div>
+        <ol>
+            <li><strong>Choose a shift value (key):</strong> This is the number of positions each letter will be moved</li>
+            <li><strong>For each letter in the message:</strong> Replace it with the letter that many positions ahead in the alphabet</li>
+            <li><strong>Wrap around:</strong> If you go past Z, continue from A</li>
+            <li><strong>Keep non-letters unchanged:</strong> Spaces, punctuation, and numbers typically remain the same</li>
+        </ol>
+    </div>
+
+    <div class="cipher-example">
+        <strong>Encryption Example (Shift = 5):</strong><br>
+        Plaintext:  HELLO WORLD<br>
+        Process:    H→M, E→J, L→Q, L→Q, O→T, W→B, O→T, R→W, L→Q, D→I<br>
+        Ciphertext: MJQQT BTWQI
+    </div>
+
+    <h2>📚 Theory and Practice Questions</h2>
+
+    <div class="question">
+        <strong>1.</strong> What is the key (shift value) used in the traditional Caesar cipher that Julius Caesar himself used?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: 3</div>
+        <div class="explanation">Julius Caesar used a shift of 3 positions to the right (A→D, B→E, C→F, etc.)</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(1)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-1">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Historical Context</h4>
+                According to the Roman historian Suetonius, Julius Caesar used this cipher for his private correspondence, particularly for military communications. The shift of 3 was likely chosen because it was simple to remember and implement.
+
+                <h4>Why Shift 3?</h4>
+                <ul>
+                    <li><strong>Simplicity:</strong> Easy for Roman soldiers to remember and apply</li>
+                    <li><strong>Security through obscurity:</strong> Most people were illiterate, so any encryption seemed secure</li>
+                    <li><strong>Mathematical significance:</strong> 3 is a small prime number, making mental calculation easier</li>
+                </ul>
+
+                <h4>Modern Perspective</h4>
+                Today, a shift of 3 provides virtually no security, but in Caesar's time, literacy was rare and cryptanalysis hadn't been developed as a science.
+
+                <div class="reference">
+                    References: Suetonius "The Twelve Caesars"; Singh, Simon "The Code Book" (1999)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> How many possible keys (shift values) are there for the Caesar cipher using the English alphabet?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: 25</div>
+        <div class="explanation">There are 25 meaningful shifts (1-25). A shift of 0 leaves the message unchanged, and a shift of 26 is the same as shift 0.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(2)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-2">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Mathematical Analysis</h4>
+                The Caesar cipher operates in modular arithmetic (mod 26 for English alphabet):
+                <ul>
+                    <li><strong>Shift 0:</strong> No encryption (identity function)</li>
+                    <li><strong>Shifts 1-25:</strong> All produce different ciphertexts</li>
+                    <li><strong>Shift 26:</strong> Same as shift 0 (26 ≡ 0 mod 26)</li>
+                </ul>
+
+                <h4>Brute Force Attack</h4>
+                With only 25 possible keys, the Caesar cipher is vulnerable to brute force attacks:
+                <ul>
+                    <li><strong>Manual checking:</strong> A human can test all 25 shifts in minutes</li>
+                    <li><strong>Computer analysis:</strong> All possibilities can be checked instantly</li>
+                    <li><strong>Pattern recognition:</strong> Common words like "THE" help identify correct shift</li>
+                </ul>
+
+                <h4>Security Implications</h4>
+                This small key space makes Caesar cipher unsuitable for modern cryptography, but perfect for educational purposes and puzzle solving.
+
+                <div class="reference">
+                    References: Stinson "Cryptography: Theory and Practice"; Kahn "The Codebreakers"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> What type of cipher is the Caesar cipher classified as?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: Substitution cipher (specifically, a monoalphabetic substitution cipher)</div>
+        <div class="explanation">Each letter is consistently replaced by another letter according to a fixed system. It's also called a shift cipher.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> If the shift value is 13, what special name is given to this Caesar cipher variant?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: ROT13</div>
+        <div class="explanation">ROT13 (rotate by 13 places) is special because applying it twice returns the original text, making encryption and decryption the same operation.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> What is the main weakness of the Caesar cipher that makes it easy to break?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: Small key space (only 25 possible keys) and vulnerability to frequency analysis</div>
+        <div class="explanation">With only 25 possible shifts, all can be tested quickly. Additionally, letter frequency patterns are preserved, making statistical analysis possible.</div>
+    </div>
+
+    <h2>🧮 Practice Problems</h2>
+    <div class="section-points">10 Problems - Ranging from Simple to Difficult</div>
+
+    <div class="question">
+        <strong>Problem 1 (Easy):</strong> Encrypt the word "HELLO" using a Caesar cipher with shift 1.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: IFMMP</div>
+        <div class="explanation">H→I, E→F, L→M, L→M, O→P</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 2 (Easy):</strong> Decrypt the message "FDHVDU" that was encrypted with shift 3.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: CAESAR</div>
+        <div class="explanation">Shift back by 3: F→C, D→A, H→E, V→S, D→A, U→R</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 3 (Easy):</strong> What shift value was used to encrypt "DOG" into "GRJ"?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: 3</div>
+        <div class="explanation">D→G (shift 3), O→R (shift 3), G→J (shift 3)</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 4 (Medium):</strong> Encrypt "MEET AT DAWN" using shift 7.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: TLLA HA KHDU</div>
+        <div class="explanation">M→T, E→L, E→L, T→A, A→H, T→A, D→K, A→H, W→D, N→U</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 5 (Medium):</strong> Decrypt "WKLV LV D WHVW" encrypted with shift 3.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: THIS IS A TEST</div>
+        <div class="explanation">Shift back by 3: W→T, K→H, L→I, V→S, etc.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 6 (Medium):</strong> The message "ROVVY JBEYV" was encrypted using a Caesar cipher. What is the original message and what shift was used?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: HELLO WORLD (shift 10)</div>
+        <div class="explanation">Try different shifts until meaningful words appear. Shift 10: R→H, O→E, V→L, V→L, Y→O, etc.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 7 (Hard):</strong> Decrypt this message: "QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD". Use frequency analysis if needed.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG (shift 23 or -3)</div>
+        <div class="explanation">The three-letter word "QEB" likely represents "THE". Q→T requires shift 23 (or -3). Apply this shift to the entire message.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 8 (Hard):</strong> You intercept the message "DWWDFN DW GDZQ". You know it uses Caesar cipher and suspect it's a military command. What does it say?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: ATTACK AT DAWN (shift 3)</div>
+        <div class="explanation">Military context suggests this might be Caesar's traditional shift of 3. D→A, W→T, W→T, D→A, F→C, N→K, etc.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 9 (Very Hard):</strong> Decrypt: "YMJHFXJWHNUMJWNXFXNRUQJXZGXYNYZYNTSHNUM JWYMFYXMNKYX JFHMQJYYJWGDYMJXFRJFRTZYQJYYJWXFWJWJUQFHJIGDQJYYJWXYMFYFWJYMJXFRJKZWYMJWFBFDNSY MJFQUMFGJY". This is a longer message that will require systematic analysis.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: THE CAESAR CIPHER IS A SIMPLE SUBSTITUTION CIPHER THAT SHIFTS EACH LETTER BY THE SAME AMOUNT LETTERS ARE REPLACED BY LETTERS THAT ARE THE SAME FURTHER AWAY IN THE ALPHABET (shift 21 or -5)</div>
+        <div class="explanation">Look for common patterns like "YMJ" (THE) and "FWJ" (ARE). Once you identify the shift, apply it systematically to the entire message.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 10 (Challenge):</strong> You have this partially decoded message: "S?E ?U?C? ?RO?N ?O? ?U??S O?ER T?E ?A?Y ?O?". The question marks represent letters you haven't decoded yet. The cipher uses shift 10. Complete the decryption.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</div>
+        <div class="explanation">With shift 10: C→S, M→W, E→O, etc. Fill in the missing letters by applying the same shift pattern.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="key-concepts">
+        <h2>🔑 Key Concepts Summary</h2>
+
+        <div class="concept-category">
+            <div class="concept-title">Caesar Cipher Basics</div>
+            <ul>
+                <li><strong>Type:</strong> Monoalphabetic substitution cipher</li>
+                <li><strong>Key:</strong> Single number (shift value) from 1-25</li>
+                <li><strong>Operation:</strong> Each letter shifted by same amount</li>
+                <li><strong>Historical use:</strong> Julius Caesar with shift 3</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Encryption/Decryption Process</div>
+            <ul>
+                <li><strong>Encryption:</strong> Shift each letter forward by key value</li>
+                <li><strong>Decryption:</strong> Shift each letter backward by key value</li>
+                <li><strong>Wrap-around:</strong> Z+1 = A, A-1 = Z</li>
+                <li><strong>Non-letters:</strong> Usually left unchanged</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Breaking Caesar Ciphers</div>
+            <ul>
+                <li><strong>Brute force:</strong> Try all 25 possible shifts</li>
+                <li><strong>Frequency analysis:</strong> Look for common letter patterns</li>
+                <li><strong>Common words:</strong> Identify "THE", "AND", "A", etc.</li>
+                <li><strong>Pattern recognition:</strong> Double letters, word lengths</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Special Cases</div>
+            <ul>
+                <li><strong>ROT13:</strong> Shift 13, encryption = decryption</li>
+                <li><strong>Negative shifts:</strong> Shift -3 = Shift 23</li>
+                <li><strong>Modular arithmetic:</strong> All operations mod 26</li>
+                <li><strong>Case sensitivity:</strong> Usually ignored in basic version</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Mathematical Formula</div>
+            <ul>
+                <li><strong>Encryption:</strong> C = (P + K) mod 26</li>
+                <li><strong>Decryption:</strong> P = (C - K) mod 26</li>
+                <li><strong>Where:</strong> P = plaintext, C = ciphertext, K = key</li>
+                <li><strong>Letter values:</strong> A=0, B=1, C=2, ..., Z=25</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Cryptanalysis Tips</div>
+            <ul>
+                <li><strong>Most common letters:</strong> E, T, A, O, I, N, S, H, R</li>
+                <li><strong>Common words:</strong> THE, AND, FOR, ARE, BUT, NOT</li>
+                <li><strong>Letter patterns:</strong> Double letters (LL, SS, EE, OO)</li>
+                <li><strong>Word structure:</strong> Single letters (A, I), short words</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips for Caesar Cipher</h3>
+        <p><strong>Master the fundamentals before moving to more complex ciphers!</strong></p>
+        <p>Practice strategies:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Memorize the alphabet positions (A=1, B=2, etc.)</li>
+            <li>Practice mental arithmetic for quick shift calculations</li>
+            <li>Learn to recognize common English letter patterns</li>
+            <li>Time yourself on encryption/decryption problems</li>
+            <li>Practice both with and without spaces/punctuation</li>
+            <li>Understand the mathematical foundation (modular arithmetic)</li>
+        </ul>
+        <p><em>The Caesar cipher is your gateway to understanding cryptography. Master it completely!</em></p>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/study-guide-common.js"></script>
+    <script>
+        // Initialize authentication for this page
+        initAuth();
+    </script>
+
+</body>
+</html>

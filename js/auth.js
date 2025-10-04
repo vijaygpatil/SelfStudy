@@ -6,7 +6,8 @@ const AUTH_CONFIG = {
     // Credentials (in a real application, these would be on the server)
     users: {
         'patilarnavv': 'Sn0wba!!',
-        'patilvijayg': 'Study2024!'
+        'patilvijayg': 'Sn0wba!!',
+        'patilneytiriv': 'Sn0wba!!'
     },
 
     // Session duration (24 hours in milliseconds)

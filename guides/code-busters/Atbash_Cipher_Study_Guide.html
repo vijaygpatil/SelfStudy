@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atbash Cipher Study Guide - Code Busters Preparation</title>
+    <link rel="stylesheet" href="../../css/study-guide-common.css">
+    <link rel="stylesheet" href="../../css/code-busters-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../../code-buster-index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Code Busters Hub
+            </a>
+            <a href="../../index.html" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                🏠 Main Portal
+            </a>
+        </div>
+        <h1>Atbash Cipher Study Guide</h1>
+        <div class="subtitle">Science Olympiad Code Busters Preparation</div>
+        <div class="subtitle">Master the Ancient Alphabet Reversal Cipher</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>🔄 Introduction to Atbash Cipher</h2>
+
+    <div class="key-concepts">
+        <h3>What is the Atbash Cipher?</h3>
+        <p>The Atbash cipher is one of the oldest known substitution ciphers, dating back to ancient Hebrew texts. It is a <strong>monoalphabetic substitution cipher</strong> where each letter is replaced by its counterpart from the opposite end of the alphabet.</p>
+
+        <div class="cipher-example">
+            <strong>Atbash Mapping:</strong><br>
+            A ↔ Z, B ↔ Y, C ↔ X, D ↔ W, E ↔ V, F ↔ U, G ↔ T, H ↔ S, I ↔ R, J ↔ Q, K ↔ P, L ↔ O, M ↔ N
+        </div>
+
+        <div class="atbash-mapping">
+            <div class="mapping-cell plain">A</div>
+            <div class="mapping-cell plain">B</div>
+            <div class="mapping-cell plain">C</div>
+            <div class="mapping-cell plain">D</div>
+            <div class="mapping-cell plain">E</div>
+            <div class="mapping-cell plain">F</div>
+            <div class="mapping-cell plain">G</div>
+            <div class="mapping-cell plain">H</div>
+            <div class="mapping-cell plain">I</div>
+            <div class="mapping-cell plain">J</div>
+            <div class="mapping-cell plain">K</div>
+            <div class="mapping-cell plain">L</div>
+            <div class="mapping-cell plain">M</div>
+            <div class="mapping-cell plain">N</div>
+            <div class="mapping-cell plain">O</div>
+            <div class="mapping-cell plain">P</div>
+            <div class="mapping-cell plain">Q</div>
+            <div class="mapping-cell plain">R</div>
+            <div class="mapping-cell plain">S</div>
+            <div class="mapping-cell plain">T</div>
+            <div class="mapping-cell plain">U</div>
+            <div class="mapping-cell plain">V</div>
+            <div class="mapping-cell plain">W</div>
+            <div class="mapping-cell plain">X</div>
+            <div class="mapping-cell plain">Y</div>
+            <div class="mapping-cell plain">Z</div>
+        </div>
+        <div class="atbash-mapping">
+            <div class="mapping-cell cipher">Z</div>
+            <div class="mapping-cell cipher">Y</div>
+            <div class="mapping-cell cipher">X</div>
+            <div class="mapping-cell cipher">W</div>
+            <div class="mapping-cell cipher">V</div>
+            <div class="mapping-cell cipher">U</div>
+            <div class="mapping-cell cipher">T</div>
+            <div class="mapping-cell cipher">S</div>
+            <div class="mapping-cell cipher">R</div>
+            <div class="mapping-cell cipher">Q</div>
+            <div class="mapping-cell cipher">P</div>
+            <div class="mapping-cell cipher">O</div>
+            <div class="mapping-cell cipher">N</div>
+            <div class="mapping-cell cipher">M</div>
+            <div class="mapping-cell cipher">L</div>
+            <div class="mapping-cell cipher">K</div>
+            <div class="mapping-cell cipher">J</div>
+            <div class="mapping-cell cipher">I</div>
+            <div class="mapping-cell cipher">H</div>
+            <div class="mapping-cell cipher">G</div>
+            <div class="mapping-cell cipher">F</div>
+            <div class="mapping-cell cipher">E</div>
+            <div class="mapping-cell cipher">D</div>
+            <div class="mapping-cell cipher">C</div>
+            <div class="mapping-cell cipher">B</div>
+            <div class="mapping-cell cipher">A</div>
+        </div>
+
+        <p>The name "Atbash" comes from the first, second, last, and second-to-last letters of the Hebrew alphabet: <strong>Aleph-Tav-Beth-Shin</strong> (אתבש).</p>
+    </div>
+
+    <h2>🔤 How Atbash Cipher Works</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Encryption/Decryption Process</div>
+        <ol>
+            <li><strong>Identify the letter's position:</strong> Find where the letter appears in the alphabet (A=1, B=2, etc.)</li>
+            <li><strong>Find its mirror position:</strong> The corresponding letter is at position (27 - original position)</li>
+            <li><strong>Replace the letter:</strong> Substitute with the mirror letter</li>
+            <li><strong>Repeat for all letters:</strong> Apply the same process to every letter in the message</li>
+        </ol>
+    </div>
+
+    <div class="cipher-example">
+        <strong>Encryption Example:</strong><br>
+        Plaintext:  HELLO WORLD<br>
+        Process:    H→S, E→V, L→O, L→O, O→L, W→D, O→L, R→I, L→O, D→W<br>
+        Ciphertext: SVOOL DLIOW
+    </div>
+
+    <div class="cipher-example">
+        <strong>Key Property:</strong> Atbash is its own inverse!<br>
+        Encrypting "SVOOL DLIOW" gives back "HELLO WORLD"<br>
+        This means encryption and decryption use the exact same process.
+    </div>
+
+    <h2>📚 Theory and Practice Questions</h2>
+
+    <div class="question">
+        <strong>1.</strong> What makes the Atbash cipher unique compared to other substitution ciphers?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: It is its own inverse - encryption and decryption use the same process</div>
+        <div class="explanation">Unlike Caesar cipher where you need to reverse the shift, Atbash encryption and decryption are identical operations.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(1)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-1">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Mathematical Property</h4>
+                The Atbash cipher is mathematically described as f(f(x)) = x, making it an involution. This means:
+                <ul>
+                    <li><strong>Self-inverse:</strong> Applying Atbash twice returns the original text</li>
+                    <li><strong>Symmetric:</strong> If A maps to Z, then Z maps to A</li>
+                    <li><strong>No key needed:</strong> The mapping is fixed and universal</li>
+                </ul>
+
+                <h4>Historical Significance</h4>
+                This property made Atbash particularly useful in ancient times:
+                <ul>
+                    <li><strong>Simplicity:</strong> No need to remember different processes for encoding/decoding</li>
+                    <li><strong>Error reduction:</strong> Same operation reduces chance of mistakes</li>
+                    <li><strong>Teaching:</strong> Easy to learn and remember</li>
+                </ul>
+
+                <h4>Modern Applications</h4>
+                The involution property is still valuable in modern cryptography for certain specialized applications.
+
+                <div class="reference">
+                    References: Kahn "The Codebreakers"; Biblical cryptography studies
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> In which ancient texts was the Atbash cipher historically used?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: Hebrew Bible (Old Testament), particularly in the books of Jeremiah and Ezekiel</div>
+        <div class="explanation">Examples include "Sheshach" for "Babel" (Babylon) in Jeremiah 25:26 and 51:41.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(2)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-2">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Biblical Examples</h4>
+                <ul>
+                    <li><strong>Jeremiah 25:26:</strong> "Sheshach" (ששך) = "Babel" (בבל)</li>
+                    <li><strong>Jeremiah 51:1:</strong> "Leb Kamai" (לב קמי) = "Kasdim" (כשדים) = Chaldeans</li>
+                    <li><strong>Jeremiah 51:41:</strong> Another reference to Babylon using Atbash</li>
+                </ul>
+
+                <h4>Purpose in Biblical Context</h4>
+                <ul>
+                    <li><strong>Political safety:</strong> Disguised references to enemy nations</li>
+                    <li><strong>Literary device:</strong> Added mystical or prophetic elements</li>
+                    <li><strong>Preservation:</strong> Protected sensitive information during transmission</li>
+                </ul>
+
+                <h4>Hebrew Alphabet Application</h4>
+                The original Hebrew Atbash: א↔ת, ב↔ש, ג↔ר, ד↔ק, etc.
+                <div class="hebrew-example">
+                    Hebrew: בבל → ששך (Babel → Sheshach)
+                </div>
+
+                <div class="reference">
+                    References: Biblical archaeology studies; Hebrew linguistic analysis
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> What is the mathematical formula for Atbash cipher in the English alphabet?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: If A=0, B=1, ..., Z=25, then Atbash(x) = 25 - x</div>
+        <div class="explanation">For any letter at position x, its Atbash equivalent is at position (25 - x). This works for both encryption and decryption.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> Which letters remain unchanged when encrypted with Atbash cipher?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: M and N</div>
+        <div class="explanation">M (13th letter) maps to N (14th letter), and N maps to M. They are the middle letters of the alphabet and swap with each other.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> How can you quickly identify if a message might be encrypted with Atbash?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: Look for high frequency of letters from the end of the alphabet (Z, Y, X, W, V) and low frequency of common letters (E, T, A, O)</div>
+        <div class="explanation">Since common letters like E become V, T becomes G, etc., the frequency distribution is reversed compared to normal English.</div>
+    </div>
+
+    <h2>🧮 Practice Problems</h2>
+    <div class="section-points">10 Problems - Ranging from Simple to Difficult</div>
+
+    <div class="question">
+        <strong>Problem 1 (Easy):</strong> Encrypt the word "CAT" using Atbash cipher.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: XZG</div>
+        <div class="explanation">C→X, A→Z, T→G</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 2 (Easy):</strong> Decrypt the Atbash message "WLNT".
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: DOGS</div>
+        <div class="explanation">W→D, L→O, N→G, T→S (Remember: Atbash decryption uses the same process as encryption)</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 3 (Easy):</strong> What does "NZGS" decrypt to in Atbash?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: MATH</div>
+        <div class="explanation">N→M, Z→A, G→T, S→H</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 4 (Medium):</strong> Encrypt "HELLO WORLD" using Atbash cipher.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: SVOOL DLIOW</div>
+        <div class="explanation">H→S, E→V, L→O, L→O, O→L, W→D, O→L, R→I, L→O, D→W</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 5 (Medium):</strong> Decrypt "GSV JFRXP YILDM ULC" encrypted with Atbash.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: THE QUICK BROWN FOX</div>
+        <div class="explanation">G→T, S→H, V→E, J→Q, F→U, R→I, X→C, P→K, etc.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 6 (Medium):</strong> The message "XIBV RH Z HVXIVG" was encrypted using Atbash. What is the original message?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: THIS IS A SECRET</div>
+        <div class="explanation">Apply Atbash mapping: X→T, I→H, B→I, V→S, R→I, H→S, Z→A, S→H, V→E, X→C, I→R, V→E, G→T</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 7 (Hard):</strong> Decrypt this longer Atbash message: "GSV ZGYZHS XRKSVI RH ZM ZMXRVMG SVYIVD HFYHGRGFGRLM XRKSVI GSZG IVEVIHVH GSV ZOKSZYVG"
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: THE ATBASH CIPHER IS AN ANCIENT HEBREW SUBSTITUTION CIPHER THAT REVERSES THE ALPHABET</div>
+        <div class="explanation">Apply Atbash systematically to each letter. Remember that spaces and punctuation typically remain unchanged.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 8 (Hard):</strong> You intercept the message "NVVG ZG NRWMRTSG". You suspect it's Atbash. What does it say?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: MEET AT MIDNIGHT</div>
+        <div class="explanation">N→M, V→E, V→E, G→T, Z→A, G→T, N→M, R→I, W→D, M→N, R→I, T→G, S→H, G→T</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 9 (Very Hard):</strong> Decrypt: "R ZN Z HGFWVMG LU XIBKGLTIZKSB ZMW R OLEV HLOERMT XRKSVIH YVXZFHV GSVB XSZOOVATV NB NRMW ZMW SVOK NV FMWVIHGZMW SLD RMULNZGRLM XZM YV KILGVXGVW ZMW SROWWVM"
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: I AM A STUDENT OF CRYPTOGRAPHY AND I LOVE SOLVING CIPHERS BECAUSE THEY CHALLENGE MY MIND AND HELP ME UNDERSTAND HOW INFORMATION CAN BE PROTECTED AND HIDDEN</div>
+        <div class="explanation">This is a longer text requiring systematic application of Atbash. Work through each letter methodically, maintaining word boundaries.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 10 (Challenge):</strong> You have this partially decoded Atbash message: "?HV ?U?C? ?RO?N ?O? ?U??S O?ER T?E ?A?Y ?O?". The question marks represent letters you haven't decoded yet. Complete the decryption.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</div>
+        <div class="explanation">Apply Atbash to fill in missing letters: ?→T, ?→H, ?→E, ?→Q, ?→U, ?→I, ?→C, ?→K, etc. The pattern should become clear as you decode.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="key-concepts">
+        <h2>🔑 Key Concepts Summary</h2>
+
+        <div class="concept-category">
+            <div class="concept-title">Atbash Cipher Basics</div>
+            <ul>
+                <li><strong>Type:</strong> Monoalphabetic substitution cipher</li>
+                <li><strong>Key:</strong> No key needed - fixed alphabet reversal</li>
+                <li><strong>Operation:</strong> Each letter maps to its mirror position</li>
+                <li><strong>Historical use:</strong> Ancient Hebrew texts, biblical references</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Encryption/Decryption Process</div>
+            <ul>
+                <li><strong>Mapping:</strong> A↔Z, B↔Y, C↔X, ..., M↔N</li>
+                <li><strong>Formula:</strong> Position(new) = 25 - Position(old)</li>
+                <li><strong>Self-inverse:</strong> Encryption = Decryption</li>
+                <li><strong>Preservation:</strong> Spaces and punctuation usually unchanged</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Identifying Atbash Ciphers</div>
+            <ul>
+                <li><strong>Letter frequency:</strong> High frequency of Z, Y, X, W, V</li>
+                <li><strong>Common words:</strong> "THE" becomes "GSV", "AND" becomes "ZMW"</li>
+                <li><strong>Pattern recognition:</strong> Reversed frequency distribution</li>
+                <li><strong>Double letters:</strong> "LL" becomes "OO", "SS" becomes "HH"</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Special Properties</div>
+            <ul>
+                <li><strong>Fixed letters:</strong> M and N swap with each other</li>
+                <li><strong>Symmetry:</strong> If X→Y, then Y→X</li>
+                <li><strong>No key space:</strong> Only one possible Atbash mapping</li>
+                <li><strong>Easy recognition:</strong> Distinctive frequency pattern</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Mathematical Properties</div>
+            <ul>
+                <li><strong>Involution:</strong> f(f(x)) = x</li>
+                <li><strong>Linear mapping:</strong> y = 25 - x (mod 26)</li>
+                <li><strong>Bijection:</strong> One-to-one correspondence</li>
+                <li><strong>Order 2:</strong> Applying twice returns original</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Breaking Atbash Ciphers</div>
+            <ul>
+                <li><strong>Frequency analysis:</strong> Look for reversed letter frequencies</li>
+                <li><strong>Common words:</strong> Identify "GSV" (THE), "ZMW" (AND)</li>
+                <li><strong>Pattern matching:</strong> Double letters, word lengths</li>
+                <li><strong>Trial decryption:</strong> Apply Atbash and check for meaningful text</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Historical Context</div>
+            <ul>
+                <li><strong>Origin:</strong> Ancient Hebrew scribes</li>
+                <li><strong>Biblical use:</strong> Books of Jeremiah and Ezekiel</li>
+                <li><strong>Purpose:</strong> Disguise sensitive political references</li>
+                <li><strong>Name origin:</strong> Hebrew letters Aleph-Tav-Beth-Shin</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips for Atbash Cipher</h3>
+        <p><strong>Master the alphabet reversal pattern!</strong></p>
+        <p>Practice strategies:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Memorize the A↔Z, B↔Y, C↔X pattern</li>
+            <li>Practice quick mental mapping of common letters</li>
+            <li>Learn to recognize reversed frequency patterns</li>
+            <li>Identify common Atbash words: GSV (THE), ZMW (AND), LU (OF)</li>
+            <li>Remember that M and N swap with each other</li>
+            <li>Practice with both short words and longer passages</li>
+            <li>Understand the historical and biblical context</li>
+        </ul>
+        <p><em>The Atbash cipher's simplicity makes it perfect for quick recognition and solving!</em></p>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/study-guide-common.js"></script>
+    <script>
+        // Initialize authentication for this page
+        initAuth();
+    </script>
+
+</body>
+</html>
