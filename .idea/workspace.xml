@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a7d7917-cf0f-45cc-864b-f548877b340d" name="Changes" comment="">
+    <list default="true" id="0a7d7917-cf0f-45cc-864b-f548877b340d" name="Changes" comment="Add Affine Cipher and Aristocrat Cipher study guides for Code Busters preparation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-buster-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/code-buster-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guides/Solar_System_Study_Guide.html" beforeDir="false" afterPath="$PROJECT_DIR$/guides/Solar_System_Study_Guide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,22 +28,26 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26574.91" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26574.91" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>
@@ -60,10 +65,26 @@
       <workItem from="1759539197926" duration="6038000" />
       <workItem from="1759547386885" duration="1045000" />
       <workItem from="1759848243187" duration="33000" />
+      <workItem from="1760976655142" duration="238000" />
+      <workItem from="1760977316807" duration="4119000" />
+      <workItem from="1760993349833" duration="349000" />
     </task>
+    <task id="LOCAL-00001" summary="Add Affine Cipher and Aristocrat Cipher study guides for Code Busters preparation">
+      <option name="closed" value="true" />
+      <created>1760976758080</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760976758080</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Affine Cipher and Aristocrat Cipher study guides for Code Busters preparation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Affine Cipher and Aristocrat Cipher study guides for Code Busters preparation" />
   </component>
 </project>

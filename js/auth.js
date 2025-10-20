@@ -1,5 +1,5 @@
 // Authentication system for Solar System Self Study
-// Simple client-side authentication with 24-hour expiration
+// Simple client-side authentication with 1-hour expiration
 
 // Configuration
 const AUTH_CONFIG = {
@@ -7,11 +7,12 @@ const AUTH_CONFIG = {
     users: {
         'patilarnavv': 'Sn0wba!!',
         'patilvijayg': 'Sn0wba!!',
-        'patilneytiriv': 'Sn0wba!!'
+        'patilneytiriv': 'Sn0wba!!',
+        'scioly': 'scioly2026'
     },
 
-    // Session duration (24 hours in milliseconds)
-    sessionDuration: 24 * 60 * 60 * 1000,
+    // Session duration (1 hour in milliseconds)
+    sessionDuration: 1 * 60 * 60 * 1000,
 
     // Storage keys
     storageKeys: {
@@ -60,7 +61,7 @@ function isLoggedIn() {
     const currentTime = new Date().getTime();
     const timeDifference = currentTime - loginTime;
 
-    // Check if session has expired (24 hours)
+    // Check if session has expired (1 hour)
     if (timeDifference > AUTH_CONFIG.sessionDuration) {
         console.log('Session expired, logging out');
         logout();
@@ -250,9 +251,19 @@ function initAuth() {
 
     // Add logout button when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => addLogoutButton());
+        document.addEventListener('DOMContentLoaded', () => {
+            addLogoutButton();
+            // Initialize study tracker if available
+            if (typeof initStudyTracker === 'function') {
+                initStudyTracker();
+            }
+        });
     } else {
         addLogoutButton();
+        // Initialize study tracker if available
+        if (typeof initStudyTracker === 'function') {
+            initStudyTracker();
+        }
     }
 
     console.log('Authentication initialized for user:', getCurrentUser());
