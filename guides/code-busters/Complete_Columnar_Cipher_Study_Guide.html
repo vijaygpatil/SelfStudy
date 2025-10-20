@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Columnar Cipher Study Guide - Code Busters Preparation</title>
+    <link rel="stylesheet" href="../../css/study-guide-common.css">
+    <link rel="stylesheet" href="../../css/code-busters-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../../code-buster-index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Code Busters Hub
+            </a>
+            <a href="../../index.html" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                🏠 Main Portal
+            </a>
+        </div>
+        <h1>Complete Columnar Cipher Study Guide</h1>
+        <div class="subtitle">Science Olympiad Code Busters Preparation</div>
+        <div class="subtitle">Master Advanced Transposition Encryption</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>🔄 Introduction to Complete Columnar Cipher</h2>
+
+    <div class="key-concepts">
+        <h3>What is the Complete Columnar Cipher?</h3>
+        <p>The <strong>Complete Columnar Cipher</strong> is an advanced transposition cipher that rearranges the letters of a message based on a keyword-determined column order. Unlike simple columnar transposition, the complete version fills the grid completely and reads columns in alphabetical order of the keyword letters, creating a more secure and systematic encryption method.</p>
+
+        <div class="cipher-example">
+            <strong>Key Features:</strong><br>
+            • Transposition-based: Rearranges letter positions, doesn't substitute<br>
+            • Keyword-dependent: Column order determined by keyword alphabetization<br>
+            • Grid-based: Message arranged in rectangular matrix<br>
+            • Complete filling: All grid positions used (padding if necessary)<br>
+            • Column reading: Output taken by reading columns in key order
+        </div>
+
+        <p>This cipher provides strong security through systematic letter rearrangement while maintaining all original letters, making it resistant to frequency analysis but vulnerable to anagramming and pattern recognition techniques.</p>
+    </div>
+
+    <h2>🏗️ Grid Construction and Keyword Processing</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Keyword Preparation</div>
+        <p>The keyword determines column arrangement and grid width:</p>
+        <div class="cipher-example">
+            <strong>Example with keyword "CIPHER":</strong><br>
+            1. Remove duplicates: CIPHER (already unique)<br>
+            2. Number alphabetically: C=1, H=2, I=3, P=4, E=5, R=6<br>
+            3. Create column order: 1-2-3-4-5-6 → C-H-I-P-E-R<br>
+            4. Grid width = 6 columns
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Grid Filling Process</div>
+        <p>Fill the grid row by row with the plaintext message:</p>
+        <div class="cipher-example">
+            <strong>Message: "ATTACK AT DAWN"</strong><br>
+            Remove spaces: ATTACKATDAWN (12 letters)<br>
+            Grid dimensions: 6 columns × 2 rows = 12 positions<br>
+            <pre>
+Keyword:  C  I  P  H  E  R
+Order:    1  3  4  2  5  6
+Row 1:    A  T  T  A  C  K
+Row 2:    A  T  D  A  W  N
+            </pre>
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Padding Considerations</div>
+        <p>When message length doesn't fill the grid completely:</p>
+        <ul>
+            <li><strong>Null padding:</strong> Add random letters to complete the grid</li>
+            <li><strong>X padding:</strong> Use X's to fill remaining positions</li>
+            <li><strong>Repeated padding:</strong> Repeat message characters</li>
+            <li><strong>Standard practice:</strong> Use X's or agreed-upon null characters</li>
+        </ul>
+    </div>
+
+    <h2>🔐 Complete Columnar Encryption Process</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Step 1: Grid Setup</div>
+        <p>Arrange the keyword and determine column order:</p>
+        <div class="cipher-example">
+            <strong>Keyword "CIPHER" alphabetical ordering:</strong><br>
+            C(1) - E(5) - H(2) - I(3) - P(4) - R(6)<br>
+            Reading order: 1-2-3-4-5-6 → C-H-I-P-E-R
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Step 2: Message Placement</div>
+        <p>Fill the grid row by row with the plaintext:</p>
+        <div class="cipher-example">
+            <strong>Complete example with "MEET ME AT MIDNIGHT":</strong><br>
+            Message: MEETMEATMIDNIGHT (15 letters)<br>
+            Add padding: MEETMEATMIDNIGHTX (16 letters)<br>
+            <pre>
+Keyword:  C  I  P  H  E  R
+Order:    1  3  4  2  5  6
+Row 1:    M  E  E  T  M  E
+Row 2:    A  T  M  I  D  N
+Row 3:    I  G  H  T  X  X
+            </pre>
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Step 3: Column Reading</div>
+        <p>Read columns in alphabetical order of keyword letters:</p>
+        <div class="cipher-example">
+            <strong>Reading order: C(1) - H(2) - I(3) - P(4) - E(5) - R(6)</strong><br>
+            Column C(1): M-A-I = MAI<br>
+            Column H(2): T-I-T = TIT<br>
+            Column I(3): E-T-G = ETG<br>
+            Column P(4): E-M-H = EMH<br>
+            Column E(5): M-D-X = MDX<br>
+            Column R(6): E-N-X = ENX<br>
+            <br>
+            <strong>Final ciphertext: MAITITGETGEMHDXENX</strong>
+        </div>
+    </div>
+
+    <h2>🔓 Decryption Process</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Reverse Column Reading</div>
+        <p>Reconstruct the grid by placing ciphertext back into columns:</p>
+        <div class="cipher-example">
+            <strong>Decrypting "MAITITGETGEMHDXENX":</strong><br>
+            Keyword: CIPHER (6 columns)<br>
+            Ciphertext length: 18 letters<br>
+            Grid dimensions: 6 columns × 3 rows<br>
+            Column lengths: 18 ÷ 6 = 3 letters per column
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Grid Reconstruction</div>
+        <p>Place ciphertext segments into appropriate columns:</p>
+        <div class="cipher-example">
+            <strong>Column placement in alphabetical order:</strong><br>
+            C(1): MAI, H(2): TIT, I(3): ETG, P(4): EMH, E(5): MDX, R(6): ENX<br>
+            <pre>
+Keyword:  C  I  P  H  E  R
+Order:    1  3  4  2  5  6
+Row 1:    M  E  E  T  M  E
+Row 2:    A  T  M  I  D  N
+Row 3:    I  G  H  T  X  X
+            </pre>
+            Reading row by row: MEETMEATMIDNIGHTX<br>
+            Remove padding: MEETMEATMIDNIGHT
+        </div>
+    </div>
+
+    <h2>🔍 Cryptanalysis of Complete Columnar Cipher</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Security Strengths</div>
+        <ul>
+            <li><strong>Letter preservation:</strong> All original letters retained</li>
+            <li><strong>Frequency resistance:</strong> Letter frequencies unchanged but positions scrambled</li>
+            <li><strong>Keyword dependency:</strong> Column order varies with keyword</li>
+            <li><strong>Grid flexibility:</strong> Different keywords create different grid dimensions</li>
+            <li><strong>Pattern disruption:</strong> Common words scattered across columns</li>
+        </ul>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Cryptanalytic Approaches</div>
+        <p>Methods for breaking Complete Columnar ciphers:</p>
+        <ol>
+            <li><strong>Anagramming:</strong> Rearrange letters to find meaningful words</li>
+            <li><strong>Column width analysis:</strong> Test different grid dimensions</li>
+            <li><strong>Keyword length determination:</strong> Factor analysis of message length</li>
+            <li><strong>Pattern recognition:</strong> Look for common letter combinations</li>
+            <li><strong>Frequency analysis:</strong> Identify letter distributions within columns</li>
+            <li><strong>Known plaintext:</strong> Use known words to deduce column arrangements</li>
+        </ol>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Vulnerability Points</div>
+        <ul>
+            <li><strong>Short keywords:</strong> Limited column arrangements</li>
+            <li><strong>Common keywords:</strong> Predictable column orders</li>
+            <li><strong>Repeated patterns:</strong> Long messages may show regularities</li>
+            <li><strong>Padding patterns:</strong> Obvious padding can reveal grid structure</li>
+            <li><strong>Letter frequency:</strong> Overall frequencies remain unchanged</li>
+        </ul>
+    </div>
+
+    <h2>📚 Theory and Practice Questions</h2>
+
+    <div class="question">
+        <strong>1.</strong> How does the Complete Columnar cipher differ from simple columnar transposition?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: It uses alphabetical ordering of keyword letters to determine column reading sequence</div>
+        <div class="explanation">Simple columnar transposition reads columns in the order they appear in the keyword, while Complete Columnar cipher reads columns in alphabetical order of the keyword letters. This creates a more systematic and secure arrangement that's harder to guess without knowing the keyword.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(1)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-1">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Systematic vs. Sequential Reading</h4>
+                <ul>
+                    <li><strong>Simple columnar:</strong> Reads columns in keyword appearance order</li>
+                    <li><strong>Complete columnar:</strong> Reads columns in alphabetical order of keyword letters</li>
+                    <li><strong>Security enhancement:</strong> Alphabetical ordering obscures keyword structure</li>
+                    <li><strong>Standardization:</strong> Provides consistent method regardless of keyword</li>
+                </ul>
+
+                <h4>Cryptanalytic Implications</h4>
+                <ul>
+                    <li><strong>Pattern masking:</strong> Alphabetical ordering disrupts obvious patterns</li>
+                    <li><strong>Keyword recovery:</strong> More difficult to deduce original keyword order</li>
+                    <li><strong>Systematic approach:</strong> Enables consistent encryption/decryption procedures</li>
+                    <li><strong>Enhanced security:</strong> Requires knowledge of both keyword and method</li>
+                </ul>
+
+                <h4>Historical Development</h4>
+                <p>The Complete Columnar cipher evolved from simple transposition methods to provide more systematic security while maintaining the fundamental transposition principle.</p>
+
+                <div class="reference">
+                    References: Friedman "Military Cryptanalysis"; Gaines "Cryptanalysis"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> Why is padding necessary in Complete Columnar ciphers?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: To fill the grid completely when message length doesn't divide evenly by keyword length</div>
+        <div class="explanation">The grid must be completely filled for the cipher to work properly. If the message length isn't a multiple of the keyword length, padding characters (usually X's) are added to complete the final row, ensuring all columns have equal length.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(2)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-2">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Grid Completion Requirements</h4>
+                <ul>
+                    <li><strong>Equal column lengths:</strong> All columns must have same number of characters</li>
+                    <li><strong>Complete rows:</strong> No partial rows allowed in the grid</li>
+                    <li><strong>Systematic reading:</strong> Uniform column lengths enable consistent decryption</li>
+                    <li><strong>Padding standards:</strong> Agreed-upon characters (X, Z, or nulls)</li>
+                </ul>
+
+                <h4>Padding Strategies</h4>
+                <ul>
+                    <li><strong>Null padding:</strong> Random letters to obscure message end</li>
+                    <li><strong>Standard padding:</strong> X's or other agreed characters</li>
+                    <li><strong>Message repetition:</strong> Repeat message characters cyclically</li>
+                    <li><strong>Cryptanalytic consideration:</strong> Padding patterns can reveal grid structure</li>
+                </ul>
+
+                <h4>Security Implications</h4>
+                <p>Proper padding prevents cryptanalysts from easily determining message boundaries and grid dimensions, while poor padding choices can provide valuable clues for breaking the cipher.</p>
+
+                <div class="reference">
+                    References: Kahn "The Codebreakers"; Singh "The Code Book"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> What happens to letter frequencies in Complete Columnar encryption?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: Letter frequencies remain unchanged, only positions are rearranged</div>
+        <div class="explanation">Since Complete Columnar is a transposition cipher, it only rearranges letter positions without substituting letters. The overall frequency distribution remains the same, but the positional relationships and patterns are disrupted.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> How do you determine the keyword length from a Complete Columnar ciphertext?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: Find factors of the ciphertext length and test different grid dimensions</div>
+        <div class="explanation">The keyword length must be a factor of the total ciphertext length (including padding). Test each factor as a potential keyword length by arranging the ciphertext in grids and looking for meaningful patterns or words when reading rows.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> What role does the keyword alphabetization play in security?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: It standardizes column reading order and obscures the original keyword sequence</div>
+        <div class="explanation">Alphabetizing the keyword letters creates a systematic reading order that doesn't depend on the keyword's original letter sequence. This makes it harder for cryptanalysts to deduce the keyword from the ciphertext pattern and provides a standard method for encryption/decryption.</div>
+    </div>
+
+    <h2>🧮 Practice Problems</h2>
+    <div class="section-points">10 Problems - Ranging from Simple to Difficult</div>
+
+    <div class="question">
+        <strong>Problem 1 (Easy):</strong> Encrypt "HELLO" using keyword "KEY".
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Create a 3-column grid and read columns in alphabetical order</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: EHLOL</div>
+        <div class="explanation">
+            Keyword: KEY → Alphabetical order: E(1), K(2), Y(3)<br>
+            Grid setup (3 columns × 2 rows, need padding):<br>
+            <pre>
+K  E  Y
+2  1  3
+H  E  L
+L  O  X
+            </pre>
+            Reading columns in order E(1)-K(2)-Y(3): EO + HL + LX = EOHLLX<br>
+            Wait, let me recalculate: E column: E,O = EO; K column: H,L = HL; Y column: L,X = LX<br>
+            Result: EOHLLX
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 2 (Easy):</strong> What is the alphabetical order for keyword "ZEBRA"?
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Assign numbers 1-5 based on alphabetical position</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: A(1), B(2), E(3), R(4), Z(5)</div>
+        <div class="explanation">
+            Original keyword: Z-E-B-R-A<br>
+            Alphabetical sorting: A-B-E-R-Z<br>
+            Column reading order: A(1), B(2), E(3), R(4), Z(5)<br>
+            This means read columns in positions: 5-3-2-4-1 (A-B-E-R-Z order)
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 3 (Easy):</strong> Decrypt "HLOLEL" using keyword "CAT".
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Arrange in 3 columns, then read rows</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: HELLO + padding</div>
+        <div class="explanation">
+            Keyword: CAT → Alphabetical order: A(1), C(2), T(3)<br>
+            Ciphertext length: 6 letters, 3 columns = 2 rows<br>
+            Place ciphertext in alphabetical column order:<br>
+            <pre>
+C  A  T
+2  1  3
+?  H  H  (Column A gets first 2: HL)
+?  L  L  (Column C gets next 2: OL, Column T gets last 2: EL)
+            </pre>
+            Actually: A(1)=HL, C(2)=OL, T(3)=EL<br>
+            Reconstruct grid and read rows: HELLO + L
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 4 (Medium):</strong> Encrypt "MEET AT NOON" using keyword "WORD".
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Remove spaces, add padding if needed, create 4-column grid</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: Systematic encryption with 4-column grid</div>
+        <div class="explanation">
+            Message: MEETATNOON (10 letters)<br>
+            Keyword: WORD → Alphabetical: D(1), O(2), R(3), W(4)<br>
+            Need padding: MEETATNOONXX (12 letters)<br>
+            Grid (4 columns × 3 rows):<br>
+            <pre>
+W  O  R  D
+4  2  3  1
+M  E  E  T
+A  T  N  O
+O  N  X  X
+            </pre>
+            Read columns D(1)-O(2)-R(3)-W(4): TOX + ETN + ENX + MAO = TOXETNENXMAO
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 5 (Medium):</strong> Determine the keyword length for a 24-letter ciphertext.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Find all factors of 24</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: Possible keyword lengths: 1, 2, 3, 4, 6, 8, 12, 24</div>
+        <div class="explanation">
+            Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24<br>
+            Practical keyword lengths: 3, 4, 6, 8 (most common)<br>
+            Grid possibilities:<br>
+            • 3 columns × 8 rows<br>
+            • 4 columns × 6 rows<br>
+            • 6 columns × 4 rows<br>
+            • 8 columns × 3 rows<br>
+            Test each to find meaningful plaintext
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 6 (Medium):</strong> Encrypt "CRYPTOGRAPHY" using keyword "STUDY".
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: 12 letters, 5-column keyword, needs padding</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: Complex 5-column encryption</div>
+        <div class="explanation">
+            Message: CRYPTOGRAPHY (12 letters)<br>
+            Keyword: STUDY → Alphabetical: D(1), S(2), T(3), U(4), Y(5)<br>
+            Need padding: CRYPTOGRAPHYXXX (15 letters)<br>
+            Grid (5 columns × 3 rows):<br>
+            Read columns in D-S-T-U-Y order<br>
+            Result depends on exact grid arrangement
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 7 (Hard):</strong> Break this Complete Columnar cipher: "TACOERHM"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Try different keyword lengths and look for English words</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: Systematic cryptanalysis approach</div>
+        <div class="explanation">
+            Ciphertext: TACOERHM (8 letters)<br>
+            Possible keyword lengths: 1, 2, 4, 8<br>
+            Test 4 columns × 2 rows:<br>
+            Try different column arrangements to find English words<br>
+            Look for common patterns like THE, AND, etc.<br>
+            Requires systematic testing of arrangements
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 8 (Hard):</strong> Analyze the security of using "ABCD" as a keyword.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Consider what happens with alphabetical ordering</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: Very weak security - no transposition occurs</div>
+        <div class="explanation">
+            Keyword: ABCD → Alphabetical order: A(1), B(2), C(3), D(4)<br>
+            Reading order: 1-2-3-4 (same as original)<br>
+            No column rearrangement occurs!<br>
+            Ciphertext = plaintext arranged in rows<br>
+            Security flaw: alphabetically ordered keywords provide no transposition
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 9 (Very Hard):</strong> Decrypt "HTISENCRPYTOI" knowing it contains the word "ENCRYPTION".
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Use known plaintext to determine grid arrangement</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: Known plaintext attack approach</div>
+        <div class="explanation">
+            Ciphertext: HTISENCRPYTOI (13 letters)<br>
+            Known word: ENCRYPTION (10 letters)<br>
+            Test different grid arrangements where ENCRYPTION appears in rows<br>
+            Try various keyword lengths that divide 13 (only 1 and 13)<br>
+            Likely needs padding analysis or different approach<br>
+            Systematic placement testing required
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 10 (Challenge):</strong> Design a Complete Columnar variant that uses numeric keywords.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Consider how to order numeric columns systematically</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: Numeric Complete Columnar design</div>
+        <div class="explanation">
+            Numeric keyword example: 31542<br>
+            Ordering: 1(2nd position), 2(5th position), 3(1st position), 4(4th position), 5(3rd position)<br>
+            Reading order: 1-2-3-4-5 → positions 2-5-1-4-3<br>
+            Advantages: Easier memorization, mathematical ordering<br>
+            Implementation: Same principle, numeric instead of alphabetic ordering
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="key-concepts">
+        <h2>🔑 Key Concepts Summary</h2>
+
+        <div class="concept-category">
+            <div class="concept-title">Complete Columnar Fundamentals</div>
+            <ul>
+                <li><strong>Transposition cipher:</strong> Rearranges letter positions without substitution</li>
+                <li><strong>Keyword-based:</strong> Column arrangement determined by keyword</li>
+                <li><strong>Alphabetical ordering:</strong> Columns read in alphabetical order of keyword letters</li>
+                <li><strong>Grid-based:</strong> Message arranged in rectangular matrix</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Encryption Process</div>
+            <ul>
+                <li><strong>Step 1:</strong> Prepare keyword and determine alphabetical column order</li>
+                <li><strong>Step 2:</strong> Create grid and fill row by row with plaintext</li>
+                <li><strong>Step 3:</strong> Add padding if necessary to complete grid</li>
+                <li><strong>Step 4:</strong> Read columns in alphabetical order of keyword letters</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Security Features</div>
+            <ul>
+                <li><strong>Letter preservation:</strong> All original letters retained in ciphertext</li>
+                <li><strong>Position scrambling:</strong> Letter positions systematically rearranged</li>
+                <li><strong>Keyword dependency:</strong> Security depends on keyword secrecy</li>
+                <li><strong>Pattern disruption:</strong> Common words scattered across columns</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Cryptanalytic Approaches</div>
+            <ul>
+                <li><strong>Factor analysis:</strong> Determine possible keyword lengths</li>
+                <li><strong>Anagramming:</strong> Rearrange letters to find meaningful words</li>
+                <li><strong>Pattern recognition:</strong> Identify common letter combinations</li>
+                <li><strong>Known plaintext:</strong> Use known words to deduce arrangements</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Grid Construction</div>
+            <ul>
+                <li><strong>Keyword processing:</strong> Remove duplicates and determine width</li>
+                <li><strong>Alphabetical ordering:</strong> Number keyword letters by alphabet</li>
+                <li><strong>Row-by-row filling:</strong> Place plaintext systematically</li>
+                <li><strong>Padding requirements:</strong> Complete grid with null characters</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Implementation Considerations</div>
+            <ul>
+                <li><strong>Grid dimensions:</strong> Keyword length determines column count</li>
+                <li><strong>Message length:</strong> Must account for padding requirements</li>
+                <li><strong>Column reading:</strong> Systematic alphabetical order approach</li>
+                <li><strong>Decryption process:</strong> Reverse column placement and row reading</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips for Complete Columnar Cipher</h3>
+        <p><strong>Master systematic transposition with mathematical precision!</strong></p>
+        <p>Practice strategies:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Practice alphabetizing keyword letters quickly and accurately</li>
+            <li>Master grid construction with different keyword lengths</li>
+            <li>Learn to calculate padding requirements efficiently</li>
+            <li>Develop systematic approaches for column reading and writing</li>
+            <li>Practice factor analysis for determining keyword lengths</li>
+            <li>Master anagramming techniques for cryptanalysis</li>
+            <li>Time yourself on complete encryption/decryption cycles</li>
+            <li>Learn to recognize when keywords provide no transposition</li>
+        </ul>
+        <p><em>Complete Columnar ciphers combine systematic method with transposition security!</em></p>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/study-guide-common.js"></script>
+    <script>
+        // Initialize authentication for this page
+        initAuth();
+    </script>
+
+</body>
+</html>

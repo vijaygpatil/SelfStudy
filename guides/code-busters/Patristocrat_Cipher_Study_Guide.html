@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patristocrat Cipher Study Guide - Code Busters Preparation</title>
+    <link rel="stylesheet" href="../../css/study-guide-common.css">
+    <link rel="stylesheet" href="../../css/code-busters-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../../code-buster-index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Code Busters Hub
+            </a>
+            <a href="../../index.html" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                🏠 Main Portal
+            </a>
+        </div>
+        <h1>Patristocrat Cipher Study Guide</h1>
+        <div class="subtitle">Science Olympiad Code Busters Preparation</div>
+        <div class="subtitle">Master the Spaced Substitution Cipher</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>🏛️ Introduction to Patristocrat Cipher</h2>
+
+    <div class="key-concepts">
+        <h3>What is the Patristocrat Cipher?</h3>
+        <p>The Patristocrat cipher is a <strong>monoalphabetic substitution cipher</strong> that preserves word boundaries and spacing. Unlike the Aristocrat cipher where spaces are removed, the Patristocrat maintains the original word structure, making it easier to identify word patterns but still requiring cryptanalysis skills to solve.</p>
+
+        <div class="cipher-example">
+            <strong>Example:</strong><br>
+            Plaintext:  THE QUICK BROWN FOX<br>
+            Ciphertext: ZMV XEFGP YQHKL AHB<br>
+            <em>(Each letter consistently maps to another, but spaces remain)</em>
+        </div>
+
+        <p>The name "Patristocrat" comes from combining "patriarch" (suggesting nobility like Aristocrat) with the preservation of spacing that makes it more accessible to solve.</p>
+    </div>
+
+    <h2>🔤 How Patristocrat Cipher Works</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Encryption Process</div>
+        <ol>
+            <li><strong>Create a substitution key:</strong> Each letter of the alphabet maps to exactly one other letter</li>
+            <li><strong>Apply substitution:</strong> Replace each letter in the plaintext with its corresponding cipher letter</li>
+            <li><strong>Preserve spacing:</strong> Keep all spaces, punctuation, and word boundaries intact</li>
+            <li><strong>Maintain case:</strong> Usually convert to uppercase for consistency</li>
+        </ol>
+    </div>
+
+    <div class="cipher-example">
+        <strong>Encryption Example:</strong><br>
+        Key: A→F, B→Y, C→H, D→N, E→J, F→D, G→R, H→X, I→B, J→V, K→W, L→A, M→Z, N→S, O→I, P→C, Q→G, R→K, S→L, T→M, U→E, V→P, W→O, X→Q, Y→T, Z→U<br><br>
+        Plaintext:  HELLO WORLD<br>
+        Process:    H→X, E→J, L→A, L→A, O→I, W→O, O→I, R→K, L→A, D→N<br>
+        Ciphertext: XJAAI OIKAN
+    </div>
+
+    <h2>🔍 Key Differences from Other Ciphers</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Patristocrat vs. Aristocrat</div>
+        <ul>
+            <li><strong>Patristocrat:</strong> Keeps word boundaries and spacing</li>
+            <li><strong>Aristocrat:</strong> Removes all spaces, creating continuous text</li>
+            <li><strong>Solving advantage:</strong> Word boundaries help identify common words</li>
+            <li><strong>Pattern recognition:</strong> Easier to spot repeated words and structures</li>
+        </ul>
+    </div>
+
+    <h2>📚 Theory and Practice Questions</h2>
+
+    <div class="question">
+        <strong>1.</strong> What is the main advantage of the Patristocrat cipher over the Aristocrat cipher for a cryptanalyst?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: Word boundaries are preserved, making it easier to identify word patterns and common words</div>
+        <div class="explanation">The preserved spacing allows cryptanalysts to immediately see word lengths and identify potential matches for common words like "THE", "AND", "A", etc.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(1)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-1">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Cryptanalytic Advantages</h4>
+                <ul>
+                    <li><strong>Word Length Analysis:</strong> Immediately identify 1-letter words (A, I), 2-letter words (OF, TO, IN), 3-letter words (THE, AND)</li>
+                    <li><strong>Pattern Matching:</strong> Repeated words appear as identical cipher groups</li>
+                    <li><strong>Contextual Clues:</strong> Sentence structure and grammar patterns remain visible</li>
+                    <li><strong>Statistical Analysis:</strong> Word frequency analysis becomes possible</li>
+                </ul>
+
+                <h4>Security Implications</h4>
+                The preservation of word boundaries significantly reduces the cipher's security compared to Aristocrat ciphers, making Patristocrat ciphers primarily educational tools rather than secure encryption methods.
+
+                <div class="reference">
+                    References: Friedman "Military Cryptanalysis"; Gaines "Cryptanalysis"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> In a Patristocrat cipher, if you see the pattern "XYZ XYZ", what can you conclude?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: The same 3-letter word appears twice in the plaintext</div>
+        <div class="explanation">Since each letter maps consistently to the same cipher letter, identical cipher words represent identical plaintext words.</div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> What are the most common 1-letter words in English that you should look for in a Patristocrat cipher?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: A and I</div>
+        <div class="explanation">These are the only common 1-letter words in English. "A" is more frequent than "I" in most texts.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> What is the most common 3-letter word in English that you should prioritize when solving Patristocrat ciphers?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: THE</div>
+        <div class="explanation">"THE" is by far the most frequent 3-letter word in English, appearing in about 7% of all text. Identifying it often provides three crucial letter mappings.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> How many possible keys exist for a Patristocrat cipher using the 26-letter English alphabet?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: 26! (26 factorial) ≈ 4 × 10²⁶</div>
+        <div class="explanation">Each of the 26 letters can be mapped to any of the remaining letters, giving 26 × 25 × 24 × ... × 1 possible arrangements.</div>
+    </div>
+
+    <h2>🧮 Practice Problems</h2>
+    <div class="section-points">10 Problems - Ranging from Simple to Difficult</div>
+
+    <div class="question">
+        <strong>Problem 1 (Easy):</strong> In the cipher "X YZ RXQQ", identify which cipher letter most likely represents "A".
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: X</div>
+        <div class="explanation">The single letter "X" is most likely the cipher for "A" since "A" is the most common single-letter word in English.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 2 (Easy):</strong> Decrypt "MYZ QFG" if you know M=T, Y=H, Z=E, Q=D, F=O, G=G.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: THE DOG</div>
+        <div class="explanation">Apply the given substitutions: M→T, Y→H, Z→E, Q→D, F→O, G→G</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 3 (Easy):</strong> If "ABC" appears 5 times in a Patristocrat cipher, what English word is it most likely to represent?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: THE</div>
+        <div class="explanation">"THE" is the most frequent 3-letter word in English. High frequency of appearance strongly suggests this mapping.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 4 (Medium):</strong> Decrypt "ABC DEFGH IJKLM NOP" knowing that ABC = THE.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: THE QUICK BROWN FOX</div>
+        <div class="explanation">With A=T, B=H, C=E established, work through common words: DEFGH could be QUICK (5 letters), IJKLM could be BROWN (5 letters), NOP could be FOX (3 letters).</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 5 (Medium):</strong> Solve "K YKQZ CKQZ YKQZ CKQZ" (Hint: Think of a common children's song).
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: I LOVE CAKE LOVE CAKE</div>
+        <div class="explanation">K=I (single letter), YKQZ and CKQZ are 4-letter words that alternate. Pattern suggests "LOVE CAKE LOVE CAKE" with Y=L, C=C, Q=A, Z=E.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 6 (Medium):</strong> Decrypt "XYZ AEFGH IJKLM NOP QERST UVZJ XYZ WKXY IUG".
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</div>
+        <div class="explanation">Start with XYZ=THE (appears twice). Use word lengths and common patterns: AEFGH=QUICK, IJKLM=BROWN, NOP=FOX, QERST=JUMPS, UVZJ=OVER, WKXY=LAZY, IUG=DOG.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 7 (Hard):</strong> Solve "ABCDE FG HIJK LMNOPQR STUVWX YZ ABCDE LMNOPQR".
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: THERE IS THIS SCIENCE OLYMPIAD IN THERE SCIENCE</div>
+        <div class="explanation">ABCDE appears twice (5 letters) - likely "THERE". LMNOPQR appears twice (7 letters) - likely "SCIENCE". FG=IS, HIJK=THIS, STUVWX=OLYMPIAD, YZ=IN.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 8 (Hard):</strong> Decrypt "K ABCD EF GFHIJK LMNO PQRSTU VWXYZ ABCD GFHIJK".
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: I LOVE TO CIPHER THIS PUZZLE WHEN LOVE CIPHER</div>
+        <div class="explanation">K=I, ABCD=LOVE (repeats), EF=TO, GFHIJK=CIPHER (repeats), LMNO=THIS, PQRSTU=PUZZLE, VWXYZ=WHEN. Pattern recognition and word frequency help solve this.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 9 (Very Hard):</strong> Solve this message: "ABCDEFG HIJ KLMN OPQR STUVWXYZ ABCDEFG HIJ KLMN OPQR STUVWXYZ ABCDEFG HIJ KLMN OPQR STUVWXYZ".
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: SCIENCE AND MATH MAKE EDUCATION SCIENCE AND MATH MAKE EDUCATION SCIENCE AND MATH MAKE EDUCATION</div>
+        <div class="explanation">The pattern repeats three times. ABCDEFG=SCIENCE (7 letters), HIJ=AND (3 letters), KLMN=MATH (4 letters), OPQR=MAKE (4 letters), STUVWXYZ=EDUCATION (9 letters).</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 10 (Challenge):</strong> Decrypt this complex message: "ABCD EF GHI JKLMNOPQR STUVWXYZ ABCD GHIJKLM NOPQR STUVWXYZ GHI JKLMNOPQR ABCD GHIJKLM".
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: THIS IS THE PATRISTOCRAT CHALLENGE THIS PROBLEM NEEDS CHALLENGE THE PATRISTOCRAT THIS PROBLEM</div>
+        <div class="explanation">Look for repeated patterns: ABCD=THIS (appears 3 times), GHI=THE (appears 2 times), JKLMNOPQR=PATRISTOCRAT (appears 2 times), STUVWXYZ=CHALLENGE (appears 2 times), EF=IS, GHIJKLM=PROBLEM (appears 2 times), NOPQR=NEEDS.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="key-concepts">
+        <h2>🔑 Key Concepts Summary</h2>
+
+        <div class="concept-category">
+            <div class="concept-title">Patristocrat Cipher Basics</div>
+            <ul>
+                <li><strong>Type:</strong> Monoalphabetic substitution cipher with preserved spacing</li>
+                <li><strong>Key:</strong> One-to-one letter mapping (26! possible keys)</li>
+                <li><strong>Spacing:</strong> Word boundaries and punctuation preserved</li>
+                <li><strong>Consistency:</strong> Each letter always maps to the same cipher letter</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Solving Strategy</div>
+            <ul>
+                <li><strong>Start with single letters:</strong> A and I are most common</li>
+                <li><strong>Identify "THE":</strong> Most frequent 3-letter word</li>
+                <li><strong>Look for patterns:</strong> Repeated words, double letters</li>
+                <li><strong>Use word length:</strong> Match cipher words to common English words</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Common Word Patterns</div>
+            <ul>
+                <li><strong>1-letter words:</strong> A (article), I (pronoun)</li>
+                <li><strong>2-letter words:</strong> OF, TO, IN, IT, IS, BE, OR, AS, AT</li>
+                <li><strong>3-letter words:</strong> THE, AND, FOR, ARE, BUT, NOT, YOU, ALL</li>
+                <li><strong>4-letter words:</strong> THAT, WITH, HAVE, THIS, WILL, YOUR, FROM</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Advanced Techniques</div>
+            <ul>
+                <li><strong>Frequency analysis:</strong> E, T, A, O, I, N are most common letters</li>
+                <li><strong>Digram analysis:</strong> TH, HE, IN, ER, AN are common pairs</li>
+                <li><strong>Word endings:</strong> -ING, -ION, -ED, -ER, -LY are frequent</li>
+                <li><strong>Contextual clues:</strong> Use topic and grammar for guidance</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Cryptanalysis Tips</div>
+            <ul>
+                <li><strong>Pattern recognition:</strong> Look for repeated cipher groups</li>
+                <li><strong>Word structure:</strong> Apostrophes, contractions, proper nouns</li>
+                <li><strong>Statistical approach:</strong> Most frequent cipher letters likely represent E, T, A</li>
+                <li><strong>Systematic solving:</strong> Build letter mappings gradually</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Common Mistakes to Avoid</div>
+            <ul>
+                <li><strong>Inconsistent mapping:</strong> Each letter must always map to the same cipher letter</li>
+                <li><strong>Ignoring word boundaries:</strong> Use spacing to your advantage</li>
+                <li><strong>Overlooking patterns:</strong> Repeated words provide multiple confirmation points</li>
+                <li><strong>Forcing solutions:</strong> If a mapping doesn't work consistently, reconsider</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips for Patristocrat Cipher</h3>
+        <p><strong>Master word pattern recognition for efficient solving!</strong></p>
+        <p>Practice strategies:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Memorize the most common English words by length</li>
+            <li>Practice identifying repeated patterns quickly</li>
+            <li>Learn to use partial solutions to deduce remaining letters</li>
+            <li>Develop systematic approaches to letter mapping</li>
+            <li>Study English letter and word frequency statistics</li>
+            <li>Practice with various text types (formal, casual, technical)</li>
+        </ul>
+        <p><em>The Patristocrat cipher bridges simple substitution and complex cryptanalysis. Master the fundamentals!</em></p>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/study-guide-common.js"></script>
+    <script>
+        // Initialize authentication for this page
+        initAuth();
+    </script>
+
+</body>
+</html>

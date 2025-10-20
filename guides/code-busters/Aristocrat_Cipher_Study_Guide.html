@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aristocrat Cipher Study Guide - Code Busters Preparation</title>
+    <link rel="stylesheet" href="../../css/study-guide-common.css">
+    <link rel="stylesheet" href="../../css/code-busters-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../../code-buster-index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Code Busters Hub
+            </a>
+            <a href="../../index.html" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                🏠 Main Portal
+            </a>
+        </div>
+        <h1>Aristocrat Cipher Study Guide</h1>
+        <div class="subtitle">Science Olympiad Code Busters Preparation</div>
+        <div class="subtitle">Master the Classic Substitution Cipher</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>👑 Introduction to Aristocrat Cipher</h2>
+
+    <div class="key-concepts">
+        <h3>What is the Aristocrat Cipher?</h3>
+        <p>The Aristocrat cipher is a <strong>monoalphabetic substitution cipher</strong> where each letter of the alphabet is consistently replaced by another letter. Unlike the Caesar cipher, the substitution pattern is not a simple shift but follows a random or keyword-based mapping.</p>
+
+        <div class="cipher-example">
+            <strong>Example substitution alphabet:</strong><br>
+            Plaintext:  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+            Ciphertext: Q W E R T Y U I O P A S D F G H J K L Z X C V B N M
+        </div>
+
+        <p>The name "Aristocrat" comes from the American Cryptogram Association (ACA), which uses this term for substitution ciphers that preserve word boundaries and capitalization patterns.</p>
+    </div>
+
+    <h2>🔤 How Aristocrat Cipher Works</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Encryption Process</div>
+        <ol>
+            <li><strong>Create a substitution alphabet:</strong> Each letter maps to exactly one other letter</li>
+            <li><strong>Apply the substitution:</strong> Replace each plaintext letter with its corresponding ciphertext letter</li>
+            <li><strong>Preserve structure:</strong> Keep spaces, punctuation, and capitalization patterns</li>
+            <li><strong>Maintain consistency:</strong> The same plaintext letter always becomes the same ciphertext letter</li>
+        </ol>
+    </div>
+
+    <div class="cipher-example">
+        <strong>Encryption Example:</strong><br>
+        Key: A→Q, B→W, C→E, D→R, E→T, F→Y, G→U, H→I, I→O, J→P, K→A, L→S, M→D, N→F, O→G, P→H, Q→J, R→K, S→L, T→Z, U→X, V→C, W→V, X→B, Y→N, Z→M<br><br>
+        Plaintext:  HELLO WORLD<br>
+        Ciphertext: ITSSGL VGKSR
+    </div>
+
+    <h2>🔍 Breaking Aristocrat Ciphers</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Frequency Analysis Method</div>
+        <ol>
+            <li><strong>Count letter frequencies:</strong> Identify the most common ciphertext letters</li>
+            <li><strong>Match to English frequencies:</strong> E, T, A, O, I, N, S, H, R are most common</li>
+            <li><strong>Look for patterns:</strong> Double letters, common words, letter combinations</li>
+            <li><strong>Make educated guesses:</strong> Start with high-frequency letters and common words</li>
+            <li><strong>Test and refine:</strong> Check if your guesses create meaningful words</li>
+        </ol>
+    </div>
+
+    <h2>📚 Theory and Practice Questions</h2>
+
+    <div class="question">
+        <strong>1.</strong> What is the key difference between an Aristocrat cipher and a Caesar cipher?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: Aristocrat uses a random/keyword-based substitution alphabet, while Caesar uses a simple shift</div>
+        <div class="explanation">Caesar cipher shifts all letters by the same amount, while Aristocrat can map any letter to any other letter, making it much more complex.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(1)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-1">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Mathematical Comparison</h4>
+                <ul>
+                    <li><strong>Caesar Cipher:</strong> 25 possible keys (shifts 1-25)</li>
+                    <li><strong>Aristocrat Cipher:</strong> 26! ≈ 4 × 10²⁶ possible keys (all permutations of alphabet)</li>
+                </ul>
+
+                <h4>Security Implications</h4>
+                The vast key space makes brute force attacks impossible, but frequency analysis remains effective because:
+                <ul>
+                    <li>Letter frequency patterns are preserved</li>
+                    <li>Word structure and spacing remain intact</li>
+                    <li>Statistical properties of the language show through</li>
+                </ul>
+
+                <div class="reference">
+                    References: Friedman "Military Cryptanalysis"; ACA "The Cryptogram"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> What are the most common letters in English, in order of frequency?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: E, T, A, O, I, N, S, H, R, D, L, U</div>
+        <div class="explanation">The mnemonic "ETAOIN SHRDLU" helps remember the most frequent letters. E appears about 12.7% of the time in English text.</div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> What is the most common three-letter word in English that helps break Aristocrat ciphers?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: THE</div>
+        <div class="explanation">"THE" appears frequently and has a distinctive pattern with T and H being less common letters surrounding the very common E.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> What are the most common single-letter words in English?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: A and I</div>
+        <div class="explanation">These are the only single-letter words in English (excluding contractions). Finding single letters in ciphertext often reveals A or I.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> What pattern should you look for to identify double letters in an Aristocrat cipher?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: Identical adjacent letters in the ciphertext</div>
+        <div class="explanation">Common double letters in English include LL, SS, EE, OO, TT. These patterns are preserved in Aristocrat ciphers.</div>
+    </div>
+
+    <h2>🧮 Practice Problems</h2>
+    <div class="section-points">10 Problems - Ranging from Simple to Difficult</div>
+
+    <div class="question">
+        <strong>Problem 1 (Easy):</strong> In the ciphertext "ZIT", if you know that I = H and T = E, what does the word decode to?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: THE</div>
+        <div class="explanation">Z = T, I = H, T = E, so "ZIT" decodes to "THE"</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 2 (Easy):</strong> If the single letter "Q" appears in a ciphertext, what are the two most likely plaintext letters it represents?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: A or I</div>
+        <div class="explanation">These are the only single-letter words in English, so any isolated letter in ciphertext likely represents A or I.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 3 (Easy):</strong> In the pattern "QLL", what common English word might this represent?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: ALL</div>
+        <div class="explanation">The double-L pattern is common in English. "ALL" is a frequent three-letter word with this pattern.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 4 (Medium):</strong> Decode this message: "KFOO RFPF". You know that F = E and O = L.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: WELL DONE</div>
+        <div class="explanation">K = W, F = E, O = L, R = D, P = O, F = E. So "KFOO RFPF" becomes "WELL DONE".</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 5 (Medium):</strong> The ciphertext "QPA" appears frequently. If A = E, what word does "QPA" likely represent?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: THE</div>
+        <div class="explanation">Since A = E and "THE" is the most common three-letter word ending in E, Q = T and P = H.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 6 (Medium):</strong> Decode: "KFOO RFPF, UFPF BL Q LBDEOF DFLLQUF". Known: F = E, O = L, Q = T, P = H, R = D, K = W, U = H, B = I, L = S, D = M, G = A.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: WELL DONE, HERE IS A SIMPLE MESSAGE</div>
+        <div class="explanation">Apply the given substitutions: KFOO RFPF = WELL DONE, UFPF BL Q LBDEOF DFLLQUF = HERE IS A SIMPLE MESSAGE</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 7 (Hard):</strong> Break this cipher using frequency analysis: "ZIT JEBVN WKFXP UFY AEDOL FMTK ZIT OQSR RFH". Start by identifying the most frequent letters.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</div>
+        <div class="explanation">T appears 4 times (likely E), Z appears 2 times at start of words (likely T). "ZIT" = "THE". Work from there: Z=T, I=H, T=E, etc.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 8 (Hard):</strong> Decode: "B OFMT VKRPZFHKQOIR QPA LZEAR FU VFATL QPA VBPITK XFKOA". Look for common patterns and word structures.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: I LOVE CRYPTOGRAPHY THE STUDY OF CODES THE CIPHER WORLD</div>
+        <div class="explanation">B = I (single letter), QPA = THE (common pattern), work out: O=L, F=O, M=V, T=E, V=C, K=R, R=Y, P=H, Z=T, H=P, Q=T, I=H, L=S, E=U, A=E, U=F, C=D, L=S, X=W, A=E, O=L, R=D</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 9 (Very Hard):</strong> Break this longer message: "VKRPZFHKQOIR BL Q UQLVBPQZBPH LVAJTPVT ZIQZ IQPROL LTVKTZ DTLLQHTL QPA VFATL. BZ BL FLTA BR DQPR QKQTL FU VKBDBPFOFHR QPA BPZTOOBHTPVT XFKN. ZIT NTR ZF WKTQNBPH ZITLT VBPITK BL UKQJATPVR QPQORLBL QPA PQZZTK KTVFHPBZBFP."
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: CRYPTOGRAPHY IS A FASCINATING SCIENCE THAT HANDLES SECRET MESSAGES AND CODES. IT IS USED IN MANY AREAS OF CRIMINOLOGY AND INTELLIGENCE WORK. THE KEY TO BREAKING THESE CIPHER IS FREQUENCY ANALYSIS AND PATTERN RECOGNITION.</div>
+        <div class="explanation">Start with single letters (B = I), common three-letter words (ZIT = THE), and build the substitution alphabet systematically using frequency analysis and pattern recognition.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 10 (Challenge):</strong> This message uses a keyword-based substitution. The keyword is hidden in the message: "NKRPZF VBPITK LZEAR IQPROL LTVKTZ DTLLQHTL XBZI NTRXFKA WQLTL LRLDTZL". Find the keyword and decode the message.
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: CRYPTO CIPHER STUDY HANDLES SECRET MESSAGES WITH KEYWORD BASED SYSTEMS (Keyword: CRYPTO)</div>
+        <div class="explanation">The first word "NKRPZF" decodes to "CRYPTO" which is likely the keyword. Use this to build the substitution alphabet and decode the rest.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="key-concepts">
+        <h2>🔑 Key Concepts Summary</h2>
+
+        <div class="concept-category">
+            <div class="concept-title">Aristocrat Cipher Basics</div>
+            <ul>
+                <li><strong>Type:</strong> Monoalphabetic substitution cipher</li>
+                <li><strong>Key:</strong> Complete substitution alphabet (26! possibilities)</li>
+                <li><strong>Structure:</strong> Preserves word boundaries and capitalization</li>
+                <li><strong>Consistency:</strong> Each letter always maps to the same substitute</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Breaking Techniques</div>
+            <ul>
+                <li><strong>Frequency Analysis:</strong> Match cipher letters to English frequency</li>
+                <li><strong>Pattern Recognition:</strong> Identify common words and structures</li>
+                <li><strong>Single Letters:</strong> Isolated letters are usually A or I</li>
+                <li><strong>Double Letters:</strong> Look for LL, SS, EE, OO patterns</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Common English Patterns</div>
+            <ul>
+                <li><strong>Most frequent letters:</strong> E T A O I N S H R D L U</li>
+                <li><strong>Common words:</strong> THE, AND, FOR, ARE, BUT, NOT, YOU, ALL</li>
+                <li><strong>Word endings:</strong> -ING, -ION, -ED, -ER, -LY, -EST</li>
+                <li><strong>Digrams:</strong> TH, HE, IN, ER, AN, RE, ED, ND, ON, EN</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Solving Strategy</div>
+            <ul>
+                <li><strong>Step 1:</strong> Count letter frequencies in ciphertext</li>
+                <li><strong>Step 2:</strong> Identify single letters and short words</li>
+                <li><strong>Step 3:</strong> Look for "THE" pattern (most common 3-letter word)</li>
+                <li><strong>Step 4:</strong> Use partial solutions to find more letters</li>
+                <li><strong>Step 5:</strong> Check for meaningful words and refine</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Advanced Techniques</div>
+            <ul>
+                <li><strong>Bigram analysis:</strong> Study two-letter combinations</li>
+                <li><strong>Trigram analysis:</strong> Examine three-letter patterns</li>
+                <li><strong>Word pattern matching:</strong> Match cipher patterns to dictionary words</li>
+                <li><strong>Contextual clues:</strong> Use topic or theme hints</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Keyword-Based Aristocrats</div>
+            <ul>
+                <li><strong>Keyword placement:</strong> Often at start of cipher alphabet</li>
+                <li><strong>Remaining letters:</strong> Fill in alphabetically after keyword</li>
+                <li><strong>Keyword clues:</strong> May be hinted at in the message</li>
+                <li><strong>Common keywords:</strong> Names, places, themes related to message</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips for Aristocrat Cipher</h3>
+        <p><strong>Master frequency analysis and pattern recognition!</strong></p>
+        <p>Practice strategies:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Memorize English letter frequencies (ETAOIN SHRDLU)</li>
+            <li>Learn common word patterns and structures</li>
+            <li>Practice identifying "THE", "AND", "FOR" in ciphertext</li>
+            <li>Study double letter patterns (LL, SS, EE, OO)</li>
+            <li>Work with progressively longer messages</li>
+            <li>Time yourself to build speed and confidence</li>
+            <li>Keep a substitution chart while solving</li>
+        </ul>
+        <p><em>Aristocrat ciphers test your analytical skills and pattern recognition. Practice makes perfect!</em></p>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/study-guide-common.js"></script>
+    <script>
+        // Initialize authentication for this page
+        initAuth();
+    </script>
+
+</body>
+</html>

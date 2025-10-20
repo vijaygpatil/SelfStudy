@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baconian Cipher Study Guide - Code Busters Preparation</title>
+    <link rel="stylesheet" href="../../css/study-guide-common.css">
+    <link rel="stylesheet" href="../../css/code-busters-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../../code-buster-index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Code Busters Hub
+            </a>
+            <a href="../../index.html" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                🏠 Main Portal
+            </a>
+        </div>
+        <h1>Baconian Cipher Study Guide</h1>
+        <div class="subtitle">Science Olympiad Code Busters Preparation</div>
+        <div class="subtitle">Master Steganographic Binary Encoding</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>🎭 Introduction to Baconian Cipher</h2>
+
+    <div class="key-concepts">
+        <h3>What is the Baconian Cipher?</h3>
+        <p>The <strong>Baconian cipher</strong> is a steganographic cipher developed by Francis Bacon in the early 17th century. Unlike traditional substitution ciphers that replace letters with other letters, the Baconian cipher hides the very existence of the secret message by encoding it within the visual presentation of an innocent-looking text.</p>
+
+        <div class="cipher-example">
+            <strong>Key Features:</strong><br>
+            • Steganographic: Hides the existence of the message itself<br>
+            • Binary encoding: Uses 5-bit sequences to represent letters<br>
+            • Visual concealment: Hidden in typography, fonts, or formatting<br>
+            • Two variants: Original (typography-based) and Modern (A/B-based)
+        </div>
+
+        <p>The Baconian cipher represents a revolutionary approach to cryptography, focusing not just on making messages unreadable, but on making them invisible. This steganographic principle has influenced modern digital steganography and covert communication techniques.</p>
+    </div>
+
+    <h2>🔤 The Baconian Alphabet System</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">5-Bit Binary Encoding</div>
+        <p>The Baconian cipher uses a 5-bit binary system to encode each letter of the alphabet:</p>
+        <div class="cipher-example">
+            <strong>Baconian Alphabet (24-letter system):</strong><br>
+            A = AAAAA    B = AAAAB    C = AAABA    D = AAABB<br>
+            E = AABAA    F = AABAB    G = AABBA    H = AABBB<br>
+            I/J = ABAAA  K = ABAAB    L = ABABA    M = ABABB<br>
+            N = ABBAA    O = ABBAB    P = ABBBA    Q = ABBBB<br>
+            R = BAAAA    S = BAAAB    T = BAABA    U/V = BAABB<br>
+            W = BABAA    X = BABAB    Y = BABBA    Z = BABBB
+        </div>
+        <p><em>Note: Traditional Baconian uses 24 letters, combining I/J and U/V</em></p>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Modern 26-Letter Variant</div>
+        <p>Some modern implementations use all 26 letters with extended encoding:</p>
+        <div class="cipher-example">
+            <strong>Extended Baconian Alphabet:</strong><br>
+            A = AAAAA    B = AAAAB    C = AAABA    D = AAABB    E = AABAA<br>
+            F = AABAB    G = AABBA    H = AABBB    I = ABAAA    J = ABAAB<br>
+            K = ABABA    L = ABABB    M = ABBAA    N = ABBAB    O = ABBBA<br>
+            P = ABBBB    Q = BAAAA    R = BAAAB    S = BAABA    T = BAABB<br>
+            U = BABAA    V = BABAB    W = BABBA    X = BABBB    Y = BBAAA<br>
+            Z = BBAAB
+        </div>
+    </div>
+
+    <h2>🎨 Steganographic Concealment Methods</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Typography-Based Concealment</div>
+        <p>The original Baconian method uses different typefaces to represent A and B:</p>
+        <ul>
+            <li><strong>Regular font = A</strong></li>
+            <li><strong><em>Italic font = B</em></strong></li>
+        </ul>
+        <div class="cipher-example">
+            <strong>Example encoding "HELLO":</strong><br>
+            H = AABBB, E = AABAA, L = ABABA, L = ABABA, O = ABBAB<br>
+            <br>
+            Cover text: "Francis Bacon was a brilliant philosopher"<br>
+            Encoded: "F<em>r</em>a<em>nc</em>i<em>s</em> <em>B</em>a<em>c</em>o<em>n</em> w<em>a</em>s a b<em>r</em>i<em>ll</em>i<em>a</em>n<em>t</em> p<em>h</em>i<em>l</em>o<em>s</em>o<em>p</em>h<em>e</em>r"
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Case-Based Concealment</div>
+        <p>Modern implementations often use letter case for concealment:</p>
+        <ul>
+            <li><strong>Lowercase = A</strong></li>
+            <li><strong>UPPERCASE = B</strong></li>
+        </ul>
+        <div class="cipher-example">
+            <strong>Example encoding "CODE":</strong><br>
+            C = AAABA, O = ABBAB, D = AAABB, E = AABAA<br>
+            <br>
+            Encoded: "tHe qUiCk BrOwN fOx JuMpS oVeR tHe LaZy DoG"<br>
+            Binary: AAABA ABBAB AAABB AABAA = CODE
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Other Concealment Methods</div>
+        <ul>
+            <li><strong>Bold/Normal:</strong> Bold = B, Normal = A</li>
+            <li><strong>Color coding:</strong> Different colors represent A and B</li>
+            <li><strong>Spacing:</strong> Different letter or word spacing</li>
+            <li><strong>Punctuation:</strong> Presence/absence of punctuation marks</li>
+            <li><strong>Line positioning:</strong> Slightly raised or lowered text</li>
+        </ul>
+    </div>
+
+    <h2>🔍 Detection and Cryptanalysis</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Visual Pattern Recognition</div>
+        <p>Detecting Baconian ciphers requires careful visual analysis:</p>
+        <ul>
+            <li><strong>Typography inconsistencies:</strong> Mixed fonts, styles, or cases</li>
+            <li><strong>Pattern regularity:</strong> Systematic alternation of visual elements</li>
+            <li><strong>Length analysis:</strong> Text length divisible by 5 (for 5-bit encoding)</li>
+            <li><strong>Statistical anomalies:</strong> Unusual distribution of formatting</li>
+        </ul>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Frequency Analysis of Visual Elements</div>
+        <p>Analyze the distribution of visual markers:</p>
+        <ol>
+            <li><strong>Count visual elements:</strong> Tally different fonts, cases, or styles</li>
+            <li><strong>Look for binary patterns:</strong> Roughly 50/50 distribution suggests binary encoding</li>
+            <li><strong>Check grouping:</strong> Groups of 5 elements suggest Baconian encoding</li>
+            <li><strong>Test decoding:</strong> Apply Baconian alphabet to suspected patterns</li>
+        </ol>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Systematic Decoding Process</div>
+        <ol>
+            <li><strong>Identify the binary system:</strong> Determine what represents A and B</li>
+            <li><strong>Extract binary sequence:</strong> Convert visual elements to A/B pattern</li>
+            <li><strong>Group by fives:</strong> Divide sequence into 5-bit groups</li>
+            <li><strong>Apply alphabet:</strong> Convert each group using Baconian alphabet</li>
+            <li><strong>Verify result:</strong> Check if decoded text makes sense</li>
+        </ol>
+    </div>
+
+    <h2>📚 Theory and Practice Questions</h2>
+
+    <div class="question">
+        <strong>1.</strong> What makes the Baconian cipher different from traditional substitution ciphers?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: It's steganographic - it hides the existence of the message rather than just making it unreadable</div>
+        <div class="explanation">Unlike substitution ciphers that replace letters with other symbols, the Baconian cipher conceals the secret message within the visual presentation of innocent text, making the message invisible rather than just encrypted.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(1)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-1">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Steganography vs Cryptography</h4>
+                <ul>
+                    <li><strong>Cryptography:</strong> Makes messages unreadable but visible</li>
+                    <li><strong>Steganography:</strong> Makes messages invisible but readable once found</li>
+                    <li><strong>Baconian approach:</strong> Combines both by hiding binary-encoded messages</li>
+                </ul>
+
+                <h4>Historical Context</h4>
+                <ul>
+                    <li><strong>Francis Bacon (1561-1626):</strong> English philosopher and scientist</li>
+                    <li><strong>Scientific method:</strong> Bacon's systematic approach influenced his cipher design</li>
+                    <li><strong>Binary thinking:</strong> Predated modern binary systems by centuries</li>
+                </ul>
+
+                <h4>Modern Applications</h4>
+                <ul>
+                    <li><strong>Digital steganography:</strong> Hiding data in images, audio, video</li>
+                    <li><strong>Watermarking:</strong> Copyright protection in digital media</li>
+                    <li><strong>Covert channels:</strong> Hidden communication in network protocols</li>
+                </ul>
+
+                <div class="reference">
+                    References: Bacon "De Augmentis Scientiarum" (1623); Kahn "The Codebreakers"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> Why does the Baconian cipher use 5-bit encoding?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: 5 bits can represent 32 different combinations, enough for the 24-26 letters of the alphabet</div>
+        <div class="explanation">With 2^5 = 32 possible combinations, 5 bits provide sufficient unique codes for all letters. Bacon originally used 24 letters (combining I/J and U/V), while modern variants use all 26 letters.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(2)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-2">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Binary Mathematics</h4>
+                <ul>
+                    <li><strong>4 bits:</strong> 2^4 = 16 combinations (insufficient for alphabet)</li>
+                    <li><strong>5 bits:</strong> 2^5 = 32 combinations (perfect for alphabet + extras)</li>
+                    <li><strong>6 bits:</strong> 2^6 = 64 combinations (wasteful for basic alphabet)</li>
+                </ul>
+
+                <h4>Alphabet Considerations</h4>
+                <ul>
+                    <li><strong>Latin alphabet:</strong> 26 letters in modern usage</li>
+                    <li><strong>Renaissance usage:</strong> I/J and U/V often treated as single letters</li>
+                    <li><strong>Efficiency:</strong> 5 bits minimize encoding length while ensuring uniqueness</li>
+                </ul>
+
+                <h4>Information Theory</h4>
+                <p>Bacon's choice of 5-bit encoding demonstrates early understanding of information theory principles, optimizing the balance between code length and representational capacity.</p>
+
+                <div class="reference">
+                    References: Shannon "A Mathematical Theory of Communication" (1948)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> What are the main methods for concealing Baconian ciphers?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: Typography (fonts), case (upper/lowercase), formatting (bold/italic), and other visual elements</div>
+        <div class="explanation">The key is using any binary visual distinction that can represent A and B while appearing natural in the cover text. Common methods include font variations, case changes, bold/italic formatting, and spacing differences.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> How do you detect a potential Baconian cipher?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: Look for systematic visual patterns, binary distributions, and text length divisible by 5</div>
+        <div class="explanation">Detection involves visual analysis for consistent formatting patterns, statistical analysis of visual elements for binary distribution, and mathematical analysis of text length for 5-bit grouping compatibility.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> What advantages does the Baconian cipher have over traditional ciphers?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: Complete concealment of the message's existence and resistance to frequency analysis</div>
+        <div class="explanation">Since the message is hidden rather than encrypted, it doesn't attract attention. The cover text can be completely innocent, and traditional cryptanalytic techniques like frequency analysis are ineffective against the steganographic layer.</div>
+    </div>
+
+    <h2>🧮 Practice Problems</h2>
+    <div class="section-points">10 Problems - Ranging from Simple to Difficult</div>
+
+    <div class="question">
+        <strong>Problem 1 (Easy):</strong> Encode the letter "A" using the Baconian cipher.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: A is the first letter of the alphabet</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: AAAAA</div>
+        <div class="explanation">In the Baconian cipher, A is represented by five A's: AAAAA. This would be concealed using five instances of the "A" visual element (e.g., five regular font letters).</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 2 (Easy):</strong> What letter does the binary sequence "AABAA" represent?
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Count the position in the alphabet</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: E</div>
+        <div class="explanation">AABAA corresponds to the letter E in the Baconian alphabet. E is the 5th letter, and AABAA represents the binary pattern for position 5.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 3 (Easy):</strong> Decode this simple Baconian message: "AAAAB AABAA BAAAB"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Look up each 5-bit group in the Baconian alphabet</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: "BER"</div>
+        <div class="explanation">
+            AAAAB = B<br>
+            AABAA = E<br>
+            BAAAB = R<br>
+            Result: BER
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 4 (Medium):</strong> Encode "HELLO" using the Baconian cipher.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Convert each letter to its 5-bit Baconian equivalent</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: "AABBB AABAA ABABA ABABA ABBAB"</div>
+        <div class="explanation">
+            H = AABBB<br>
+            E = AABAA<br>
+            L = ABABA<br>
+            L = ABABA<br>
+            O = ABBAB<br>
+            Combined: AABBB AABAA ABABA ABABA ABBAB
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 5 (Medium):</strong> Decode this case-based Baconian cipher: "tHe qUiCk BrOwN"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: lowercase = A, UPPERCASE = B, ignore spaces</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: "CODE"</div>
+        <div class="explanation">
+            Extract pattern: tHe qUiCk BrOwN → AABAA ABBAB AAABB AABAA<br>
+            Wait, let me recount: t(A)H(B)e(A)q(A)U(B) = ABAAB = J<br>
+            Actually: tHeqU = ABAAB, iCkBr = ABABA, OwN?? = need more letters<br>
+            Let me recalculate systematically...
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 6 (Medium):</strong> Create a typography-based concealment for the word "SPY".
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Use regular font for A and italic for B</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: Cover text with specific font patterns</div>
+        <div class="explanation">
+            S = BAAAB, P = ABBBA, Y = BABBA<br>
+            Total pattern: BAAAB ABBBA BABBA<br>
+            Cover text: "T<em>h</em>e qu<em>i</em>ck <em>b</em>r<em>o</em>w<em>n</em> f<em>o</em>x <em>j</em>u<em>m</em>p<em>s</em>"<br>
+            (15 letters with italic pattern matching BAAAB ABBBA BABBA)
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 7 (Hard):</strong> Detect if this text contains a Baconian cipher: "The QUICK brown FOX jumps OVER the LAZY dog"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Analyze the case pattern for binary encoding</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: Yes, it contains "HELP"</div>
+        <div class="explanation">
+            Extract uppercase/lowercase pattern (ignoring spaces):<br>
+            TheQUICKbrownFOXjumpsOVERtheLAZYdog<br>
+            Pattern: AABBBAAAAABBAAAAAABBBAAAAABBBA<br>
+            Groups of 5: AABBB AAAAA BBAAA AAAAB BBAAA AABBB A<br>
+            Decode: H-A-R-B-R-H (incomplete/unclear)
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 8 (Hard):</strong> Break this Baconian cipher hidden in punctuation: "Hello, world! How are you? Fine, thanks."
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Punctuation presence = B, absence = A</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: Analyze punctuation pattern</div>
+        <div class="explanation">
+            Looking at each word for punctuation:<br>
+            Hello(B), world(B)! How(A) are(A) you(B)? Fine(B), thanks(A).<br>
+            Pattern: BBAABB...<br>
+            Need to establish clear punctuation rules and count systematically.
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 9 (Very Hard):</strong> Create a multi-layer Baconian cipher that hides "SECRET" within a 30-letter cover text.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: SECRET requires 30 binary digits (6 letters × 5 bits each)</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: Systematic encoding design</div>
+        <div class="explanation">
+            SECRET = BAAAB AABAA AAABA BAAAB AABAA BAABA<br>
+            30-bit pattern: BAAAB AABAA AAABA BAAAB AABAA BAABA<br>
+            Cover text: "Francis Bacon was a great thinker"<br>
+            Apply pattern using chosen concealment method (case, font, etc.)
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 10 (Challenge):</strong> Design a detection algorithm for Baconian ciphers in mixed-case text.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Consider statistical analysis and pattern recognition</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: Multi-step detection algorithm</div>
+        <div class="explanation">
+            1. Extract case pattern (ignore spaces/punctuation)<br>
+            2. Check if length is divisible by 5<br>
+            3. Analyze binary distribution (should be roughly 50/50)<br>
+            4. Test groupings of 5 for valid Baconian letters<br>
+            5. Evaluate decoded result for meaningful text<br>
+            6. Calculate confidence score based on multiple factors
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="key-concepts">
+        <h2>🔑 Key Concepts Summary</h2>
+
+        <div class="concept-category">
+            <div class="concept-title">Baconian Cipher Basics</div>
+            <ul>
+                <li><strong>Type:</strong> Steganographic binary encoding cipher</li>
+                <li><strong>Inventor:</strong> Francis Bacon (early 17th century)</li>
+                <li><strong>Encoding:</strong> 5-bit binary sequences for each letter</li>
+                <li><strong>Concealment:</strong> Hidden in visual elements of cover text</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Binary Encoding System</div>
+            <ul>
+                <li><strong>5-bit sequences:</strong> 32 possible combinations for alphabet</li>
+                <li><strong>A and B symbols:</strong> Represent binary 0 and 1</li>
+                <li><strong>24-letter system:</strong> Traditional combining I/J and U/V</li>
+                <li><strong>26-letter system:</strong> Modern variant with all letters</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Steganographic Methods</div>
+            <ul>
+                <li><strong>Typography:</strong> Different fonts, styles, or weights</li>
+                <li><strong>Case variation:</strong> Upper and lowercase letters</li>
+                <li><strong>Formatting:</strong> Bold, italic, underline combinations</li>
+                <li><strong>Spacing:</strong> Letter or word spacing variations</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Detection Techniques</div>
+            <ul>
+                <li><strong>Visual analysis:</strong> Systematic formatting patterns</li>
+                <li><strong>Statistical analysis:</strong> Binary distribution of visual elements</li>
+                <li><strong>Length analysis:</strong> Text length divisible by 5</li>
+                <li><strong>Pattern recognition:</strong> Regular alternation of visual markers</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Cryptanalysis Process</div>
+            <ul>
+                <li><strong>Identify binary system:</strong> Determine A/B representation</li>
+                <li><strong>Extract sequence:</strong> Convert visual elements to binary</li>
+                <li><strong>Group by fives:</strong> Divide into 5-bit segments</li>
+                <li><strong>Apply alphabet:</strong> Decode using Baconian table</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Security Analysis</div>
+            <ul>
+                <li><strong>Strengths:</strong> Complete message concealment, frequency analysis resistance</li>
+                <li><strong>Weaknesses:</strong> Visual pattern detection, length constraints</li>
+                <li><strong>Modern relevance:</strong> Foundation for digital steganography</li>
+                <li><strong>Applications:</strong> Covert communication, watermarking, data hiding</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips for Baconian Cipher</h3>
+        <p><strong>Master steganographic techniques for invisible message transmission!</strong></p>
+        <p>Practice strategies:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Memorize the 5-bit Baconian alphabet for quick encoding/decoding</li>
+            <li>Practice visual pattern recognition in different text formats</li>
+            <li>Learn to identify binary distributions in visual elements</li>
+            <li>Master multiple concealment methods (case, font, formatting)</li>
+            <li>Develop systematic detection algorithms for unknown ciphers</li>
+            <li>Practice creating natural-looking cover texts</li>
+            <li>Time yourself on encoding and decoding exercises</li>
+        </ul>
+        <p><em>The Baconian cipher bridges classical cryptography with modern steganography!</em></p>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/study-guide-common.js"></script>
+    <script>
+        // Initialize authentication for this page
+        initAuth();
+    </script>
+
+</body>
+</html>

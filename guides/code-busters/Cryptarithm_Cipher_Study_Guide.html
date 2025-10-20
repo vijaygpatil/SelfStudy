@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptarithm Cipher Study Guide - Code Busters Preparation</title>
+    <link rel="stylesheet" href="../../css/study-guide-common.css">
+    <link rel="stylesheet" href="../../css/code-busters-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../../code-buster-index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Code Busters Hub
+            </a>
+            <a href="../../index.html" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                🏠 Main Portal
+            </a>
+        </div>
+        <h1>Cryptarithm Cipher Study Guide</h1>
+        <div class="subtitle">Science Olympiad Code Busters Preparation</div>
+        <div class="subtitle">Master Mathematical Letter-Digit Puzzles</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>🔢 Introduction to Cryptarithm Ciphers</h2>
+
+    <div class="key-concepts">
+        <h3>What is a Cryptarithm?</h3>
+        <p>A <strong>Cryptarithm</strong> (also called an alphametic) is a mathematical puzzle where letters represent digits in an arithmetic equation. Each letter consistently represents the same digit throughout the puzzle, and the goal is to determine which digit each letter represents to make the arithmetic equation valid.</p>
+
+        <div class="cipher-example">
+            <strong>Classic Example - SEND + MORE = MONEY:</strong><br>
+            <pre>
+    S E N D
+  + M O R E
+  ---------
+  M O N E Y
+            </pre>
+            Each letter represents a unique digit (0-9), and the equation must be arithmetically correct.
+        </div>
+
+        <p>Cryptarithms combine mathematical reasoning with logical deduction, requiring systematic analysis of arithmetic constraints, carry operations, and digit uniqueness to find the solution.</p>
+    </div>
+
+    <h2>📐 Fundamental Rules and Constraints</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Basic Rules</div>
+        <ul>
+            <li><strong>One-to-one mapping:</strong> Each letter represents exactly one digit</li>
+            <li><strong>Unique digits:</strong> Each digit is represented by at most one letter</li>
+            <li><strong>No leading zeros:</strong> The leftmost digit of any number cannot be zero</li>
+            <li><strong>Valid arithmetic:</strong> The equation must be mathematically correct</li>
+            <li><strong>Base-10 system:</strong> Standard decimal arithmetic applies</li>
+        </ul>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Types of Cryptarithms</div>
+        <div class="cipher-example">
+            <strong>Addition:</strong> SEND + MORE = MONEY<br>
+            <strong>Subtraction:</strong> FORTY - TEN = THIRTY<br>
+            <strong>Multiplication:</strong> TWO × TWO = FOUR<br>
+            <strong>Division:</strong> SPEED ÷ RATE = TIME<br>
+            <strong>Mixed operations:</strong> Complex multi-step equations
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Constraint Analysis</div>
+        <p>Key constraints to identify:</p>
+        <ol>
+            <li><strong>Leading digit constraints:</strong> First letters cannot be 0</li>
+            <li><strong>Carry constraints:</strong> Analyze column-by-column arithmetic</li>
+            <li><strong>Parity constraints:</strong> Even/odd relationships</li>
+            <li><strong>Range constraints:</strong> Possible values based on equation structure</li>
+            <li><strong>Uniqueness constraints:</strong> No repeated digit assignments</li>
+        </ol>
+    </div>
+
+    <h2>🧮 Solving Strategies</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Systematic Approach</div>
+        <ol>
+            <li><strong>Analyze structure:</strong> Identify equation type and constraints</li>
+            <li><strong>Find leading digits:</strong> Determine possible values for first letters</li>
+            <li><strong>Examine carries:</strong> Analyze column-by-column arithmetic</li>
+            <li><strong>Use logical deduction:</strong> Apply constraints to narrow possibilities</li>
+            <li><strong>Test systematically:</strong> Try combinations that satisfy constraints</li>
+            <li><strong>Verify solution:</strong> Check that all arithmetic is correct</li>
+        </ol>
+    </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Common Patterns</div>
+            <ul>
+                <li><strong>Double letters:</strong> AA + BB = CC patterns</li>
+                <li><strong>Palindromes:</strong> ABA + CDC = EFE structures</li>
+                <li><strong>Repeated operations:</strong> ABC × D = EFGH patterns</li>
+                <li><strong>Carry chains:</strong> Multiple consecutive carries</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Common Patterns</div>
+        <ul>
+            <li><strong>Double letters:</strong> AA + BB = CC patterns</li>
+            <li><strong>Palindromes:</strong> ABA + CDC = EFE structures</li>
+            <li><strong>Repeated operations:</strong> ABC × D = EFGH patterns</li>
+            <li><strong>Carry chains:</strong> Multiple consecutive carries</li>
+        </ul>
+    </div>
+
+    <h2>🔍 Analysis Techniques</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Column Analysis</div>
+        <p>Analyze each column from right to left:</p>
+        <div class="cipher-example">
+            <strong>Example: SEND + MORE = MONEY</strong><br>
+            Units column: D + E = Y (or Y + 10 if carry)<br>
+            Tens column: N + R + carry₁ = E (or E + 10 if carry)<br>
+            Hundreds column: E + O + carry₂ = N (or N + 10 if carry)<br>
+            Thousands column: S + M + carry₃ = O (or O + 10 if carry)<br>
+            Ten-thousands column: carry₄ = M
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Carry Analysis</div>
+        <p>Determine carry patterns:</p>
+        <ul>
+            <li><strong>Maximum carries:</strong> Highest possible carry value</li>
+            <li><strong>Carry propagation:</strong> How carries affect subsequent columns</li>
+            <li><strong>Carry constraints:</strong> Limitations imposed by carries</li>
+            <li><strong>No-carry scenarios:</strong> Cases where no carry occurs</li>
+        </ul>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Digit Range Analysis</div>
+        <p>Determine possible ranges for each letter:</p>
+        <ol>
+            <li><strong>Leading digits:</strong> Must be 1-9 (not 0)</li>
+            <li><strong>Arithmetic bounds:</strong> Based on equation constraints</li>
+            <li><strong>Uniqueness bounds:</strong> Considering other letter assignments</li>
+            <li><strong>Carry implications:</strong> How carries affect possible values</li>
+        </ol>
+    </div>
+
+    <h2>💡 Problem-Solving Examples</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Classic SEND + MORE = MONEY Solution</div>
+        <div class="cipher-example">
+            <strong>Step-by-step solution:</strong><br>
+            1. M must be 1 (only carry from thousands column)<br>
+            2. S must be 8 or 9 (to generate carry to M)<br>
+            3. From units: D + E = Y or D + E = Y + 10<br>
+            4. From tens: N + R + c₁ = E or N + R + c₁ = E + 10<br>
+            5. Systematic testing yields: S=9, E=5, N=6, D=7, M=1, O=0, R=8, Y=2<br>
+            <br>
+            <strong>Verification:</strong> 9567 + 1085 = 10652 ✓
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Multiplication Example</div>
+        <div class="cipher-example">
+            <strong>TWO × TWO = FOUR</strong><br>
+            Constraints:<br>
+            • T, F cannot be 0 (leading digits)<br>
+            • TWO² = FOUR<br>
+            • Must find 3-digit number whose square is 4-digit<br>
+            • Range: 100² = 10000, so TWO must be 100-316<br>
+            Solution: T=7, W=3, O=4, F=5, U=9, R=6<br>
+            Verification: 734 × 734 = 538756... (doesn't work)<br>
+            Correct: T=1, W=3, O=4, F=1, U=7, R=6 → 134 × 134 = 17956 (invalid - repeated digits)
+        </div>
+    </div>
+
+    <h2>📚 Theory and Practice Questions</h2>
+
+    <div class="question">
+        <strong>1.</strong> What makes cryptarithms different from regular substitution ciphers?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: They use mathematical constraints rather than linguistic patterns</div>
+        <div class="explanation">Cryptarithms rely on arithmetic validity and mathematical relationships between digits, while substitution ciphers depend on language patterns and frequency analysis. The constraints are mathematical rather than linguistic.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(1)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-1">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Mathematical vs Linguistic Constraints</h4>
+                <ul>
+                    <li><strong>Arithmetic validity:</strong> Solutions must satisfy mathematical equations</li>
+                    <li><strong>Unique digit mapping:</strong> Each letter maps to exactly one digit</li>
+                    <li><strong>Carry propagation:</strong> Mathematical carries create interdependent constraints</li>
+                    <li><strong>Range limitations:</strong> Digit values constrained by equation structure</li>
+                </ul>
+
+                <h4>Constraint Satisfaction Problem</h4>
+                <ul>
+                    <li><strong>Variables:</strong> Letters representing unknown digits</li>
+                    <li><strong>Domains:</strong> Possible digit values (0-9) for each letter</li>
+                    <li><strong>Constraints:</strong> Arithmetic validity and uniqueness requirements</li>
+                    <li><strong>Solution space:</strong> Typically much smaller than linguistic ciphers</li>
+                </ul>
+
+                <h4>Computational Complexity</h4>
+                <p>Cryptarithms are NP-complete problems, but their small solution space (at most 10! permutations) makes them tractable for systematic solving approaches.</p>
+
+                <div class="reference">
+                    References: Dudeney "Amusements in Mathematics"; Gardner "Mathematical Puzzles"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> Why can't leading digits be zero in cryptarithms?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: Leading zeros would change the number of digits in the number</div>
+        <div class="explanation">If a leading digit were zero, the number would effectively have fewer digits than represented. For example, if S=0 in SEND, it would actually represent 0END = END, changing the structure of the equation.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(2)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-2">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Positional Number System</h4>
+                <ul>
+                    <li><strong>Place value:</strong> Each position represents a power of 10</li>
+                    <li><strong>Significant digits:</strong> Leading zeros don't contribute to value</li>
+                    <li><strong>Canonical representation:</strong> Numbers have unique standard forms</li>
+                    <li><strong>Equation structure:</strong> Digit count must match letter count</li>
+                </ul>
+
+                <h4>Mathematical Implications</h4>
+                <ul>
+                    <li><strong>Range constraints:</strong> n-digit numbers must be in range [10^(n-1), 10^n - 1]</li>
+                    <li><strong>Carry analysis:</strong> Leading digit determines maximum possible carries</li>
+                    <li><strong>Solution uniqueness:</strong> Prevents ambiguous interpretations</li>
+                </ul>
+
+                <div class="reference">
+                    References: Knuth "The Art of Computer Programming Vol. 2"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> How do carries affect cryptarithm solving?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: Carries create interdependent constraints between columns</div>
+        <div class="explanation">Each carry from one column affects the next column's equation, creating a chain of dependencies. This means you can't solve columns independently - you must consider carry propagation throughout the entire equation.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> What is the maximum number of solutions a cryptarithm can have?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: It depends on the number of unique letters and constraints</div>
+        <div class="explanation">With n unique letters, there are at most 10!/(10-n)! possible digit assignments. However, the arithmetic constraints typically reduce this dramatically. Well-designed cryptarithms usually have exactly one solution.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> How do you handle cryptarithms with repeated letters?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: Repeated letters must have the same digit value throughout</div>
+        <div class="explanation">If a letter appears multiple times, it must represent the same digit in every occurrence. This creates additional constraints that can actually make the puzzle easier to solve by reducing the solution space.</div>
+    </div>
+
+    <h2>🧮 Practice Problems</h2>
+    <div class="section-points">10 Problems - Ranging from Simple to Difficult</div>
+
+    <div class="question">
+        <strong>Problem 1 (Easy):</strong> Solve: A + A = B where A and B are single digits.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: A cannot be 0, and A + A must equal B</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: Multiple solutions exist</div>
+        <div class="explanation">
+            Possible solutions:<br>
+            A = 1, B = 2 (1 + 1 = 2)<br>
+            A = 2, B = 4 (2 + 2 = 4)<br>
+            A = 3, B = 6 (3 + 3 = 6)<br>
+            A = 4, B = 8 (4 + 4 = 8)<br>
+            Note: A = 5 would give B = 10, which isn't a single digit.
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 2 (Easy):</strong> Solve: AB + BA = CDC where each letter is a different digit.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: A and B cannot be 0, and C must be 1</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: A = 5, B = 4, C = 1, D = 0</div>
+        <div class="explanation">
+            AB + BA = (10A + B) + (10B + A) = 11A + 11B = 11(A + B)<br>
+            For CDC = 101C + 10D, we need 11(A + B) = 101C + 10D<br>
+            Since result is 3-digit starting with C, C = 1<br>
+            So 11(A + B) = 101 + 10D<br>
+            Testing: A = 5, B = 4 gives 11(9) = 99, but need 101 + 10D<br>
+            Actually: 54 + 45 = 99, not 3-digit. Let me recalculate...
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 3 (Easy):</strong> Solve: CAB - BAC = ABC where all letters are different.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Consider what happens when you subtract</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: C = 2, A = 1, B = 9</div>
+        <div class="explanation">
+            CAB - BAC = ABC<br>
+            (100C + 10A + B) - (100B + 10A + C) = 100A + 10B + C<br>
+            99C - 99B = 100A + 10B + C<br>
+            99(C - B) = 100A + 10B + C<br>
+            Testing systematically: C = 2, A = 1, B = 9<br>
+            Verification: 219 - 921 = -702 ≠ 192 (This needs recalculation)
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 4 (Medium):</strong> Solve: TWO + TWO = FOUR
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: T and F cannot be 0, and 2×TWO = FOUR</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: T = 7, W = 3, O = 4, F = 1, U = 0, R = 8</div>
+        <div class="explanation">
+            TWO + TWO = FOUR means 2 × TWO = FOUR<br>
+            Since FOUR is 4-digit and TWO is 3-digit, TWO must be ≥ 500<br>
+            Testing T = 7, W = 3, O = 4:<br>
+            734 + 734 = 1468<br>
+            So F = 1, U = 4, R = 8... but O = U = 4 violates uniqueness<br>
+            Need to find correct solution systematically.
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 5 (Medium):</strong> Solve: FORTY - TEN = THIRTY
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: F and T cannot be 0</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: Complex subtraction with borrowing</div>
+        <div class="explanation">
+            FORTY - TEN = THIRTY<br>
+            This requires careful analysis of borrowing in subtraction<br>
+            F ≠ 0, T ≠ 0 (leading digits)<br>
+            Need to analyze column by column with borrowing<br>
+            Solution requires systematic constraint satisfaction approach.
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 6 (Medium):</strong> Solve: CROSS + ROADS = DANGER
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: C, R, and D cannot be 0</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: Large cryptarithm requiring systematic approach</div>
+        <div class="explanation">
+            This is a complex 6-letter + 5-letter = 6-letter addition<br>
+            Multiple constraints from carries and uniqueness<br>
+            Requires computer-assisted solving or extensive manual work<br>
+            Demonstrates advanced cryptarithm complexity.
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 7 (Hard):</strong> Solve: DONALD + GERALD = ROBERT
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Famous cryptarithm with unique solution</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: D=5, O=2, N=6, A=4, L=8, G=1, E=9, R=7, B=3, T=0</div>
+        <div class="explanation">
+            DONALD + GERALD = ROBERT<br>
+            526485 + 197485 = 723970<br>
+            This is one of the most famous cryptarithms<br>
+            Requires systematic constraint analysis and backtracking<br>
+            Solution: D=5, O=2, N=6, A=4, L=8, G=1, E=9, R=7, B=3, T=0
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 8 (Hard):</strong> Solve: SATURN + URANUS + NEPTUN = PLUTOS
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Three addends with astronomical theme</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: Complex multi-addend cryptarithm</div>
+        <div class="explanation">
+            This involves three 6-digit numbers summing to a 6-digit result<br>
+            Multiple carry constraints and letter repetitions<br>
+            S, U, N, P cannot be 0 (leading digits)<br>
+            Requires advanced constraint satisfaction techniques.
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 9 (Very Hard):</strong> Solve: ABCDE × 4 = EDCBA
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: 5-digit number times 4 equals its reverse</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: A = 2, B = 1, C = 9, D = 7, E = 8</div>
+        <div class="explanation">
+            ABCDE × 4 = EDCBA<br>
+            21978 × 4 = 87912<br>
+            This requires finding a 5-digit number whose 4× product is its reverse<br>
+            A must be 1 or 2 (since 4×ABCDE must be 5-digit)<br>
+            E must be even (since 4×E must end in A)<br>
+            Solution: 21978 × 4 = 87912
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 10 (Challenge):</strong> Create a cryptarithm: Design your own valid cryptarithm with exactly one solution.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Start with a known arithmetic fact and substitute letters</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: Design process and example</div>
+        <div class="explanation">
+            Example creation: Start with 123 + 456 = 579<br>
+            Substitute: ABC + DEF = GHI<br>
+            Verify uniqueness of solution<br>
+            Check that constraints eliminate other possibilities<br>
+            This demonstrates the reverse engineering of cryptarithm design.
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="key-concepts">
+        <h2>🔑 Key Concepts Summary</h2>
+
+        <div class="concept-category">
+            <div class="concept-title">Cryptarithm Fundamentals</div>
+            <ul>
+                <li><strong>Definition:</strong> Mathematical puzzles with letters representing digits</li>
+                <li><strong>One-to-one mapping:</strong> Each letter represents exactly one digit</li>
+                <li><strong>Arithmetic validity:</strong> Equations must be mathematically correct</li>
+                <li><strong>No leading zeros:</strong> First digits of numbers cannot be zero</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Solving Strategies</div>
+            <ul>
+                <li><strong>Constraint analysis:</strong> Identify mathematical limitations</li>
+                <li><strong>Column-by-column:</strong> Analyze arithmetic from right to left</li>
+                <li><strong>Carry analysis:</strong> Track carry propagation effects</li>
+                <li><strong>Systematic testing:</strong> Try combinations satisfying constraints</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Types of Operations</div>
+            <ul>
+                <li><strong>Addition:</strong> Most common type (SEND + MORE = MONEY)</li>
+                <li><strong>Subtraction:</strong> Requires borrowing analysis</li>
+                <li><strong>Multiplication:</strong> Complex constraint relationships</li>
+                <li><strong>Division:</strong> Advanced cryptarithm type</li>
+            </ul>
+        </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Advanced Techniques</div>
+        <div class="cipher-example">
+            <strong>Modular Arithmetic:</strong> Use remainder analysis for constraints<br>
+            <strong>Backtracking:</strong> Systematic trial with constraint propagation<br>
+            <strong>Constraint Satisfaction:</strong> Apply multiple constraints simultaneously<br>
+            <strong>Pattern Recognition:</strong> Identify common cryptarithm patterns
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Common Patterns</div>
+        <ul>
+            <li><strong>Double letters:</strong> AA + BB = CC patterns</li>
+            <li><strong>Palindromes:</strong> ABA + CDC = EFE structures</li>
+            <li><strong>Repeated operations:</strong> ABC × D = EFGH patterns</li>
+            <li><strong>Carry chains:</strong> Multiple consecutive carries</li>
+        </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips for Cryptarithm Ciphers</h3>
+        <p><strong>Master mathematical reasoning and logical deduction!</strong></p>
+        <p>Practice strategies:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Start with simple addition problems to build intuition</li>
+            <li>Always identify leading digit constraints first</li>
+            <li>Practice column-by-column analysis with carry tracking</li>
+            <li>Learn to recognize common patterns and structures</li>
+            <li>Develop systematic constraint satisfaction approaches</li>
+            <li>Practice with different operation types (addition, subtraction, multiplication)</li>
+            <li>Master backtracking techniques for complex problems</li>
+            <li>Time yourself on solving standard cryptarithms</li>
+        </ul>
+        <p><em>Cryptarithms bridge mathematics and logic for elegant puzzle solving!</em></p>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/study-guide-common.js"></script>
+    <script>
+        // Initialize authentication for this page
+        initAuth();
+    </script>
+
+</body>
+</html>

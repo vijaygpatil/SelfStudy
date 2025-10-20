@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xenocrypt Cipher Study Guide - Code Busters Preparation</title>
+    <link rel="stylesheet" href="../../css/study-guide-common.css">
+    <link rel="stylesheet" href="../../css/code-busters-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../../code-buster-index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Code Busters Hub
+            </a>
+            <a href="../../index.html" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                🏠 Main Portal
+            </a>
+        </div>
+        <h1>Xenocrypt Cipher Study Guide</h1>
+        <div class="subtitle">Science Olympiad Code Busters Preparation</div>
+        <div class="subtitle">Master Foreign Language Cryptanalysis</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>🌍 Introduction to Xenocrypt Cipher</h2>
+
+    <div class="key-concepts">
+        <h3>What is a Xenocrypt?</h3>
+        <p>A <strong>Xenocrypt</strong> (from Greek "xenos" meaning foreign) is a cryptogram written in a foreign language. It combines the challenge of solving a substitution cipher with the additional complexity of working in an unfamiliar language. These puzzles test both cryptanalytic skills and linguistic pattern recognition.</p>
+
+        <div class="cipher-example">
+            <strong>Example (Spanish Xenocrypt):</strong><br>
+            Ciphertext: "QD FKDV QD FKDV FDVD"<br>
+            Plaintext:  "NO ESTA NO ESTA CASA"<br>
+            Translation: "It's not, it's not home"
+        </div>
+
+        <p>Xenocrypts are commonly used in cryptography competitions and puzzle magazines, requiring solvers to identify both the cipher method and the underlying language.</p>
+    </div>
+
+    <h2>🔤 How Xenocrypt Ciphers Work</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Basic Structure</div>
+        <ol>
+            <li><strong>Choose a foreign language:</strong> Common choices include Spanish, French, German, Italian, Latin</li>
+            <li><strong>Apply a substitution cipher:</strong> Usually monoalphabetic (each letter maps to one other letter)</li>
+            <li><strong>Preserve word structure:</strong> Spaces and punctuation typically maintained</li>
+            <li><strong>Maintain language patterns:</strong> The underlying grammar and vocabulary remain intact</li>
+        </ol>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Solving Strategy</div>
+        <ol>
+            <li><strong>Identify the language:</strong> Look for characteristic patterns, word lengths, letter frequencies</li>
+            <li><strong>Find common words:</strong> Articles, prepositions, and conjunctions in the target language</li>
+            <li><strong>Use frequency analysis:</strong> Each language has distinct letter frequency patterns</li>
+            <li><strong>Apply linguistic knowledge:</strong> Grammar rules, common endings, word structure</li>
+        </ol>
+    </div>
+
+    <div class="cipher-example">
+        <strong>Solving Example (French Xenocrypt):</strong><br>
+        Ciphertext: "QD FKDV QD FKDV FDVD"<br>
+        Analysis: Short words suggest articles/pronouns. "QD" appears twice - likely "LE" or "LA"<br>
+        If Q=L, D=E: "LE ?E?E LE ?E?E ?E?E"<br>
+        Pattern suggests: "LE PERE LE PERE PERE" (THE FATHER THE FATHER FATHER)
+    </div>
+
+    <h2>📚 Theory and Practice Questions</h2>
+
+    <div class="question">
+        <strong>1.</strong> What does the term "Xenocrypt" literally mean, and why is this name appropriate for this type of cipher?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: "Foreign cipher" - from Greek "xenos" (foreign) + "kryptos" (hidden)</div>
+        <div class="explanation">The name is appropriate because these ciphers combine cryptanalysis with foreign language recognition, making them "doubly foreign" to most solvers.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(1)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-1">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Etymology and History</h4>
+                The term "xenocrypt" was coined by puzzle creators in the mid-20th century to describe this specific type of cryptographic challenge. It reflects the dual nature of the puzzle:
+                <ul>
+                    <li><strong>Cryptographic challenge:</strong> Solving the substitution cipher</li>
+                    <li><strong>Linguistic challenge:</strong> Recognizing and understanding the foreign language</li>
+                </ul>
+
+                <h4>Educational Value</h4>
+                Xenocrypts serve multiple educational purposes:
+                <ul>
+                    <li><strong>Cryptanalysis skills:</strong> Pattern recognition, frequency analysis</li>
+                    <li><strong>Language awareness:</strong> Exposure to foreign language structures</li>
+                    <li><strong>Cultural literacy:</strong> Understanding of different linguistic patterns</li>
+                    <li><strong>Problem-solving:</strong> Multi-layered analytical thinking</li>
+                </ul>
+
+                <div class="reference">
+                    References: Friedman "Military Cryptanalysis"; ACA (American Cryptogram Association) publications
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> Which languages are most commonly used in xenocrypt puzzles, and why?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: Spanish, French, German, Italian, and Latin</div>
+        <div class="explanation">These languages are chosen because they use the same alphabet as English, have familiar vocabulary roots, and are commonly studied in schools.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(2)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-2">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Language Selection Criteria</h4>
+                <ul>
+                    <li><strong>Alphabet compatibility:</strong> Must use Latin alphabet (A-Z)</li>
+                    <li><strong>Educational familiarity:</strong> Languages taught in schools</li>
+                    <li><strong>Vocabulary overlap:</strong> Cognates with English help solvers</li>
+                    <li><strong>Distinct patterns:</strong> Each language has unique characteristics</li>
+                </ul>
+
+                <h4>Language-Specific Patterns</h4>
+                <ul>
+                    <li><strong>Spanish:</strong> High frequency of A, E, O; common endings -AR, -ER, -IR</li>
+                    <li><strong>French:</strong> High frequency of E; common words LE, LA, DE, UN</li>
+                    <li><strong>German:</strong> Long compound words; common endings -EN, -ER, -ES</li>
+                    <li><strong>Italian:</strong> High vowel frequency; common endings -ARE, -ERE, -IRE</li>
+                    <li><strong>Latin:</strong> Case endings -US, -A, -UM; classical vocabulary</li>
+                </ul>
+
+                <div class="reference">
+                    References: Crystal "The Cambridge Encyclopedia of Language"; ACA Xenocrypt Guidelines
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> What is the most important first step when solving a xenocrypt?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: Identify the language</div>
+        <div class="explanation">Before attempting to solve the cipher, you must determine which language is being used, as this affects frequency analysis and word pattern recognition.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> How do letter frequencies in foreign languages help solve xenocrypts?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: Each language has distinct letter frequency patterns that differ from English</div>
+        <div class="explanation">For example, Spanish has high frequencies of A, E, O while French has very high E frequency. These patterns help identify both the language and likely letter substitutions.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> What are some common short words that help identify the language in a xenocrypt?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: Articles, prepositions, and conjunctions</div>
+        <div class="explanation">Spanish: EL, LA, DE, EN, Y; French: LE, LA, DE, UN, ET; German: DER, DIE, DAS, UND; Italian: IL, LA, DI, E; Latin: ET, IN, AD</div>
+    </div>
+
+    <h2>🧮 Practice Problems</h2>
+    <div class="section-points">10 Problems - Ranging from Simple to Difficult</div>
+
+    <div class="question">
+        <strong>Problem 1 (Easy - Spanish):</strong> Solve this simple Spanish xenocrypt: "QD FDVD DV JKFMAD"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Look for the common Spanish article pattern</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: LA CASA ES GRANDE (The house is big)</div>
+        <div class="explanation">Q=L, D=A, F=C, V=S, J=G, K=R, M=N, A=E. "QD" = "LA" (the), common Spanish article pattern.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 2 (Easy - French):</strong> Decrypt: "QD FKFM DV GQFMF"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: French definite article</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: LE CHAT EST BLANC (The cat is white)</div>
+        <div class="explanation">Q=L, D=E, F=C, K=H, M=A, V=T, G=B, M=N. "QD" = "LE" (the) in French.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 3 (Easy - German):</strong> Solve: "ADK KZMA LVW JZW"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: German definite article</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: DER HUND IST GUT (The dog is good)</div>
+        <div class="explanation">A=D, D=E, K=R, Z=U, M=N, L=I, V=S, W=T, J=G. "ADK" = "DER" (the) in German.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 4 (Medium - Spanish):</strong> Decrypt this Spanish phrase: "DQ JFWW DVWF DM QF GQFYF"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Look for repeated patterns and common Spanish words</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: EL GATO ESTA EN LA PLAZA (The cat is in the plaza)</div>
+        <div class="explanation">D=E, Q=L, J=G, F=A, W=T, V=S, M=N, G=P, Y=Z. Pattern "DQ" appears twice = "EL".</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 5 (Medium - French):</strong> Solve: "QD QLSKD DVW WKDV GQFMF"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: French has very high E frequency</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: LE LIVRE EST TRES BLANC (The book is very white)</div>
+        <div class="explanation">Q=L, D=E, L=I, S=V, K=R, W=T, V=S, G=B, F=A, M=N, C=C. High frequency of D suggests D=E.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 6 (Medium - Italian):</strong> Decrypt: "LQ JFWW GLFMF GQZD"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Italian definite article and high vowel frequency</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: IL GATTO BIANCO BELLO (The white cat beautiful)</div>
+        <div class="explanation">L=I, Q=L, J=G, F=A, W=T, G=B, M=N, Z=C, D=O. "LQ" = "IL" (the) in Italian.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 7 (Hard - Latin):</strong> Solve this Latin phrase: "FFDVFK KDMALK JFQQLFV"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Famous Latin phrase about conquest</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: CAESAR REGNAT GALLIUS (Caesar rules Gaul)</div>
+        <div class="explanation">F=C, D=A, V=E, K=R, M=N, L=I, J=G, Q=L, V=S. Classical Latin vocabulary and structure.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 8 (Hard - Spanish):</strong> Decrypt: "QFV FMLJZV GQFMFV SZQFM FQKDADKDV FQ FLKM"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Spanish sentence about birds</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: LAS AVES BLANCAS VUELAN ALREDEDOR AL CIELO (The white birds fly around the sky)</div>
+        <div class="explanation">Q=L, F=A, V=S, M=V, L=I, J=B, Z=E, G=B, K=R, D=E, A=D, S=U, R=O. Complex Spanish sentence structure.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 9 (Very Hard - French):</strong> Solve: "QDV DMEFMWV EZKDMW AFMV QD EFKALM AZ GKLV AZ VKQLDQ"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: French sentence about children playing</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: LES ENFANTS JOUENT DANS LE JARDIN AU BORD DU SOLEIL (The children play in the garden at the edge of the sun)</div>
+        <div class="explanation">Q=L, D=E, V=S, M=N, E=J, F=A, W=T, Z=U, K=R, A=D, G=B, L=I, S=O. Complex French grammar with articles and prepositions.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 10 (Challenge - Multi-language):</strong> This xenocrypt contains a mix of Latin and Spanish. Solve: "FFDVFK DW KLVGFMLF AFMW QFWLMZV"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Famous phrase mixing classical and modern languages</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: CAESAR ET HISPANIA SUNT LATINUS (Caesar and Spain are Latin)</div>
+        <div class="explanation">F=C, D=A, V=S, K=R, W=T, L=I, G=P, M=N, Z=U, Q=L. Mixed Latin-Spanish construction showing historical linguistic connections.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="key-concepts">
+        <h2>🔑 Key Concepts Summary</h2>
+
+        <div class="concept-category">
+            <div class="concept-title">Xenocrypt Basics</div>
+            <ul>
+                <li><strong>Definition:</strong> Cryptogram in a foreign language</li>
+                <li><strong>Common languages:</strong> Spanish, French, German, Italian, Latin</li>
+                <li><strong>Cipher type:</strong> Usually monoalphabetic substitution</li>
+                <li><strong>Dual challenge:</strong> Cryptanalysis + language recognition</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Language Identification Clues</div>
+            <ul>
+                <li><strong>Spanish:</strong> High A, E, O frequency; endings -AR, -ER, -IR</li>
+                <li><strong>French:</strong> Very high E frequency; words LE, LA, DE, UN</li>
+                <li><strong>German:</strong> Long words; endings -EN, -ER; articles DER, DIE, DAS</li>
+                <li><strong>Italian:</strong> High vowel frequency; articles IL, LA; endings -ARE, -ERE</li>
+                <li><strong>Latin:</strong> Case endings -US, -A, -UM; classical vocabulary</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Solving Strategy</div>
+            <ul>
+                <li><strong>Step 1:</strong> Identify the language using patterns and frequencies</li>
+                <li><strong>Step 2:</strong> Find common short words (articles, prepositions)</li>
+                <li><strong>Step 3:</strong> Apply frequency analysis for the specific language</li>
+                <li><strong>Step 4:</strong> Use linguistic knowledge (grammar, word structure)</li>
+                <li><strong>Step 5:</strong> Verify solution makes sense in the language</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Common Short Words by Language</div>
+            <ul>
+                <li><strong>Spanish:</strong> EL, LA, DE, EN, Y, ES, UN, UNA, CON, POR</li>
+                <li><strong>French:</strong> LE, LA, DE, UN, UNE, ET, EST, DANS, AVEC, POUR</li>
+                <li><strong>German:</strong> DER, DIE, DAS, UND, IST, IN, MIT, FUR, AUF</li>
+                <li><strong>Italian:</strong> IL, LA, DI, E, UN, UNA, IN, CON, PER, DA</li>
+                <li><strong>Latin:</strong> ET, IN, AD, DE, CUM, PRO, EX, AB, SUB</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Letter Frequency Patterns</div>
+            <ul>
+                <li><strong>Spanish:</strong> E(12.0%), A(11.7%), O(8.7%), S(7.2%), N(6.8%)</li>
+                <li><strong>French:</strong> E(17.3%), A(8.1%), I(7.2%), S(7.9%), N(7.1%)</li>
+                <li><strong>German:</strong> E(16.4%), N(9.8%), I(7.5%), S(7.3%), R(7.0%)</li>
+                <li><strong>Italian:</strong> E(11.8%), A(11.7%), I(11.3%), O(9.8%), N(6.9%)</li>
+                <li><strong>Latin:</strong> I(11.0%), A(9.0%), E(8.5%), U(8.0%), S(7.5%)</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Advanced Techniques</div>
+            <ul>
+                <li><strong>Cognate recognition:</strong> Words similar to English</li>
+                <li><strong>Grammar patterns:</strong> Verb conjugations, noun declensions</li>
+                <li><strong>Cultural context:</strong> Common phrases, idioms</li>
+                <li><strong>Historical knowledge:</strong> Classical references, cultural allusions</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips for Xenocrypt Ciphers</h3>
+        <p><strong>Master multiple languages and cryptanalysis simultaneously!</strong></p>
+        <p>Practice strategies:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Learn basic vocabulary in common xenocrypt languages</li>
+            <li>Memorize letter frequency patterns for each language</li>
+            <li>Practice identifying languages from short text samples</li>
+            <li>Study common grammatical patterns and word endings</li>
+            <li>Build familiarity with cognates (words similar to English)</li>
+            <li>Practice with authentic foreign language texts</li>
+            <li>Time yourself on progressively difficult xenocrypts</li>
+        </ul>
+        <p><em>Xenocrypts combine the best of cryptography and linguistics - master both for success!</em></p>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/study-guide-common.js"></script>
+    <script>
+        // Initialize authentication for this page
+        initAuth();
+    </script>
+
+</body>
+</html>

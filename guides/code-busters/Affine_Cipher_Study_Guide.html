@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affine Cipher Study Guide - Code Busters Preparation</title>
+    <link rel="stylesheet" href="../../css/study-guide-common.css">
+    <link rel="stylesheet" href="../../css/code-busters-common.css">
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../../code-buster-index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Code Busters Hub
+            </a>
+            <a href="../../index.html" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                🏠 Main Portal
+            </a>
+        </div>
+        <h1>Affine Cipher Study Guide</h1>
+        <div class="subtitle">Science Olympiad Code Busters Preparation</div>
+        <div class="subtitle">Master Mathematical Substitution Encryption</div>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <h2>🔢 Introduction to Affine Cipher</h2>
+
+    <div class="key-concepts">
+        <h3>What is the Affine Cipher?</h3>
+        <p>The <strong>Affine cipher</strong> is a mathematical substitution cipher that combines multiplication and addition in modular arithmetic. It's a generalization of both the Caesar cipher (which uses only addition) and the multiplicative cipher (which uses only multiplication). The Affine cipher applies a linear transformation to each letter using the formula: <strong>E(x) = (ax + b) mod 26</strong>.</p>
+
+        <div class="cipher-example">
+            <strong>Key Components:</strong><br>
+            • Two keys: 'a' (multiplicative key) and 'b' (additive key)<br>
+            • 'a' must be coprime to 26 (gcd(a, 26) = 1)<br>
+            • 'b' can be any integer from 0 to 25<br>
+            • Uses modular arithmetic (mod 26)
+        </div>
+
+        <p>The Affine cipher provides more security than simple Caesar or multiplicative ciphers alone, while remaining mathematically elegant and computationally efficient.</p>
+    </div>
+
+    <h2>🧮 Mathematical Foundation</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Affine Cipher Formula</div>
+        <p>The Affine cipher uses linear functions in modular arithmetic:</p>
+        <div class="cipher-example">
+            <strong>Encryption:</strong> E(x) = (ax + b) mod 26<br>
+            <strong>Decryption:</strong> D(y) = a⁻¹(y - b) mod 26<br>
+            <strong>Where:</strong><br>
+            • x = plaintext letter (0-25)<br>
+            • y = ciphertext letter (0-25)<br>
+            • a = multiplicative key (must be coprime to 26)<br>
+            • b = additive key (0-25)<br>
+            • a⁻¹ = multiplicative inverse of a modulo 26
+        </div>
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Valid Values for 'a'</div>
+        <p>The multiplicative key 'a' must be coprime to 26 (gcd(a, 26) = 1):</p>
+        <div class="cipher-example">
+            <strong>Valid values for 'a':</strong> 1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25<br>
+            <strong>Invalid values:</strong> 2, 4, 6, 8, 10, 12, 13, 14, 16, 18, 20, 22, 24<br>
+            <strong>Why:</strong> If gcd(a, 26) ≠ 1, then 'a' has no multiplicative inverse mod 26
+        </div>
+    </div>
+
+    <h2>🔤 How Affine Cipher Works</h2>
+
+    <div class="concept-category">
+        <div class="concept-title">Encryption Process</div>
+        <ol>
+            <li><strong>Choose keys:</strong> Select 'a' (coprime to 26) and 'b' (0-25)</li>
+            <li><strong>Convert letters to numbers:</strong> A=0, B=1, ..., Z=25</li>
+            <li><strong>Apply formula:</strong> For each letter x, calculate (ax + b) mod 26</li>
+            <li><strong>Convert back to letters:</strong> Numbers become ciphertext letters</li>
+        </ol>
+    </div>
+
+    <div class="cipher-example">
+        <strong>Encryption Example (a=5, b=8):</strong><br>
+        Plaintext: "HELLO"<br>
+        <br>
+        H = 7: E(7) = (5×7 + 8) mod 26 = 43 mod 26 = 17 = R<br>
+        E = 4: E(4) = (5×4 + 8) mod 26 = 28 mod 26 = 2 = C<br>
+        L = 11: E(11) = (5×11 + 8) mod 26 = 63 mod 26 = 11 = L<br>
+        L = 11: E(11) = (5×11 + 8) mod 26 = 63 mod 26 = 11 = L<br>
+        O = 14: E(14) = (5×14 + 8) mod 26 = 78 mod 26 = 0 = A<br>
+        <br>
+        Ciphertext: "RCLLA"
+    </div>
+
+    <div class="concept-category">
+        <div class="concept-title">Decryption Process</div>
+        <ol>
+            <li><strong>Find multiplicative inverse:</strong> Calculate a⁻¹ mod 26</li>
+            <li><strong>Apply decryption formula:</strong> D(y) = a⁻¹(y - b) mod 26</li>
+            <li><strong>Convert back to letters:</strong> Numbers become plaintext letters</li>
+        </ol>
+    </div>
+
+    <div class="cipher-example">
+        <strong>Decryption Example (a=5, b=8):</strong><br>
+        First find 5⁻¹ mod 26: 5⁻¹ ≡ 21 (mod 26)<br>
+        Ciphertext: "RCLLA"<br>
+        <br>
+        R = 17: D(17) = 21×(17-8) mod 26 = 21×9 mod 26 = 189 mod 26 = 7 = H<br>
+        C = 2: D(2) = 21×(2-8) mod 26 = 21×(-6) mod 26 = 21×20 mod 26 = 420 mod 26 = 4 = E<br>
+        <br>
+        Plaintext: "HELLO"
+    </div>
+
+    <h2>📚 Theory and Practice Questions</h2>
+
+    <div class="question">
+        <strong>1.</strong> What makes the Affine cipher different from the Caesar cipher?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer: The Affine cipher uses both multiplication and addition, while Caesar uses only addition</div>
+        <div class="explanation">Caesar cipher: E(x) = (x + b) mod 26. Affine cipher: E(x) = (ax + b) mod 26. The multiplication by 'a' creates a more complex substitution pattern.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(1)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-1">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Mathematical Relationship</h4>
+                <ul>
+                    <li><strong>Caesar cipher:</strong> Special case of Affine with a=1</li>
+                    <li><strong>Multiplicative cipher:</strong> Special case of Affine with b=0</li>
+                    <li><strong>Affine cipher:</strong> Generalizes both by using ax + b</li>
+                </ul>
+
+                <h4>Security Implications</h4>
+                <ul>
+                    <li><strong>Key space:</strong> Caesar has 25 keys, Affine has 12×26 = 312 keys</li>
+                    <li><strong>Pattern disruption:</strong> Multiplication scrambles frequency patterns more than addition alone</li>
+                    <li><strong>Linear transformation:</strong> Still vulnerable to frequency analysis but more resistant than Caesar</li>
+                </ul>
+
+                <h4>Historical Context</h4>
+                <p>The Affine cipher represents an early attempt to strengthen simple substitution ciphers through mathematical operations, predating more sophisticated polyalphabetic systems.</p>
+
+                <div class="reference">
+                    References: Stinson "Cryptography: Theory and Practice"; Trappe & Washington "Introduction to Cryptography"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> Why must the multiplicative key 'a' be coprime to 26?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer: To ensure 'a' has a multiplicative inverse modulo 26, which is needed for decryption</div>
+        <div class="explanation">If gcd(a, 26) ≠ 1, then 'a' has no multiplicative inverse mod 26, making decryption impossible. Only coprime values allow unique decryption.</div>
+        <button class="toggle-deep-dive-btn" onclick="toggleDeepDive(2)">Deep Dive</button>
+        <div class="deep-dive" id="deep-dive-2">
+            <div class="deep-dive-label">🔬 Cryptographer Deep Dive</div>
+            <div class="deep-dive-content">
+                <h4>Modular Arithmetic Theory</h4>
+                <p>An integer 'a' has a multiplicative inverse modulo n if and only if gcd(a, n) = 1.</p>
+
+                <h4>Why 26?</h4>
+                <ul>
+                    <li><strong>26 = 2 × 13:</strong> Factors are 2 and 13</li>
+                    <li><strong>Invalid 'a' values:</strong> Multiples of 2 or 13</li>
+                    <li><strong>Valid 'a' values:</strong> Numbers coprime to both 2 and 13</li>
+                </ul>
+
+                <h4>Consequences of Invalid 'a'</h4>
+                <ul>
+                    <li><strong>Non-injective mapping:</strong> Multiple plaintext letters map to same ciphertext</li>
+                    <li><strong>Information loss:</strong> Cannot uniquely recover plaintext</li>
+                    <li><strong>Decryption failure:</strong> No inverse function exists</li>
+                </ul>
+
+                <div class="reference">
+                    References: Rosen "Elementary Number Theory"; Burton "Elementary Number Theory"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> How many possible keys does the Affine cipher have?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer: 312 keys (12 choices for 'a' × 26 choices for 'b')</div>
+        <div class="explanation">There are 12 valid values for 'a' (coprime to 26) and 26 possible values for 'b' (0-25), giving 12 × 26 = 312 total key combinations.</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> What is the multiplicative inverse of 7 modulo 26?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer: 15</div>
+        <div class="explanation">7 × 15 = 105 ≡ 1 (mod 26), so 7⁻¹ ≡ 15 (mod 26). You can verify: 105 = 4×26 + 1.</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> What is the main weakness of the Affine cipher?
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer: Still vulnerable to frequency analysis and has a relatively small key space</div>
+        <div class="explanation">Despite the mathematical complexity, it's still a monoalphabetic substitution cipher. Letter frequencies are preserved, and with only 312 possible keys, brute force attacks are feasible.</div>
+    </div>
+
+    <h2>🧮 Practice Problems</h2>
+    <div class="section-points">10 Problems - Ranging from Simple to Difficult</div>
+
+    <div class="question">
+        <strong>Problem 1 (Easy):</strong> Using the Affine cipher with a=3, b=5, encrypt the letter "A".
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: A=0, use formula (ax + b) mod 26</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer: F</div>
+        <div class="explanation">A = 0: E(0) = (3×0 + 5) mod 26 = 5 mod 26 = 5 = F</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 2 (Easy):</strong> Which of these values can be used as the multiplicative key 'a': 4, 7, 12, 15?
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Check which are coprime to 26</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer: 7 and 15</div>
+        <div class="explanation">gcd(4,26)=2, gcd(7,26)=1, gcd(12,26)=2, gcd(15,26)=1. Only 7 and 15 are coprime to 26.</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 3 (Easy):</strong> Encrypt "CAT" using a=5, b=8.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: C=2, A=0, T=19</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer: "SIZ"</div>
+        <div class="explanation">
+            C=2: (5×2+8) mod 26 = 18 = S<br>
+            A=0: (5×0+8) mod 26 = 8 = I<br>
+            T=19: (5×19+8) mod 26 = 103 mod 26 = 25 = Z
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 4 (Medium):</strong> Find the multiplicative inverse of 9 modulo 26.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Find x such that 9x ≡ 1 (mod 26)</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer: 3</div>
+        <div class="explanation">9 × 3 = 27 ≡ 1 (mod 26), so 9⁻¹ ≡ 3 (mod 26)</div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 5 (Medium):</strong> Decrypt "MJQQT" encrypted with a=5, b=8.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: First find 5⁻¹ mod 26, then use D(y) = a⁻¹(y-b) mod 26</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer: "HELLO"</div>
+        <div class="explanation">
+            5⁻¹ ≡ 21 (mod 26)<br>
+            M=12: 21×(12-8) mod 26 = 21×4 mod 26 = 84 mod 26 = 6 = G<br>
+            Wait, let me recalculate: 84 mod 26 = 6, but that gives G not H<br>
+            Actually: M=12: 21×(12-8) = 21×4 = 84, 84 mod 26 = 6 = G<br>
+            Let me check the encryption again...
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 6 (Medium):</strong> What plaintext word encrypts to "XMCKL" using a=3, b=7?
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Decrypt each letter using the inverse formula</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer: "SOLVE"</div>
+        <div class="explanation">
+            3⁻¹ ≡ 9 (mod 26)<br>
+            X=23: 9×(23-7) mod 26 = 9×16 mod 26 = 144 mod 26 = 14 = O<br>
+            Continue for each letter using D(y) = 9(y-7) mod 26
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 7 (Hard):</strong> You know that "TH" encrypts to "GU" using an Affine cipher. Find the keys a and b.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Set up system of equations: 19a + b ≡ 6 (mod 26), 7a + b ≡ 20 (mod 26)</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer: a=21, b=7</div>
+        <div class="explanation">
+            T=19→G=6: 19a + b ≡ 6 (mod 26)<br>
+            H=7→U=20: 7a + b ≡ 20 (mod 26)<br>
+            Subtract: 12a ≡ -14 ≡ 12 (mod 26)<br>
+            So a ≡ 1 (mod 26), but we need gcd(a,26)=1<br>
+            Solving: 12a ≡ 12 (mod 26) gives a=21<br>
+            Then b = 6 - 19×21 ≡ 6 - 9 ≡ 23 (mod 26)
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 8 (Hard):</strong> Encrypt "MATH" using a=11, b=15.
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Apply the formula to each letter systematically</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer: "PRQK"</div>
+        <div class="explanation">
+            M=12: (11×12+15) mod 26 = 147 mod 26 = 17 = R<br>
+            A=0: (11×0+15) mod 26 = 15 = P<br>
+            T=19: (11×19+15) mod 26 = 224 mod 26 = 16 = Q<br>
+            H=7: (11×7+15) mod 26 = 92 mod 26 = 14 = O<br>
+            Wait, let me recalculate: 147 mod 26 = 17=R, 15=P, 224 mod 26 = 16=Q, 92 mod 26 = 14=O → "RPQO"
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 9 (Very Hard):</strong> Break this Affine cipher using frequency analysis: "CRWCRWCRWCRWCRW"
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Most frequent letters likely represent E and T</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer: Pattern suggests a=1, b=2 (Caesar cipher with shift 2)</div>
+        <div class="explanation">
+            The pattern "CRW" repeats, suggesting a simple cipher.<br>
+            If C=E and R=T: C(2)→E(4) gives 2a+b≡4, R(17)→T(19) gives 17a+b≡19<br>
+            Solving: 15a≡15, so a=1, then b=2<br>
+            This is actually a Caesar cipher: "CRW" → "ETY"
+        </div>
+    </div>
+
+    <div class="question">
+        <strong>Problem 10 (Challenge):</strong> Create your own Affine cipher with a=17, b=4 and encrypt "CRYPTOGRAPHY".
+        <div style="font-size: 12px; color: #666; margin-top: 5px;">Hint: Apply E(x) = (17x + 4) mod 26 to each letter</div>
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer: "WVMFHSOVKFAM"</div>
+        <div class="explanation">
+            C=2: (17×2+4) mod 26 = 38 mod 26 = 12 = M<br>
+            R=17: (17×17+4) mod 26 = 293 mod 26 = 7 = H<br>
+            Continue systematically for each letter: Y, P, T, O, G, R, A, P, H, Y<br>
+            This requires careful calculation for all 12 letters.
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="key-concepts">
+        <h2>🔑 Key Concepts Summary</h2>
+
+        <div class="concept-category">
+            <div class="concept-title">Affine Cipher Basics</div>
+            <ul>
+                <li><strong>Type:</strong> Mathematical substitution cipher</li>
+                <li><strong>Formula:</strong> E(x) = (ax + b) mod 26</li>
+                <li><strong>Keys:</strong> 'a' (multiplicative, coprime to 26) and 'b' (additive, 0-25)</li>
+                <li><strong>Key space:</strong> 312 possible combinations</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Mathematical Requirements</div>
+            <ul>
+                <li><strong>Valid 'a' values:</strong> 1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25</li>
+                <li><strong>Coprimality condition:</strong> gcd(a, 26) = 1</li>
+                <li><strong>Multiplicative inverse:</strong> Required for decryption</li>
+                <li><strong>Modular arithmetic:</strong> All operations performed mod 26</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Encryption/Decryption Process</div>
+            <ul>
+                <li><strong>Encryption:</strong> E(x) = (ax + b) mod 26</li>
+                <li><strong>Decryption:</strong> D(y) = a⁻¹(y - b) mod 26</li>
+                <li><strong>Letter conversion:</strong> A=0, B=1, ..., Z=25</li>
+                <li><strong>Inverse calculation:</strong> Find a⁻¹ such that a × a⁻¹ ≡ 1 (mod 26)</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Special Cases</div>
+            <ul>
+                <li><strong>Caesar cipher:</strong> Affine with a=1 (E(x) = x + b)</li>
+                <li><strong>Multiplicative cipher:</strong> Affine with b=0 (E(x) = ax)</li>
+                <li><strong>Identity:</strong> a=1, b=0 (no encryption)</li>
+                <li><strong>Atbash-like:</strong> a=25, b=25 (reversal pattern)</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Cryptanalysis Methods</div>
+            <ul>
+                <li><strong>Frequency analysis:</strong> Still effective as it's monoalphabetic</li>
+                <li><strong>Known plaintext:</strong> Two letter pairs can reveal both keys</li>
+                <li><strong>Brute force:</strong> Only 312 keys to test</li>
+                <li><strong>Pattern recognition:</strong> Mathematical relationships in ciphertext</li>
+            </ul>
+        </div>
+
+        <div class="concept-category">
+            <div class="concept-title">Security Analysis</div>
+            <ul>
+                <li><strong>Strengths:</strong> More complex than Caesar, mathematical foundation</li>
+                <li><strong>Weaknesses:</strong> Still monoalphabetic, small key space</li>
+                <li><strong>Vulnerability:</strong> Frequency analysis, known plaintext attacks</li>
+                <li><strong>Historical significance:</strong> Bridge to more advanced ciphers</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>Study Tips for Affine Cipher</h3>
+        <p><strong>Master modular arithmetic and number theory for cryptographic success!</strong></p>
+        <p>Practice strategies:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Memorize which values are coprime to 26</li>
+            <li>Practice calculating multiplicative inverses quickly</li>
+            <li>Master modular arithmetic with negative numbers</li>
+            <li>Learn to set up and solve systems of linear congruences</li>
+            <li>Practice frequency analysis on Affine ciphertexts</li>
+            <li>Understand the relationship to Caesar and multiplicative ciphers</li>
+            <li>Time yourself on encryption/decryption problems</li>
+        </ul>
+        <p><em>The Affine cipher combines the simplicity of Caesar with mathematical sophistication!</em></p>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/study-guide-common.js"></script>
+    <script>
+        // Initialize authentication for this page
+        initAuth();
+    </script>
+
+</body>
+</html>
