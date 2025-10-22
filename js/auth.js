@@ -8,6 +8,7 @@ const AUTH_CONFIG = {
         'patilarnavv': 'Sn0wba!!',
         'patilvijayg': 'Sn0wba!!',
         'patilneytiriv': 'Sn0wba!!',
+        'thakkaryaashvi': 'Sn0wba!!',
         'scioly': 'scioly2026'
     },
 
