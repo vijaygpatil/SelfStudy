@@ -81,8 +81,20 @@ function logout() {
 
     console.log('User logged out');
 
-    // Redirect to login page
-    window.location.href = 'login.html';
+    // Redirect to login page - determine correct path based on current location
+    const currentPath = window.location.pathname;
+    let loginPath = 'login.html';
+
+    // If we're in a subdirectory (like guides/), go up one level
+    if (currentPath.includes('/guides/') || currentPath.includes('/code-busters/')) {
+        loginPath = '../login.html';
+    }
+
+    if (currentPath.includes('/code-busters/')) {
+      loginPath = '../../login.html';
+    }
+
+    window.location.href = loginPath;
 }
 
 /**
@@ -143,7 +155,14 @@ function requireAuth() {
     if (!isLoggedIn()) {
         // Get current page path for redirect after login
         const currentPath = window.location.pathname + window.location.search;
-        const loginUrl = `login.html?redirect=${encodeURIComponent(currentPath)}`;
+
+        // Determine correct path to login page based on current location
+        let loginPath = 'login.html';
+        if (currentPath.includes('/guides/') || currentPath.includes('/code-busters/')) {
+            loginPath = '../login.html';
+        }
+
+        const loginUrl = `${loginPath}?redirect=${encodeURIComponent(currentPath)}`;
 
         console.log('Authentication required, redirecting to login');
         window.location.href = loginUrl;
