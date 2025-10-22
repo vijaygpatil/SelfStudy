@@ -12,7 +12,7 @@ const AUTH_CONFIG = {
     },
 
     // Session duration (1 hour in milliseconds)
-    sessionDuration: 1 * 60 * 60 * 1000,
+    sessionDuration: 24 * 60 * 60 * 1000,
 
     // Storage keys
     storageKeys: {
