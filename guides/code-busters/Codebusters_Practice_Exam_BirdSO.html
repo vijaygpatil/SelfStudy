@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codebusters Practice Exam - BirdSO Invitational 2022</title>
+    <link rel="stylesheet" href="../../css/study-guide-common.css">
+    <link rel="stylesheet" href="../../css/code-busters-common.css">
+    <style>
+        /* Cipher-specific styling */
+        .cipher-type {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .frequency-table {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        .frequency-table table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .frequency-table th,
+        .frequency-table td {
+            border: 1px solid #dee2e6;
+            padding: 4px 2px;
+            text-align: center;
+            min-width: 20px;
+        }
+
+        .frequency-table th {
+            background: #e9ecef;
+            font-weight: bold;
+        }
+
+        .frequency-table .alphabet-row {
+            background: #f8f9fa;
+        }
+
+        .frequency-table .frequency-row {
+            background: #fff;
+        }
+
+        .frequency-table .replacement-row {
+            background: #f0f8ff;
+            height: 25px;
+        }
+
+        .cipher-text {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+
+        .plaintext-answer {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .timed-question {
+            border: 3px solid #dc3545;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .timed-header {
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .bonus-question {
+            border: 3px solid #ffc107;
+            background: linear-gradient(135deg, #fffbf0 0%, #fff3cd 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .bonus-header {
+            color: #856404;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .points-value {
+            background: #28a745;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            float: right;
+        }
+
+        .cipher-hint {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        .substitution-alphabet {
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            gap: 2px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+
+        .alphabet-cell {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 4px;
+            text-align: center;
+            min-height: 20px;
+        }
+
+        .section-divider {
+            border-top: 3px solid #003366;
+            margin: 40px 0 20px 0;
+            padding-top: 20px;
+        }
+
+        .exam-info {
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .scoring-info {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div style="text-align: left; margin-bottom: 15px;">
+            <a href="../../code-buster-index.html" style="display: inline-block; background: #4169e1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                ← Back to Codebusters Hub
+            </a>
+            <a href="../../index.html" style="display: inline-block; background: #28a745; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                🏠 Main Portal
+            </a>
+            <a href="../../pdfresources/CodebustersBTestBirdSOInvitational.pdf" target="_blank" style="display: inline-block; background: #dc3545; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s; margin-right: 10px;">
+                📄 Original Test PDF
+            </a>
+            <a href="../../pdfresources/CodebustersBKeyBirdSOInvitational.pdf" target="_blank" style="display: inline-block; background: #6f42c1; color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: background 0.3s;">
+                🔑 Answer Key PDF
+            </a>
+        </div>
+        <h1>Codebusters Practice Exam</h1>
+        <div class="subtitle">2022 BirdSO Mini B Invitational</div>
+        <div class="subtitle">Complete Questions & Answers from Science Olympiad Competition</div>
+    </div>
+
+    <div class="exam-info">
+        <h3>📋 Exam Information</h3>
+        <p><strong>Event:</strong> Science Olympiad Codebusters B Division</p>
+        <p><strong>Competition:</strong> 2022 BirdSO Mini Invitational</p>
+        <p><strong>Total Questions:</strong> 29 + Timed Question</p>
+        <p><strong>Total Points:</strong> 9,405 points + Bonus</p>
+        <p><strong>Time Limit:</strong> Standard Science Olympiad time (typically 50 minutes)</p>
+    </div>
+
+    <div class="global-toggle-container">
+        <h3>Study Mode Controls</h3>
+        <button class="global-toggle-btn" onclick="showAllAnswers()">Show All Answers</button>
+        <button class="global-toggle-btn hide-mode" onclick="hideAllAnswers()">Hide All Answers</button>
+    </div>
+
+    <div class="scoring-info">
+        <h4>📊 Scoring Information</h4>
+        <ul>
+            <li><strong>Correct Answer:</strong> Full points (up to 2 incorrect letters allowed)</li>
+            <li><strong>3+ Incorrect Letters:</strong> -100 points per additional incorrect letter</li>
+            <li><strong>Timed Question Bonus:</strong> Extra points if solved within 10 minutes (≤2 errors)</li>
+            <li><strong>Frequency Tables:</strong> Not graded - use as solving aids</li>
+        </ul>
+    </div>
+
+    <!-- TIMED QUESTION -->
+    <div class="timed-question">
+        <div class="timed-header">⏰ TIMED QUESTION - 10 MINUTE BONUS OPPORTUNITY</div>
+        <div class="question">
+            <span class="cipher-type">Aristocrat</span>
+            <span class="points-value">300 points</span>
+            <strong>Timed Question:</strong> Solve this Aristocrat about birds! When you have solved it, raise your hand so that the time can be recorded and the solution checked.
+
+            <div class="cipher-text">
+DHBDE CDRBCYDIRBKE BC DE BAUKQRDER AORQBI KY RVO
+CSIIOCC KY RVBC RKSQEDAOER.
+            </div>
+
+            <div class="frequency-table">
+                <table>
+                    <tr class="alphabet-row">
+                        <td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+                    </tr>
+                    <tr class="frequency-row">
+                        <td>3</td><td>7</td><td>7</td><td>7</td><td>6</td><td>1</td><td>4</td><td>5</td><td>4</td><td>3</td><td>9</td><td>2</td><td>1</td><td>2</td><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="replacement-row">
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <button class="toggle-answer-btn" onclick="toggleAnswer('timed')">Show Answer</button>
+        </div>
+        <div class="answer" id="answer-timed">
+            <div class="answer-label">Answer:</div>
+            <div class="plaintext-answer">
+AVIAN SATISFACTION IS AN IMPORTANT METRIC OF THE
+SUCCESS OF THIS TOURNAMENT.
+            </div>
+            <div class="explanation">
+                <strong>Substitution Key:</strong> MISANDQVCWOBKGEJRTULPHYZFX<br>
+                <strong>Theme:</strong> This aristocrat is about birds and tournaments, fitting the BirdSO competition theme.
+                <strong>Solving Strategy:</strong> Look for common words like "THE", "AND", "IS" and use frequency analysis.
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">
+        <h2>Section 1: Aristocrat Ciphers</h2>
+        <div class="section-points">Questions 1-11 - Various Points</div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Aristocrat</span>
+        <span class="points-value">240 points</span>
+        <strong>1.</strong> Solve this Aristocrat which is a large leap in logic.
+
+        <div class="cipher-text">
+VHEN ENB LHMB KG HZZKAIEHAB ROZX WIZWBL DBCHWHZB IZC
+ELBIEDBZE, ENBLB NIM ZBABL SBBZ I SBEEBL EHDB EK
+MDKQB.
+        </div>
+
+        <div class="frequency-table">
+            <table>
+                <tr class="alphabet-row">
+                    <td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+                </tr>
+                <tr class="frequency-row">
+                    <td>3</td><td>1</td><td>8</td><td>2</td><td>4</td><td>1</td><td>1</td><td>1</td><td>7</td><td>6</td><td>4</td><td>6</td><td>3</td><td>4</td><td>1</td><td>1</td><td>1</td><td>2</td><td>1</td><td>3</td><td>1</td><td>9</td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr class="replacement-row">
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+            </table>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(1)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-1">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+WITH THE RISE OF INNOVATIVE LUNG CANCER MEDICINE AND
+TREATMENT, THERE HAS NEVER BEEN A BETTER TIME TO
+SMOKE.
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> VEDMTQFIAPROSHUYKULBZJWCGXN<br>
+            <strong>Irony Alert:</strong> This is clearly a "large leap in logic" - the conclusion contradicts medical advice!
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Aristocrat</span>
+        <span class="points-value">250 points</span>
+        <strong>2.</strong> Solve this Aristocrat.
+
+        <div class="cipher-text">
+ISTBT WR DHISWDQ ZHBT WDIWZWKCIWDQ ISCD C JBHNK HE
+LTHLGT NTCBWDQ VMBQTB PWDQ JBHNDR RWDQWDQ IST
+DCIWHDCG CDISTZ WD MDWRHD.
+        </div>
+
+        <div class="frequency-table">
+            <table>
+                <tr class="alphabet-row">
+                    <td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+                </tr>
+                <tr class="frequency-row">
+                    <td>7</td><td>7</td><td>1</td><td>6</td><td>1</td><td>2</td><td>8</td><td>8</td><td>2</td><td>2</td><td>2</td><td>2</td><td>3</td><td>1</td><td>7</td><td>4</td><td>5</td><td>9</td><td>1</td><td>1</td><td>3</td><td>3</td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr class="replacement-row">
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+            </table>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(2)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-2">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+THERE IS NOTHING MORE INTIMIDATING THAN A CROWD OF
+PEOPLE WEARING BURGER KING CROWNS SINGING THE
+NATIONAL ANTHEM IN UNISON.
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> XRANFJLOTCDPUWYKSGHEVBIZQM<br>
+            <strong>Humor:</strong> A very specific and amusing scenario!
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Aristocrat</span>
+        <span class="points-value">265 points</span>
+        <strong>3.</strong> Solve this Aristocrat which is a puzzling conundrum.
+
+        <div class="cipher-text">
+LP G UQQEVGNF OYYR, GCQ JYX BXRRYBQE SY NYYF JYXC
+YKP UYYE SY UQQE VGNF LPSY SDQ OYYR?
+        </div>
+
+        <div class="frequency-table">
+            <table>
+                <tr class="alphabet-row">
+                    <td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+                </tr>
+                <tr class="frequency-row">
+                    <td>2</td><td>2</td><td>1</td><td>4</td><td>3</td><td>4</td><td>2</td><td>1</td><td>2</td><td>3</td><td>2</td><td>3</td><td>7</td><td>4</td><td>4</td><td>3</td><td>2</td><td>3</td><td>1</td><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr class="replacement-row">
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+            </table>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(3)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-3">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+IN A FEEDBACK LOOP, ARE YOU SUPPOSED TO COOK YOUR
+OWN FOOD TO FEED BACK INTO THE LOOP?
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> VSRHDKAQXYWIGCLNEPTMFBZUOJ<br>
+            <strong>Philosophy:</strong> A genuine puzzling conundrum about feedback loops!
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Aristocrat</span>
+        <span class="points-value">280 points</span>
+        <strong>4.</strong> Solve this Aristocrat about winter.
+
+        <div class="cipher-text">
+'HGR HOM RMFRYS YK XGJGSX, AMTOFAR YTZMT F UGTZRY
+ROGTH KYT F QYJMZ YSM YK CYWTR?
+        </div>
+
+        <div class="frequency-table">
+            <table>
+                <tr class="alphabet-row">
+                    <td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+                </tr>
+                <tr class="frequency-row">
+                    <td>2</td><td>1</td><td>4</td><td>5</td><td>3</td><td>2</td><td>3</td><td>6</td><td>3</td><td>1</td><td>7</td><td>3</td><td>7</td><td>1</td><td>1</td><td>2</td><td>9</td><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr class="replacement-row">
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+            </table>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(4)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-4">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+'TIS THE SEASON OF GIVING, PERHAPS ORDER A BIRDSO
+SHIRT FOR A LOVED ONE OF YOURS?
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> PQYWCAITZVFJEKHLMSNRBXUGOD<br>
+            <strong>Marketing:</strong> A clever plug for BirdSO merchandise in the winter season!
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Aristocrat (K1)</span>
+        <span class="points-value">290 points</span>
+        <strong>5.</strong> Solve this Aristocrat, which has been encoded with a K1 alphabet.
+
+        <div class="cipher-text">
+DJIQ FPB LIRPXI K SPROPH, FPBH TMHAO YKOMIQO PQ OJI
+VPL MA UPQQK AMO SPDQ KQS AKF, "SPROPH, XF WHILA
+RFRNI MA LHPWIQ."
+        </div>
+
+        <div class="frequency-table">
+            <table>
+                <tr class="alphabet-row">
+                    <td>K1</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+                </tr>
+                <tr class="frequency-row">
+                    <td></td><td>6</td><td>2</td><td>2</td><td>5</td><td>6</td><td>8</td><td>2</td><td>5</td><td>4</td><td>5</td><td>1</td><td>7</td><td>1</td><td>2</td><td>8</td><td>5</td><td>4</td><td>1</td><td>1</td><td>1</td><td>2</td><td>2</td><td>1</td><td></td><td></td><td></td>
+                </tr>
+                <tr class="replacement-row">
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+            </table>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(5)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-5">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+WHEN YOU BECOME A DOCTOR, YOUR FIRST PATIENT ON THE
+JOB IS GONNA SIT DOWN AND SAY, "DOCTOR, MY KREBS
+CYCLE IS BROKEN."
+        </div>
+        <div class="explanation">
+            <strong>K1 Substitution Key:</strong> SUVWXYZREHABILTONCDFJKMPQ<br>
+            <strong>Science Humor:</strong> A biology joke about the Krebs cycle (cellular respiration)!
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Aristocrat</span>
+        <span class="points-value">320 points</span>
+        <strong>6.</strong> Solve this Aristocrat about a contest. The ciphertext character "V" decodes to "T".
+
+        <div class="cipher-hint">💡 Hint: V → T</div>
+
+        <div class="cipher-text">
+WBWQD WBWSV PDPIW, CX TXTCI, VLW QTQCI CQCMX WIWPV
+CKCZS VLW VZVIW CSN CRCQN CYCQV GQJF VLW ZQZXL WSWFD.
+        </div>
+
+        <div class="frequency-table">
+            <div class="frequency-row">
+                <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            </div>
+            <div class="frequency-row">
+                <span>Frequency: 21232151141238143813414</span>
+            </div>
+            <div class="frequency-row">
+                <span>Replacement: ________________________</span>
+            </div>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(6)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-6">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+EVERY EVENT CYCLE, AS USUAL, THE RURAL ARABS ELECT
+AGAIN THE TITLE AND AWARD APART FROM THE IRISH ENEMY.
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> JVAYZMFKLOHBDXCRWNUQTESPI<br>
+            <strong>Contest Theme:</strong> About recurring competitive events and awards.
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Aristocrat</span>
+        <span class="points-value">325 points</span>
+        <strong>7.</strong> Solve this Aristocrat.
+
+        <div class="cipher-text">
+QS GRWE SLZJH L HYLWW HXQVS QR DJIHDJOSQAJ SG INQR L
+DJIVJOS DXGSGBILDX.
+        </div>
+
+        <div class="frequency-table">
+            <div class="frequency-row">
+                <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            </div>
+            <div class="frequency-row">
+                <span>Frequency: 1151444651253723311</span>
+            </div>
+            <div class="frequency-row">
+                <span>Replacement: ________________________</span>
+            </div>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(7)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-7">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+IT ONLY TAKES A SMALL SHIFT IN PERSPECTIVE TO RUIN A
+PERFECT PHOTOGRAPH.
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> VGWPYZOSREJABUCDINXTQFLHMK<br>
+            <strong>Photography Wisdom:</strong> About the importance of perspective in photography.
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Aristocrat</span>
+        <span class="points-value">340 points</span>
+        <strong>8.</strong> Solve this Aristocrat which contains a taxon.
+
+        <div class="cipher-text">
+OPP HWNLKTLQYLJGK NCXONTLGX BPLXAY QJGQWN YAOY LY
+KAJWPT DC LSMJKKLDPC BJN AESCGJMYCNOGK YJ OULOYC.
+        </div>
+
+        <div class="frequency-table">
+            <div class="frequency-row">
+                <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            </div>
+            <div class="frequency-row">
+                <span>Frequency: 426215176926653231338</span>
+            </div>
+            <div class="frequency-row">
+                <span>Replacement: ________________________</span>
+            </div>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(8)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-8">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+ALL JURISDICTIONS REGARDING FLIGHT CONCUR THAT IT
+SHOULD BE IMPOSSIBLE FOR HYMENOPTERANS TO AVIATE.
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> HFEBYWNJKOSIPRALCZMVQUGX<br>
+            <strong>Taxon:</strong> "Hymenopterans" (bees, wasps, ants) - the biological classification mentioned in the clue!<br>
+            <strong>Science Reference:</strong> The classic "bees shouldn't be able to fly" myth.
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Aristocrat</span>
+        <span class="points-value">345 points</span>
+        <strong>9.</strong> Solve this Aristocrat.
+
+        <div class="cipher-text">
+NZILU TIWVD LG SYUULWS OQZLWS. FYU'G UZJ HLVHLWS
+MYSYUBOFYG WYCU ULXY.
+        </div>
+
+        <div class="frequency-table">
+            <div class="frequency-row">
+                <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            </div>
+            <div class="frequency-row">
+                <span>Frequency: 111232217112151825173</span>
+            </div>
+            <div class="frequency-row">
+                <span>Replacement: ________________________</span>
+            </div>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(9)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-9">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+FRUIT PUNCH IS GETTING BORING. LET'S TRY KICKING
+VEGETABLES NEXT TIME.
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> WAXHZLSKUYDIVFBQOJGPTCNMER<br>
+            <strong>Culinary Innovation:</strong> A humorous take on beverage experimentation!
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Aristocrat (Meta)</span>
+        <span class="points-value">355 points</span>
+        <strong>10.</strong> Solve this meta Aristocrat.
+
+        <div class="cipher-text">
+VRKQ SIEWLJQVWXQ VWQV KQ N GJTVKQVNHW GWCVNT
+SNYNSKVD WPNG VRNV YXIHXWQQKUWTD HWVQ GIXW
+SRNTTWCHKCH VRXIJHRIJV.
+        </div>
+
+        <div class="frequency-table">
+            <div class="frequency-row">
+                <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            </div>
+            <div class="frequency-row">
+                <span>Frequency: 3214654618195451131152</span>
+            </div>
+            <div class="frequency-row">
+                <span>Replacement: ________________________</span>
+            </div>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(10)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-10">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+THIS CODEBUSTERS TEST IS A MULTISTAGE MENTAL
+CAPACITY EXAM THAT PROGRESSIVELY GETS MORE
+CHALLENGING THROUGHOUT.
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> JZNYDWMGOUIBQAFXSHCLVTERPK<br>
+            <strong>Meta Reference:</strong> This aristocrat is describing the very test you're taking!
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Aristocrat (Read Aloud)</span>
+        <span class="points-value">430 points</span>
+        <strong>11.</strong> Solve this Aristocrat. All the words are English words spelled correctly, but the message is nonsense until you read it aloud. The ciphertext character "A" decodes to "O".
+
+        <div class="cipher-hint">💡 Hint: A → O, Read the answer aloud!</div>
+
+        <div class="cipher-text">
+LEL PJL TUD VAA ACVG CL-BCLGLUYL FL. PJLTC RZCE
+GFZKK ZCP LUN PJLE'CL GA KAUOG TUPA JL LZC KEL
+FAICUTUO AIC VIP LTQQLK. QTUL ZKKLE LEL'F ZV ACV.
+        </div>
+
+        <div class="frequency-table">
+            <div class="frequency-row">
+                <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            </div>
+            <div class="frequency-row">
+                <span>Frequency: 91111645347211263168516</span>
+            </div>
+            <div class="frequency-row">
+                <span>Replacement: ________________________</span>
+            </div>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(11)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-11">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+EYE THE INK BOO ORBS RE-PRESENCE ME. THEIR VARY
+SMALL ART END THEY'RE SO LONGS INTO HE EAR LYE
+MOURNING OUR BUT EIFFEL. FINE ALLEY EYE'M AB ORB.
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> OPRKYMSZUHLEXDGTFVWINBJQCA<br>
+            <strong>Read Aloud:</strong> "I think you orbs represent me. There very small art and they're so long since to hear lie morning our but Eiffel. Finally I'm a bore."<br>
+            <strong>Technique:</strong> This uses homophones - words that sound like other words when spoken!
+        </div>
+    </div>
+
+    <div class="section-divider">
+        <h2>Section 2: Patristocrat Ciphers</h2>
+        <div class="section-points">Questions 12-14 - High Point Values</div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Patristocrat</span>
+        <span class="points-value">520 points</span>
+        <strong>12.</strong> Solve this innovative Patristocrat.
+
+        <div class="cipher-text">
+PXOPJ QIOLO SCALL PDOPX ONLMP NXMQP DCGOC FCQOT
+YPQQK OQICQ IOCQL APBTS TNXGF INKOA PBCTO PBQCX
+SCYPB Q
+        </div>
+
+        <div class="frequency-table">
+            <div class="frequency-row">
+                <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            </div>
+            <div class="frequency-row">
+                <span>Frequency: 3492224125241111103452</span>
+            </div>
+            <div class="frequency-row">
+                <span>Replacement: ________________________</span>
+            </div>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(12)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-12">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+ONEOF THESE DAYSS OMEON EISGO INGTO MAKEA WATER
+BOTTL ETHAT HEATS YOURD RINKW HILEY OUARE OUTAN
+DABOU T
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> YUAMVWKPHFLSGIEOJTDRZXQNBC<br>
+            <strong>Readable:</strong> "One of these days someone is going to make a water bottle that heats your drink while you are out and about."<br>
+            <strong>Innovation:</strong> A practical invention idea!
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Patristocrat</span>
+        <span class="points-value">550 points</span>
+        <strong>13.</strong> Solve this Patristocrat from a very confused speaker. The ciphertext character "M" decodes to "O".
+
+        <div class="cipher-hint">💡 Hint: M → O</div>
+
+        <div class="cipher-text">
+DMBEH XRMCF RXXRJ XJBDL JVYXR JXXAD XERHN JBNYI
+JYLHN XCQBH NDBXM WHQUT XMKHP JDQDX DYDBX RHBJL H
+        </div>
+
+        <div class="frequency-table">
+            <div class="frequency-row">
+                <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            </div>
+            <div class="frequency-row">
+                <span>Frequency: 17282181813441361111134</span>
+            </div>
+            <div class="frequency-row">
+                <span>Replacement: ________________________</span>
+            </div>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(13)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-13">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+IONCE THOUG HTTHA TANIM ALSTH ATTWI TCHED ANDSP
+ASMED TURNE DINTO JERKY TOBEF AIRIT ISINT HENAM E
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> WNUICGVEPABMODXFRHXYKLJTSO<br>
+            <strong>Readable:</strong> "I once thought that animals that twitched and spasmed turned into jerky. To be fair it is in the name."<br>
+            <strong>Confused Logic:</strong> A humorous misunderstanding about jerky!
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Patristocrat</span>
+        <span class="points-value">575 points</span>
+        <strong>14.</strong> Solve this motivational Patristocrat.
+
+        <div class="cipher-text">
+IDXQZ IDJAI YZCRD JRNYZ JNRPD ATCRI DXBAT ORMXP
+IDXQT FYPYZ CRQXA PTKAR NYZJN RGPDG DACRP YTGLX
+RGPTD J
+        </div>
+
+        <div class="frequency-table">
+            <div class="frequency-row">
+                <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            </div>
+            <div class="frequency-row">
+                <span>Frequency: 614914551114173106665</span>
+            </div>
+            <div class="frequency-row">
+                <span>Replacement: ________________________</span>
+            </div>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(14)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-14">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+YOUMA YONLY HAVEO NECHA NCETO LIVEY OURLI FEBUT
+YOUMI GHTHA VEMUL TIPLE CHANC ESTOS OLVET HISQU
+ESTIO N
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> LRVOKGSXYNPQBCFTMEJIWDZUHA<br>
+            <strong>Readable:</strong> "You may only have one chance to live your life, but you might have multiple chances to solve this question!"<br>
+            <strong>Motivation:</strong> Encouraging words for test-takers!
+        </div>
+    </div>
+
+    <div class="section-divider">
+        <h2>Section 3: Xenocrypt</h2>
+        <div class="section-points">Question 15 - Spanish Language</div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Xenocrypt</span>
+        <span class="points-value">375 points</span>
+        <strong>15.</strong> Solve this Xenocrypt.
+
+        <div class="cipher-text">
+DW MNAUÑ CQ DWS JÑMCJJNÑW IC KSBNWSQ RDC VDCQXUSW
+RDC DW XÑIÑ CQ VSQ RDC MS QDVS IC QDQ KSUXCQ.
+        </div>
+
+        <div class="frequency-table">
+            <div class="frequency-row">
+                <span>ABCDEFGHIJKLMNÑOPQRSTUVWXYZ</span>
+            </div>
+            <div class="frequency-row">
+                <span>Frequency: 111093323359383363</span>
+            </div>
+            <div class="frequency-row">
+                <span>Replacement: ________________________</span>
+            </div>
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(15)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-15">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+UN LIBRO ES UNA COLECCION DE PAGINAS QUE MUESTRAN
+QUE UN TODO ES MAS QUE LA SUMA DE SUS PARTES.
+        </div>
+        <div class="explanation">
+            <strong>Substitution Key:</strong> BGEUVXFWDCPKLIOÑJSQAZRMNTHY<br>
+            <strong>Spanish Translation:</strong> "A book is a collection of pages that show that a whole is more than the sum of its parts."<br>
+            <strong>Philosophy:</strong> A profound statement about books and wholeness!
+        </div>
+    </div>
+
+    <div class="section-divider">
+        <h2>Section 4: Classical Ciphers</h2>
+        <div class="section-points">Questions 16-29 - Various Cipher Types</div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Atbash</span>
+        <span class="points-value">195 points</span>
+        <strong>16.</strong> Solve this quote which has been encoded with the Atbash cipher.
+
+        <div class="cipher-text">
+ORPV,HSZIV,ZMWHFYHXIRYVGLYRIW,,HXRVMXVLOBNKRZWLMBLFGFYV..
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(16)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-16">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+LIKE,SHARE,ANDSUBSCRIBETOBIRD,,SCIENCEOLYMPIADONYOUTUBE..
+        </div>
+        <div class="explanation">
+            <strong>Atbash:</strong> A=Z, B=Y, C=X, etc. (alphabet reversed)<br>
+            <strong>Modern Reference:</strong> "Like, share, and subscribe to Bird Science Olympiad on YouTube!"
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Atbash</span>
+        <span class="points-value">230 points</span>
+        <strong>17.</strong> Encode this quote with the Atbash cipher.
+
+        <div class="cipher-text">
+THISQUESTIONGETSEASIERTHEMOREOF
+ITYOUSOLVE.THAT'SREVERSALFORYOU..
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(17)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-17">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+GSRHJFVHGRLMTVGHVZHRVIGSVNLIVLU
+RGBLFHLOEV.GSZG'HIVEVIHZOULIBLF..
+        </div>
+        <div class="explanation">
+            <strong>Encoding Task:</strong> Apply Atbash cipher to the given plaintext<br>
+            <strong>Original:</strong> "This question gets easier the more of it you solve. That's reversal for you."
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Caesar</span>
+        <span class="points-value">205 points</span>
+        <strong>18.</strong> Solve this quote which has been encoded with the Caesar Cipher.
+
+        <div class="cipher-text">
+RTTFIUZEXKFUREKV'JZEWVIEF,KNFFW',
+KYVKYIVVDFJKVMZCGVFGCVZEYZJKFIP
+NVIVKYFJVNYFRJJRJJZERKVURIFDRE
+VDGVIFI..
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(18)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-18">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+ACCORDINGTODANTE'SINFERNO,TWOOF
+THETHREEMOSTEVILPEOPLEINHISTORY
+WERETHOSEWHOASSASSINATEDAROMAN
+EMPEROR..
+        </div>
+        <div class="explanation">
+            <strong>Caesar Shift:</strong> Shift of 19 (or -7)<br>
+            <strong>Literature Reference:</strong> About Dante's Inferno and Roman history
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Caesar</span>
+        <span class="points-value">215 points</span>
+        <strong>19.</strong> Encode this quote with the Caesar Cipher and a shift of 7.
+
+        <div class="cipher-text">
+OH,YOULIKESALAD?NAMEANITALIAN,A,?,
+RANCH,ANDONETHOUSANDISLANDS.,.
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(19)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-19">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+VO,FVBSPRLZHSHK?UHTLHUPAHSPHU,H
+YHUJO,HUKVULAOVBZHUKPZSHUKZ.
+        </div>
+        <div class="explanation">
+            <strong>Caesar Shift +7:</strong> A→H, B→I, C→J, etc.<br>
+            <strong>Food Humor:</strong> About salad dressing varieties!
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Vigenère</span>
+        <span class="points-value">280 points</span>
+        <strong>20.</strong> Solve this quote which has been encoded with the Vigenère Cipher with the keyword MAPLE.
+
+        <div class="cipher-hint">💡 Keyword: MAPLE</div>
+
+        <div class="cipher-text">
+FHTDQMLACIPLTLJREAWMZTDELQCDWH
+NLJPTANS
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(20)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-20">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+THESMALLREDLEAFFELLINTOTHECOLD
+BLUEPOND
+        </div>
+        <div class="explanation">
+            <strong>Vigenère Key:</strong> MAPLE (repeating)<br>
+            <strong>Poetic:</strong> "The small red leaf fell into the cold blue pond"
+        </div>
+    </div>
+
+    <div class="bonus-question">
+        <div class="bonus-header">⭐ SPECIAL BONUS QUESTION</div>
+        <div class="question">
+            <span class="cipher-type">Vigenère</span>
+            <span class="points-value">235 points</span>
+            <strong>21.</strong> Solve this quote which has been encoded with the Vigenère Cipher with the keyword STRONG.
+
+            <div class="cipher-hint">💡 Keyword: STRONG</div>
+
+            <div class="cipher-text">
+APFIYJTXRHNTQHESVTSGRFZCJXJHYK
+AYPCHMSOVARGCGZTR
+            </div>
+
+            <button class="toggle-answer-btn" onclick="toggleAnswer(21)">Show Answer</button>
+        </div>
+        <div class="answer" id="answer-21">
+            <div class="answer-label">Answer:</div>
+            <div class="plaintext-answer">
+IWOULDBEATANYONEINANARMWRESTLE
+IFYOUGAVEMEAKNIFE
+            </div>
+            <div class="explanation">
+                <strong>Vigenère Key:</strong> STRONG (repeating)<br>
+                <strong>Humor:</strong> "I would beat anyone in an arm wrestle if you gave me a knife" - creative problem solving!
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Affine</span>
+        <span class="points-value">275 points</span>
+        <strong>22.</strong> Solve this quote which has been encoded with the Affine Cipher with the pair (A,B) = (11,5).
+
+        <div class="cipher-hint">💡 Affine: (A,B) = (11,5)</div>
+
+        <div class="cipher-text">
+PSBRWGRKFWFSGEKDODWDTJ,JDRKPS-
+WFNV,-FKXFWVDLSDNSFVJDRKFIIPSXV..
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(22)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-22">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+INCULTURALANTHROPOLOGY,YOURIN-
+LAWS,-AREALSOKNOWNASYOURAFFINES..
+        </div>
+        <div class="explanation">
+            <strong>Affine Formula:</strong> E(x) = (11x + 5) mod 26<br>
+            <strong>Anthropology:</strong> "In cultural anthropology, your in-laws are also known as your affines."
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Affine</span>
+        <span class="points-value">300 points</span>
+        <strong>23.</strong> Solve this quote that has been encoded with the Affine Cipher. The ciphertext character "Y" decodes to "R" and the ciphertext "S" decodes to the letter "N".
+
+        <div class="cipher-hint">💡 Hints: Y → R, S → N</div>
+
+        <div class="cipher-text">
+OWLYLFTNSOWLCNTFSBLCLTFRYINYOVNQL
+WFTFS"U"RTONWLCIPNJGLLCALOOLY""
+FANJOZFRORSBFYNJSQRGPNJYGCRBWO
+BLOTQLCFPLQ..
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(23)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-23">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+THEREASONTHELOSANGELESAIRPORTCODE
+HASAN"X"ISTOHELPYOUFEELBETTER""
+ABOUTWAITINGAROUNDIFYOURFLIGHT
+GETSDELAYED..
+        </div>
+        <div class="explanation">
+            <strong>Airport Humor:</strong> "The reason the Los Angeles airport code has an 'X' is to help you feel better about waiting around if your flight gets delayed."<br>
+            <strong>Solving:</strong> Use the two given letter pairs to determine the affine parameters
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Baconian</span>
+        <span class="points-value">315 points</span>
+        <strong>24.</strong> Solve this quote that has been encoded with the Baconian Cipher.
+
+        <div class="cipher-text">
+TMNTOMNOTNMTONMTONMOTMTNOMTNMTMTMOTMTNONMTMTMTONMO
+TNMOTMNTMTOMTNMTMOTMNTMTMTMTMTMOTNMTOMNTOMNOTMNTON
+MTOMTMTMTMTNOMTNMTMOTMNOTNMTMTMONTONMTONMONTMTMTON
+MTOMNTOMTMNTMTMTMOTM
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(24)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-24">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+FOGODECHAO
+LITERALLYM
+EANSGROUND
+FIRE
+        </div>
+        <div class="explanation">
+            <strong>Baconian:</strong> T=A, M=B, N=A, etc. (groups of 5)<br>
+            <strong>Translation:</strong> "Fogo de Chao literally means ground fire" - about the Brazilian steakhouse!
+        </div>
+    </div>
+
+    <div class="bonus-question">
+        <div class="bonus-header">⭐ SPECIAL BONUS QUESTION</div>
+        <div class="question">
+            <span class="cipher-type">Baconian</span>
+            <span class="points-value">365 points</span>
+            <strong>25.</strong> Solve this quote that has been encoded with the Baconian Cipher. It begins with the letter "P".
+
+            <div class="cipher-hint">💡 Starts with: P</div>
+
+            <div class="cipher-text">
+GREEN LIONS SPEAK LOYAL TANKS GLASS LABEL WAGES LUCKY
+BLEND MEANT RUMOR EMILY WALES ALLEY ALIAS NOSES AGING
+GRAVY MEALS DUDES AGILE FIGHT LARRY IS TWO WHOLE
+DOING MULTI AGILE BEERS BLEND DO NOT GRAND CHEEK
+A KING TEETH AS OLD BEARS CHEAT SADLY
+            </div>
+
+            <button class="toggle-answer-btn" onclick="toggleAnswer(25)">Show Answer</button>
+        </div>
+        <div class="answer" id="answer-25">
+            <div class="answer-label">Answer:</div>
+            <div class="plaintext-answer">
+PROSCIUTTO IS TYPICALLY DRY CURED PORK HIND LEG
+            </div>
+            <div class="explanation">
+                <strong>Word Baconian:</strong> Each word represents A or B based on a pattern (likely first letter A-M=A, N-Z=B)<br>
+                <strong>Culinary:</strong> Information about prosciutto preparation!
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Morbit</span>
+        <span class="points-value">320 points</span>
+        <strong>26.</strong> Solve this quote that has been encoded with the Morbit Cipher. 1=×–, 2=●×, 3=–●, 4=×●, 5=––, 6=××
+
+        <div class="cipher-hint">💡 Morbit Key: 1=×–, 2=●×, 3=–●, 4=×●, 5=––, 6=××</div>
+
+        <div class="cipher-text">
+7  8  8  4  4  8  4  6  9  8  4  2  3  8  4  4  3  4  7  9  8  4  8  6  9
+4  3  4  6  2  8  9  4  1  2  1  4  9  4  3  1  2  8  1  2  5  2  4  8  7
+2  9  2  3  8  4  8  6  9  3  4  3  1  5  1  3  4  3  4  4  8  4  8  4  2
+8  9  4
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(26)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-26">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+THESE LIBERALS ARE EVEN TURNING VERBS PROGRESSIVE
+        </div>
+        <div class="explanation">
+            <strong>Morbit:</strong> Numbers convert to Morse code symbols, then to letters<br>
+            <strong>Grammar Humor:</strong> A play on "progressive" verbs in grammar vs. politics!
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Pollux</span>
+        <span class="points-value">340 points</span>
+        <strong>27.</strong> Solve this quote that has been encoded with the Pollux Cipher. 1=–, 2=×, 3=●, 4=●, 5=×, 7=–
+
+        <div class="cipher-hint">💡 Pollux Key: 1=–, 2=×, 3=●, 4=●, 5=×, 7=–</div>
+
+        <div class="cipher-text">
+48849107567342473356409136752435646994759364572402476
+953651695774562072465869632237896321233462536649432444
+9263632479313456473997336967391775754463962674251686937
+53632898179483
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(27)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-27">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+POLLUX IS A STAR IN GEMINI WITH HIS HALF BROTHER CASTOR
+        </div>
+        <div class="explanation">
+            <strong>Pollux:</strong> Numbers convert to Morse, with nulls (0,6,8,9) as spacers<br>
+            <strong>Astronomy:</strong> About the twin stars Pollux and Castor in Gemini!
+        </div>
+    </div>
+
+    <div class="bonus-question">
+        <div class="bonus-header">⭐ SPECIAL BONUS QUESTION</div>
+        <div class="question">
+            <span class="cipher-type">Pollux</span>
+            <span class="points-value">285 points</span>
+            <strong>28.</strong> Solve this quote that has been encoded with the Pollux Cipher. It ends with "WICE".
+
+            <div class="cipher-hint">💡 Ends with: WICE</div>
+
+            <div class="cipher-text">
+458815282864521633814647966256981765530323289632286905
+17533628105263298457499768378043812623535750786857314
+24157598213652238065706929960543785875779784628329863
+13
+            </div>
+
+            <button class="toggle-answer-btn" onclick="toggleAnswer(28)">Show Answer</button>
+        </div>
+        <div class="answer" id="answer-28">
+            <div class="answer-label">Answer:</div>
+            <div class="plaintext-answer">
+BEEP BOOP BEEP WE EVEN CODED THE LETTER R IN MORSE TWICE
+            </div>
+            <div class="explanation">
+                <strong>Meta Humor:</strong> "Beep boop beep we even coded the letter R in Morse twice"<br>
+                <strong>Self-Reference:</strong> The cipher is commenting on itself!
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="cipher-type">Porta</span>
+        <span class="points-value">405 points</span>
+        <strong>29.</strong> Solve this quote that has been encoded with the Porta Cipher. The quote ends in "FAWHOLE."
+
+        <div class="cipher-hint">💡 Ends with: FAWHOLE</div>
+
+        <div class="cipher-text">
+KRRLPDKRJVETWJWQERONWKSPRNQFEIGAFQK
+REACWOKYEABXRNIICRCFFOXJYMZN
+        </div>
+
+        <button class="toggle-answer-btn" onclick="toggleAnswer(29)">Show Answer</button>
+    </div>
+    <div class="answer" id="answer-29">
+        <div class="answer-label">Answer:</div>
+        <div class="plaintext-answer">
+THEPARTITIVEISAGRAMMATICALCONSTRUCT
+IONTHATCONSIDERSPARTOFAWHOLE
+        </div>
+        <div class="explanation">
+            <strong>Porta Key:</strong> SUBJECT (repeating)<br>
+            <strong>Grammar:</strong> "The partitive is a grammatical construction that considers part of a whole"<br>
+            <strong>Linguistic:</strong> About grammatical concepts!
+        </div>
+    </div>
+
+    <div class="section-divider">
+        <h2>Study Tips & Strategies</h2>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+        <h3>🎯 Cipher-Solving Strategies</h3>
+
+        <h4>Aristocrats & Patristocrats:</h4>
+        <ul>
+            <li><strong>Frequency Analysis:</strong> E, T, A, O, I, N are most common letters</li>
+            <li><strong>Common Words:</strong> Look for THE, AND, OF, TO, A, IN</li>
+            <li><strong>Letter Patterns:</strong> Double letters (LL, SS, EE), common endings (-ING, -ED, -ER)</li>
+            <li><strong>Context Clues:</strong> Use the theme or hint provided</li>
+        </ul>
+
+        <h4>Classical Ciphers:</h4>
+        <ul>
+            <li><strong>Caesar:</strong> Try all 25 possible shifts</li>
+            <li><strong>Atbash:</strong> A↔Z, B↔Y, C↔X (alphabet reversal)</li>
+            <li><strong>Vigenère:</strong> Look for repeated patterns to find key length</li>
+            <li><strong>Affine:</strong> Use given letter pairs to solve for parameters</li>
+        </ul>
+
+        <h4>Advanced Ciphers:</h4>
+        <ul>
+            <li><strong>Baconian:</strong> Groups of 5 symbols, A=AAAAA, B=AAAAB, etc.</li>
+            <li><strong>Morbit/Pollux:</strong> Convert numbers to Morse code first</li>
+            <li><strong>Porta:</strong> Reciprocal cipher with keyword</li>
+        </ul>
+
+        <h4>Time Management:</h4>
+        <ul>
+            <li><strong>Timed Question:</strong> Attempt first for bonus points</li>
+            <li><strong>Easy Wins:</strong> Start with shorter ciphers</li>
+            <li><strong>Frequency Tables:</strong> Use as solving aids, don't fill completely</li>
+            <li><strong>Partial Credit:</strong> Up to 2 wrong letters still gets full points</li>
+        </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #003366;">
+        <h3>🏆 Competition Summary</h3>
+        <p><strong>This practice exam contains authentic Science Olympiad questions from the 2022 BirdSO Mini B Invitational.</strong></p>
+        <p>Practice with these real competition problems to prepare for:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Time pressure and strategic question selection</li>
+            <li>Various cipher types and difficulty levels</li>
+            <li>Frequency analysis and pattern recognition</li>
+            <li>Classical and modern cryptographic techniques</li>
+            <li>Bonus point opportunities and scoring strategies</li>
+        </ul>
+        <p><em>Master these authentic competition problems to excel in Science Olympiad Codebusters!</em></p>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/study-tracker.js"></script>
+    <script src="../../js/study-guide-common.js"></script>
+    <script>
+        // Initialize authentication for this page
+        initAuth();
+    </script>
+
+</body>
+</html>
